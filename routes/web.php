@@ -24,11 +24,11 @@ use Illuminate\Support\Facades\Route;
 //         return view('user.main.home');
 //     })->name('user#home');
 // });
-Route::get('/home', function(){
+Route::get('/', function(){
     return view('user.main.home');
 });
 
-Route::get('/home', [UserController::class, 'home'])->name('user#home');
+Route::get('/', [UserController::class, 'home'])->name('user#home');
 
 Route::get('loginPage', [AuthController::class, 'loginPage'])->name('auth#loginPage');
 
