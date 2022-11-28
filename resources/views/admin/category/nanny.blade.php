@@ -41,6 +41,7 @@
                         </div>
                     </div>
 
+                    {{-- {{dd($nannies->first()->photo)}} --}}
                     <button type="button" class="btn btn-primary mb-3">
                         Total - <span class="badge bg-secondary">{{ $nannies->total() }}</span>
                       </button>

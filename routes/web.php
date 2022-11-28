@@ -32,6 +32,15 @@ Route::get('/', [UserController::class, 'home'])->name('user#home');
 
 Route::get('loginPage', [AuthController::class, 'loginPage'])->name('auth#loginPage');
 
+// Route::get('/home/nanny/{id}', [NannyController::class, 'nannyDetail'])->name('nanny#detail');
+Route::get('requestPage', [UserController::class, 'requestForm'])->name('user#request');
+
+
+Route::get('nanny_detail/{id}', [UserController::class, 'nannyInfo'])->name('nanny#info');
+// Route::get('nanny_detail')
+
+Route::get('nanny/request/{id}', [UserController::class, 'nannyRequest'])->name('nanny#request');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -70,6 +79,9 @@ Route::middleware([
         // nanny update
         Route::post('nanny/update', [NannyController::class, 'nannyUpdate'])->name('nanny#update');
 
+
+
+
         // customers page
         Route::get('customer', [CategoryController::class, 'customerPage'])->name('customer#page');
 
@@ -82,6 +94,7 @@ Route::middleware([
     //         return view('user.home');
     //     })->name('user#home');
     // });
+
 });
 
 

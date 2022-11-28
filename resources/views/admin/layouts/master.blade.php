@@ -141,7 +141,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ asset('admin/images/icon/avatar-01.jpg') }}" alt="John Doe" />
+                                            <img src="" alt="" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
@@ -150,7 +150,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ asset('admin/images/icon/avatar-01.jpg') }}" alt="John Doe" />
+                                                        {{-- <img src="{{ asset('admin/images/icon/avatar-01.jpg') }}" alt="John Doe" /> --}}
                                                     </a>
                                                 </div>
                                                 <div class="content">
