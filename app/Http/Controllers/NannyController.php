@@ -38,12 +38,15 @@ class NannyController extends Controller
         $this->nannyValidationCheck($request);
         $data = $this->requestNannyData($request);
 
+        // dd($data);
+
         // for photo
         // if($request->hasFile('nannyPhoto')){
         $fileName = uniqid() . '_' . $request->file('nannyPhoto')->getClientOriginalName();
         $request->file('nannyPhoto')->storeAs('public', $fileName);
 
         $data['photo'] = $fileName;
+        // dd($data);
 
 
         // }
@@ -90,12 +93,12 @@ class NannyController extends Controller
         $data = $this->requestNannyData($request);
 
         // photo
-        if($request->hasFile('nannyPhoto')){
-            $dbPhoto = Nanny::where('id',$request->nannyId)->first();
+        if ($request->hasFile('nannyPhoto')) {
+            $dbPhoto = Nanny::where('id', $request->nannyId)->first();
             $dbPhoto = $dbPhoto->nannyPhoto;
 
-            if($dbPhoto != null){
-                Storage::delete('public/'.$dbPhoto);
+            if ($dbPhoto != null) {
+                Storage::delete('public/' . $dbPhoto);
             }
         }
 
@@ -110,8 +113,9 @@ class NannyController extends Controller
     // nanny validation check
     private function nannyValidationCheck($request)
     {
+        // dd("validae");
         Validator::make($request->all(), [
-            'nannyCode' => 'required|unique:nannies,code,'.$request->nannyId,
+            'nannyCode' => 'required|unique:nannies,code,' . $request->nannyId,
             'nannyPhoto' => 'required|mimes:jpg,jpeg,png|file',
             'nannyName' => 'required',
             'nannyDoB' => 'required',

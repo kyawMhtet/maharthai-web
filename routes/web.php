@@ -70,6 +70,15 @@ Route::get('requestPage', [MainMaidController::class, 'requestForm'])->name('mai
 
 // admin panel
 
+// Route::get('/home/nanny/{id}', [NannyController::class, 'nannyDetail'])->name('nanny#detail');
+Route::get('requestPage', [UserController::class, 'requestForm'])->name('user#request');
+
+
+Route::get('nanny_detail/{id}', [UserController::class, 'nannyInfo'])->name('nanny#info');
+// Route::get('nanny_detail')
+
+Route::get('nanny/request/{id}', [UserController::class, 'nannyRequest'])->name('nanny#request');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -110,6 +119,7 @@ Route::middleware([
 
 
 
+<<<<<<< HEAD
         // maid page
         // Route::get('maidPage', [MaidController::class, 'maidPage'])->name('maid#page');
 
@@ -140,6 +150,8 @@ Route::middleware([
 
 
 
+=======
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
 
         // customers page
         Route::get('customer', [CategoryController::class, 'customerPage'])->name('customer#page');

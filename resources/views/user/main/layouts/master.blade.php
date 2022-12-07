@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>Services</title>
+=======
+    <title>Nannies</title>
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -14,18 +18,24 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
+<<<<<<< HEAD
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+=======
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
 </head>
 
 <body>
 
     <style>
+<<<<<<< HEAD
         .info div .data {
             text-align: justify;
         }
+=======
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
         .nav-menu a {
             color: red;
         }
@@ -62,6 +72,12 @@
             margin-top: 25px;
         }
     </style>
+<<<<<<< HEAD
+=======
+
+    {{-- navbar --}}
+
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
     <nav class="navbar bg-light sticky-top shadow-sm-bottom">
         <div class="container-fluid p-3">
             {{-- <img src="" alt=""> --}}
@@ -72,6 +88,7 @@
                     <a href="" class="navbar-brand me-5 dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">Services</a>
                     <ul class="dropdown-menu">
+<<<<<<< HEAD
                         <li><a href="{{ route('user#home') }}" class="dropdown-item">Nanny, Maid</a></li>
                         <li><a href="{{ route('mainmaid#page') }}" class="dropdown-item">Maid</a></li>
 
@@ -80,6 +97,11 @@
                         <li><a href="#" class="dropdown-item">Maid, Pet Care</a></li>
                         <li><a href="#" class="dropdown-item">Premium Nanny</a></li>
                         <li><a href="#" class="dropdown-item">HouseKeeping</a></li>
+=======
+                        <li><a href="" class="dropdown-item">Nanny</a></li>
+                        <li><a href="" class="dropdown-item">Maid</a></li>
+                        <li><a href="" class="dropdown-item">Maid & Nanny</a></li>
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
                     </ul>
                 </div>
                 <div class="dropdown-center mt-1">
@@ -93,6 +115,7 @@
             </div>
         </div>
     </nav>
+<<<<<<< HEAD
     {{-- navbar --}}
 
     {{-- <nav class="navbar navbar-expand-lg bg-light sticky-top shadow-sm-bottom">
@@ -143,6 +166,8 @@
 
             </div>
     </nav> --}}
+=======
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
 
     {{-- end navbar --}}
 
@@ -150,8 +175,12 @@
 
 
     <p class="mt-5 text-center">
+<<<<<<< HEAD
         This site is protected by reCAPTCHA and the Google <span class="text-danger">Privacy Policy</span> and <span
             class="text-danger">Terms of Service</span> apply.
+=======
+        This site is protected by reCAPTCHA and the Google <span class="text-danger">Privacy Policy</span> and <span class="text-danger">Terms of Service</span> apply.
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
     </p>
 
 
@@ -162,6 +191,7 @@
 
 
 
+<<<<<<< HEAD
 {{-- <div class="collapse navbar-collapse" id="menu">
     <div class="nav-menu me-5 d-flex">
         <a href="https://maharthailinaung.com/" class="navbar-brand me-5">Home</a>
@@ -190,3 +220,6 @@
     </div> --}}
 
 </div>
+=======
+
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725

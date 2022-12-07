@@ -14,7 +14,11 @@
 
                 <div>
                     <p>Code*</p>
+<<<<<<< HEAD
                     <input type="text" name="nannyCode" value="" class="form-control" placeholder="J..." required>
+=======
+                    <input type="text" name="code" class="form-control" placeholder="J..." required>
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
                 </div>
                 <div>
                     <p>Name*</p>

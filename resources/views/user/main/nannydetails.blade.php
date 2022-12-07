@@ -1,5 +1,6 @@
 @extends('user.main.layouts.master')
 
+<<<<<<< HEAD
 @section('title', 'Nanny, Maid Details')
 
 @section('content')
@@ -117,6 +118,19 @@
 @endsection
 
                     {{-- <div>
+=======
+
+@section('content')
+    <div class="container-lg mt-5">
+        <div class="row">
+            <div class="col-3">
+                <img class="card-img-top rounded" src="{{ asset('storage/' . $nannies->photo) }}" style="height: 310px"
+                alt="">
+            </div>
+            <div class="col ms-5">
+                <div class="col info d-flex ">
+                    <div>
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
                         <p><b>Code :</b></p>
                         <p><b>Name :</b></p>
                         <p><b>Position :</b></p>
@@ -128,11 +142,21 @@
                         <p><b>Salary :</b></p>
                         <p><b>Language :</b></p>
                         <p><b>Status :</b></p>
+<<<<<<< HEAD
                         <p><b>Working Time: </b></p>
+=======
+                        <p><b>Full Time/Part Time :</b></p>
+                        <p><b>Live In/Live Out :</b></p>
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
                         <p><b>Experience :</b></p>
                         <p class="text-danger"><b>Remark:</b></p>
                         <div>
                             <p><b>(1) Pets :</b></p>
+<<<<<<< HEAD
+=======
+                            <p><b>(2) Dog : Small :</b></p>
+                            <p><b>(3) Dog : Big :</b></p>
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
                             <p><b>(4) Vaccine :</b></p>
                         </div>
                         <p><b>Note : </b></p>
@@ -157,8 +181,29 @@
                          <br>
                         <div class="mt-3">
                             <p>{{ old('pets', $nannies->pet) }}</p>
+<<<<<<< HEAD
                             <p>{{ old('petNote', $nannies->pet_note) }}</p>
                             <p>{{ old('nannyVaccine', $nannies->vaccine) }}</p>
                             <p>{{ old('note', $nannies->note) }}</p>
                         </div>
                     </div> --}}
+=======
+                            <p>{{ old('smallDog', $nannies->dog_small) }}</p>
+                            <p>{{ old('bigDog', $nannies->dog_big) }}</p>
+                            <p>{{ old('nannyVaccine', $nannies->vaccine) }}</p>
+                            <p>{{ old('note', $nannies->note) }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-end me-5">
+            <a href="{{ route('user#home') }}" class="btn btn-primary px-3">Back</a>
+            <a href="{{ route('user#request') }}" class="btn btn-danger px-3">Request</a>
+        </div>
+
+    </div>
+@endsection
+>>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725

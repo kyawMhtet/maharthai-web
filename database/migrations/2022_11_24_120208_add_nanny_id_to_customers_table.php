@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
-            $table->id();
-            // $table->nanny_id();
-            $table->string('customer_name');
-            $table->string('email');
-            $table->string('phone');
-            $table->timestamps();
+        Schema::table('customers', function (Blueprint $table) {
+            //
+            $table->string('nanny_id');
         });
     }
 
@@ -30,10 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
-<<<<<<< HEAD
-
-=======
->>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
+        Schema::table('customers', function (Blueprint $table) {
+            //
+            $table->dropColumn('nanny_id');
+        });
     }
 };
