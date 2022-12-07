@@ -31,9 +31,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('customers');
-<<<<<<< HEAD
-
-=======
->>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
     }
 };
