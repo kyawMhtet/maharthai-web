@@ -63,7 +63,7 @@ Route::get('maidPage', [MainMaidController::class, 'maidPage'])->name('mainmaid#
 Route::get('maid_detail/{id}', [MainMaidController::class, 'maidInfo'])->name('maid#info');
 
 // Route::get('maid/request/{id}', );
-Route::get('requestPage', [MainMaidController::class, 'requestForm'])->name('maid#request');
+// Route::get('requestPage', [MainMaidController::class, 'requestForm'])->name('maid#request');
 
 
 
@@ -119,7 +119,6 @@ Route::middleware([
 
 
 
-<<<<<<< HEAD
         // maid page
         // Route::get('maidPage', [MaidController::class, 'maidPage'])->name('maid#page');
 
@@ -150,8 +149,6 @@ Route::middleware([
 
 
 
-=======
->>>>>>> c8fa2e517d73995b196903b23a3bde9f26db6725
 
         // customers page
         Route::get('customer', [CategoryController::class, 'customerPage'])->name('customer#page');
