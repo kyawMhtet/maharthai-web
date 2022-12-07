@@ -17,21 +17,26 @@
     <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
     <link rel="stylesheet" type="text/css" href="print.css">
 
-
+    {{-- jquery --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- font-awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- Fontfaces CSS-->
     <link href="{{ asset('admin/css/font-face.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('admin/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet"
+        media="all">
 
     <!-- Bootstrap CSS-->
     <link href="{{ asset('admin/vendor/bootstrap-5.2/bootstrap.min.css') }}" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="{{ asset('admin/vendor/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet"
+        media="all">
     <link href="{{ asset('admin/vendor/wow/animate.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('admin/vendor/slick/slick.css') }}" rel="stylesheet" media="all">
@@ -41,6 +46,27 @@
     <!-- Main CSS-->
     <link href="{{ asset('admin/css/theme.css') }}" rel="stylesheet" media="all">
 
+    <style>
+        #display-image {
+            width: 170px;
+            height: 150px;
+            /* border: 1px solid black; */
+            background-position: center;
+            background-size: cover;
+            display: none;
+        }
+
+        /* #show:hover {
+            color: rgb(58, 164, 240);
+        }
+        #hide:hover {
+            color: rgb(58, 164, 240);
+        } */
+        li a {
+            text-decoration: none;
+        }
+    </style>
+
 </head>
 
 <body class="animsition" id="body">
@@ -49,13 +75,14 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="{{ route('category#list') }}">
-                    <img src="{{ asset('admin/images/icon/logo.png') }}" alt="Cool Admin" />
+                    {{-- <img src="{{ asset('admin/images/icon/logo.png') }}" alt="Cool Admin" /> --}}
+
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        {{-- <li class=" has-sub">
                             <a class="js-arrow" href="{{ route('category#list') }}">
                                 <i class="fas fa-tachometer-alt"></i>Home Page
                             </a>
@@ -63,19 +90,118 @@
                         <li>
                             <a href="{{ route('customer#page') }}">
                                 <i class="fas fa-chart-bar"></i>Customers</a>
-                        </li>
+                        </li> --}}
                         <li>
 
                             <div class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-chart-bar"></i>Workers</a>
-                                    <ul class="dropdown-menu">
-                                        {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
-                                        <li class="text-center"><a class="dropdown-item" href="{{ route('nanny#page') }}">Nanny</a></li>
-                                        <li class="text-center"><a class="dropdown-item" href="#">Driver</a></li>
-                                      </ul>
+                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fas fa-chart-bar"></i>Type 1 (Maid & Nanny)</a>
+                                <ul class="dropdown-menu">
+                                    {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
+                                    <li class="text-center">
+                                        <a class="dropdown-item" href="{{ route('maid#page') }}">Maid</a>
+                                    </li>
+                                    <li class="text-center">
+                                        <a href="{{ route('nanny#page') }}" class="dropdown-item">
+                                            Nanny, Maid
+                                        </a>
+                                    </li>
+
+                                    <li class="text-center"><a class="dropdown-item" href="#">Maid, Eldercare</a>
+                                    </li>
+
+                                    <li class="text-center"><a class="dropdown-item" href="#">Maid, Cook</a></li>
+                                    <li class="text-center"><a class="dropdown-item" href="#">Maid, Pet Care</a>
+                                    </li>
+                                    <li class="text-center"><a class="dropdown-item" href="#r">Premium Nanny</a>
+                                    </li>
+                                    <li class="text-center"><a class="dropdown-item" href="#r">HouseKeeping</a>
+                                    </li>
+
+                                </ul>
                             </div>
                         </li>
+
+                        <li>
+
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fas fa-chart-bar"></i>Type 2 (Driver)</a>
+                                <ul class="dropdown-menu">
+                                    {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
+                                    <li class="text-center"><a class="dropdown-item" href="">Driver</a></li>
+
+                                    <li class="text-center"><a class="dropdown-item" href="">Gardener</a>
+                                    </li>
+
+                                    <li class="text-center"><a class="dropdown-item" href="">General
+                                            Workers</a></li>
+
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fas fa-chart-bar"></i>Type 3 (Restaurant)</a>
+                                <ul class="dropdown-menu">
+                                    {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
+                                    <li class="text-center"><a class="dropdown-item" href="">Casher</a></li>
+
+                                    <li class="text-center"><a class="dropdown-item" href="">Manager</a>
+                                    </li>
+
+                                    <li class="text-center"><a class="dropdown-item"
+                                            href="">Waiter/Waitress</a></li>
+                                    <li class="text-center"><a class="dropdown-item" href="">Helper</a></li>
+                                    <li class="text-center"><a class="dropdown-item" href="">ChiefAssitant</a>
+                                    </li>
+                                    <li class="text-center"><a class="dropdown-item" href="">KitchenHelper</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fas fa-chart-bar"></i>Type 4 (FactoryWorkers)</a>
+                                <ul class="dropdown-menu">
+                                    {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
+                                    <li class="text-center"><a class="dropdown-item" href="">Factory
+                                            Workers</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fas fa-chart-bar"></i>Type 5 (Hotel)</a>
+                                <ul class="dropdown-menu">
+                                    {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
+                                    {{-- <li class="text-center"><a class="dropdown-item" href="">Driver</a></li>
+
+                                    <li class="text-center"><a class="dropdown-item" href="">Gardener</a>
+                                    </li>
+
+                                    <li class="text-center"><a class="dropdown-item" href="">General Workers</a></li> --}}
+
+
+                                </ul>
+                            </div>
+                        </li>
+
                     </ul>
                 </nav>
             </div>
@@ -141,7 +267,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{ asset('admin/images/icon/avatar-01.jpg') }}" alt="John Doe" />
+                                            <img src="" alt="" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{ Auth::user()->name }}</a>
@@ -150,7 +276,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ asset('admin/images/icon/avatar-01.jpg') }}" alt="John Doe" />
+                                                        {{-- <img src="{{ asset('admin/images/icon/avatar-01.jpg') }}" alt="John Doe" /> --}}
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -167,7 +293,8 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer my-3">
-                                                <form action="{{ route('logout') }}" method="post" class="d-flex justify-content-center">
+                                                <form action="{{ route('logout') }}" method="post"
+                                                    class="d-flex justify-content-center">
                                                     @csrf
                                                     <button class="btn btn-dark text-white col-10">
                                                         <i class="zmdi zmdi-power"></i>Logout</a>
@@ -191,28 +318,27 @@
 
     </div>
 
+
     <!-- Jquery JS-->
     <script src="{{ asset('admin/vendor/jquery-3.2.1.min.js') }}"></script>
     <!-- Bootstrap JS-->
     {{-- <script src="{{ asset('admin/vendor/bootstrap-5.2/popper.min.js') }}"></script> --}}
     <script src="{{ asset('admin/vendor/bootstrap-5.2/bootstrap.min.js') }}"></script>
     <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <!-- Vendor JS       -->
-    <script src="{{ asset('admin/vendor/slick/slick.min.js') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
+    <!-- Vendor JS       -->
+    <script src="{{ asset('admin/vendor/slick/slick.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/wow/wow.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/animsition/animsition.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}">
-    </script>
+    <script src="{{ asset('admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/counter-up/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/counter-up/jquery.counterup.min.js') }}">
-    </script>
+    <script src="{{ asset('admin/vendor/counter-up/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/circle-progress/circle-progress.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('admin/vendor/chartjs/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('admin/vendor/select2/select2.min.js') }}">
-    </script>
+    <script src="{{ asset('admin/vendor/select2/select2.min.js') }}"></script>
 
     <!-- Main JS-->
     <script src="{{ asset('admin/js/main.js') }}"></script>

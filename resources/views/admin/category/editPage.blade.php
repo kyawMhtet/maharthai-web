@@ -207,7 +207,7 @@
                                                     <div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="{{ old('full_part', $nanny->full_part) }}" name="full_part" id="fulltime">
+                                                                value="full-time" @if(old('full_part', $nanny->full_part) == 'full-time') checked @endif  name="full_part" id="fulltime">
                                                             <label class="form-check-label" for="fulltime">
                                                                 Full-time
                                                             </label>
@@ -215,7 +215,7 @@
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="{{ old('full_part', $nanny->full_part) }}" name="full_part" id="parttime">
+                                                                value="Part-time" @if (old('full_part', $nanny->full_part) == 'Part-time') checked @endif name="full_part" id="parttime">
                                                             <label class="form-check-label" for="parttime">
                                                                 Part-time
                                                             </label>
@@ -226,7 +226,7 @@
                                                     <div class="ms-5">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="{{ old('live_in_out', $nanny->live_in_out) }}" name="live_in_out" id="livein">
+                                                                value="live-In" @if(old('live_in_out', $nanny->live_in_out) == 'live-In') checked @endif name="live_in_out" id="livein">
                                                             <label class="form-check-label" for="livein">
                                                                 Live-In
                                                             </label>
@@ -234,7 +234,7 @@
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="{{ old('live_in_out', $nanny->live_in_out) }}" name="live_in_out" id="liveout">
+                                                                value="live_Out" @if(old('live_in_out', $nanny->live_in_out) == 'live-Out') checked @endif name="live_in_out" id="liveout">
                                                             <label class="form-check-label" for="liveout">
                                                                 Live-Out
                                                             </label>
@@ -250,11 +250,9 @@
                                                 @enderror
 
                                                 <br>
-                                                Experience : <br>
+                                                Experience  <br>
                                                 <div class="form-floating">
-                                                    <textarea class="form-control"  name="nannyExperience" placeholder="Experience" id="experience">
-                                                    {{ old('nannyExperience', $nanny->experience) }}
-                                                    </textarea>
+                                                    <textarea class="form-control"  name="nannyExperience" placeholder="Experience" id="experience">{{ old('nannyExperience', $nanny->experience) }}</textarea>
                                                     <label for="experience"></label>
                                                     <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
                                                 </div>
@@ -265,6 +263,21 @@
                                                 @enderror
 
                                                 <br>
+
+                                                <label for="cc-payment" class="control-label mb-1">Skill</label>
+                                                <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
+                                                <input id="cc-payment" name="nannySkill" type="text"
+                                                    value="{{ old('nannySkill', $nanny->skill) }}"
+                                                    class="form-control @error('nannySkill') is-invalid  @enderror"
+                                                    aria-required="true" aria-invalid="false" placeholder="skill...">
+                                                @error('nannySkill')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+
+                                                <br>
+
 
                                                 <label for="cc-payment" class="control-label mb-1">Language</label>
                                                 <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
@@ -280,33 +293,33 @@
 
 
                                                 <br>
-                                                <p class="text-danger"><b>Remark</b></p>
                                                 Pets :
                                                 <div class="ms-3">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" value="Yes" name="pets" id="">
+                                                        <input class="form-check-input" type="radio" value="Yes" @if(old('pets', $nanny->pet) == 'Yes') checked @endif name="pets" id="">
                                                         <label class="form-check-label" for="fulltime">
                                                           Yes
                                                         </label>
                                                         <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
                                                       </div>
                                                       <div class="form-check">
-                                                        <input class="form-check-input" type="radio" value="No" name="pets" id="" >
+                                                        <input class="form-check-input" type="radio" value="No" @if(old('pets', $nanny->pet) == 'No') checked @endif name="pets" id="" >
                                                         <label class="form-check-label" for="parttime">
                                                           No
                                                         </label>
                                                         <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
                                                       </div>
+                                                    <textarea name="petNote" class="form-control" id="" cols="10" rows="5">{{ old('petNote', $nanny->pet_note) }}</textarea>
                                                 </div>
 
                                                 <br>
 
-                                                Dog :
+                                                {{-- Dog :
                                                 <div class="ms-3 d-flex">
                                                     <div>
                                                         Small :
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" value="Yes" name="smallDog" id="">
+                                                            <input class="form-check-input" type="radio" value="Yes" @if(old('samllDog', $nanny->) == 'Yes') checked name="smallDog" id="">
                                                             <label class="form-check-label" for="">
                                                               Yes
                                                             </label>
@@ -334,14 +347,13 @@
                                                             </label>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
+                                                <p class="text-danger"><b>Remark :</b></p>
 
                                                 <br>
                                                 Note : (optional)
                                                 <div>
-                                                    <textarea class="form-control" name="note" id="" cols="" rows="">
-                                                        {{ old('note', $nanny->note) }}
-                                                    </textarea>
+                                                    <textarea class="form-control" name="note" id="" cols="" rows="">{{ old('note', $nanny->note) }}</textarea>
                                                 </div>
 
                                                 <br>
@@ -349,9 +361,9 @@
                                                 <div class="input-group">
                                                     <span class="input-group-text">Vaccine</span>
                                                     <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
-                                                    <textarea class="form-control" name="nannyVaccine" aria-label="With textarea">
-                                                        {{ old('nannyVaccine', $nanny->vaccine) }}
-                                                    </textarea>
+                                                    <textarea class="form-control" name="nannyVaccine" aria-label="With textarea">{{ old('nannyVaccine', $nanny->vaccine) }}</textarea>
+
+
                                                   </div>
                                             </div>
                                         </div>
@@ -360,7 +372,7 @@
                                             <button id="payment-button" type="submit"
                                                 class="btn btn-danger btn-info btn-block">
                                                 <input type="submit" class="btn text-white" value="Update">
-                                                <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                                {{-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
                                                 <i class="fa-solid fa-circle-right"></i>
                                             </button>
                                         </div>

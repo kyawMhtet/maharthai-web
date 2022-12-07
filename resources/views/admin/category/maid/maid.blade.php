@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Category List')
+@section('title', 'Maid List')
 
 @section('content')
 
@@ -13,14 +13,14 @@
                     <div class="table-data__tool">
                         <div class="table-data__tool-left">
                             <div class="overview-wrap">
-                                <h2 class="title-1">Nanny List</h2>
+                                <h2 class="title-1">Maid List</h2>
 
                             </div>
                         </div>
                         <div class="table-data__tool-right">
-                            <a href="{{ route('nanny#create') }}">
+                            <a href="{{ route('maid#create') }}">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                    <i class="zmdi zmdi-plus"></i>Add Nanny
+                                    <i class="zmdi zmdi-plus"></i>Add Maid
                                 </button>
                             </a>
                         </div>
@@ -32,7 +32,7 @@
                             </h4>
                         </div>
                         <div class="mb-3 col-3 offset-6">
-                            <form action="{{ route('nanny#page') }}" method="get">
+                            <form action="{{ route('maid#page') }}" method="get">
                                 @csrf
                                 <div class="d-flex">
                                     <input type="text" name="key" class="form-control" placeholder="code#"
@@ -45,7 +45,7 @@
                     </div>
 
                     <button type="button" class="btn btn-primary mb-3">
-                        Total - <span class="badge bg-secondary">{{ $nannies->total() }}</span>
+                        Total - <span class="badge bg-secondary">{{ $maids->total() }}</span>
                     </button>
 
                     @if (session('createSuccess'))
@@ -70,64 +70,49 @@
 
 
 
-                    @if (count($nannies) != 0)
+                    @if (count($maids) != 0)
 
                         <div class="container nanny-list" style="--bs-columns: 3;">
                             <div class="row" style="grid-gap: 10px;">
-                                @foreach ($nannies as $nanny)
+                                @foreach ($maids as $maid)
                                     <div class="card p-2 shadow" id="" style="width: 22rem;">
                                         <img class="card-img-top" id="card"
-                                            src="{{ asset('storage/' . $nanny->photo) }}" style="height: 350px"
+                                            src="{{ asset('storage/' . $maid->photo) }}" style="height: 350px"
                                             alt="">
                                         <div class="card-body d-flex" style="justify-content: space-between">
-                                            <div class="nannyinfo">
+                                            <div class="maidinfo">
                                                 <div class="d-flex">
                                                     <p><b>Code# :</b></p>
-                                                    <p class="ms-">{{ $nanny->code }}</p>
+                                                    <p class="ms-">{{ $maid->code }}</p>
                                                 </div>
 
                                                 <div class="d-flex">
                                                     <p><b>Note:</b></p>
-                                                    {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
-                                                    <p>{{ Str::words($nanny->note, 15, '...') }}</p>
+
+                                                    <p>{{ Str::words($maid->note, 15, '...') }}</p>
 
                                                 </div>
-                                                {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $nanny->note }}</span> --}}
+
 
                                             </div>
                                         </div>
                                         <div class="card-body text-center">
-                                            {{-- <a href="{{ route('nanny#edit', $nanny->id) }}" class="card-link">
-                                                <button class="btn btn-secondary">Edit</button>
-                                            </a> --}}
 
-                                            <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
+
+                                            <a href="{{ route('maid#updatePage', $maid->id) }}" class="card-link">
                                                 <button class="btn btn-secondary">View More</button>
                                             </a>
 
-                                            <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
+                                            <a href="{{ route('maid#delete', $maid->id) }}" class="card-link">
                                                 <button class="btn btn-danger">Delete</button>
                                             </a>
                                         </div>
-
-                                        {{-- <div class="text-center">
-                                            <a href="">
-                                                <button class="btn" id="show">Show</button>
-                                            </a>
-                                            <a href="">
-                                                <button class="btn" id="hide">Hide</button>
-                                            </a>
-                                        </div> --}}
-
-                                        {{-- <button class="btn" type="button" id="show">Show</button>
-                                        <button class="btn" type="button" id="hide">Hide</button> --}}
                                     </div>
                                 @endforeach
                             </div>
                             <div class="mt-4">
-                                {{ $nannies->links() }}
-                                {{-- {{ $nannies->appends(request()->query())->links() }} --}}
+                                {{ $maids->links() }}
+
                             </div>
                         </div>
                     @else
@@ -135,6 +120,7 @@
 
                     @endif
                     <!-- END DATA TABLE -->
+
                 </div>
             </div>
         </div>

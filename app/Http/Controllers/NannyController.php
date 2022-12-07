@@ -24,9 +24,17 @@ class NannyController extends Controller
         return view('admin.category.nanny', compact('nannies'));
     }
 
+    // nanny hide
+    // public function nannyHide($id)
+    // {
+    //     Nanny::where('id', $id)->first();
+
+    // }
+
     // nanny after create
     public function nannyCreate(Request $request)
     {
+        // dd($request->all());
         $this->nannyValidationCheck($request);
         $data = $this->requestNannyData($request);
 
@@ -66,6 +74,14 @@ class NannyController extends Controller
         return view('admin.category.editPage', compact('nanny'));
     }
 
+    // nanny detail
+    // public function nannyDetail($id)
+    // {
+    //     $nanny = Nanny::where('id', $id)->first();
+    //     return back(compact('nanny'));
+    //     // <!-- dd($nanny->id); -->
+    // }
+
     // nanny update
     public function nannyUpdate(Request $request)
     {
@@ -87,8 +103,6 @@ class NannyController extends Controller
         $request->file('nannyPhoto')->storeAs('public', $fileName);
         $data['photo'] = $fileName;
 
-
-
         Nanny::where('id', $request->nannyId)->update($data);
         return redirect()->route('nanny#page');
     }
@@ -101,7 +115,7 @@ class NannyController extends Controller
             'nannyPhoto' => 'required|mimes:jpg,jpeg,png|file',
             'nannyName' => 'required',
             'nannyDoB' => 'required',
-            'nannyPosition' => 'required',
+            // 'nannyPosition' => 'required',
             'nannyNationality' => 'required',
             'nannyReligion' => 'required',
             'nannyWeight' => 'required',
@@ -110,6 +124,7 @@ class NannyController extends Controller
             'nannySalary' => 'required',
             'full_part' => 'required',
             'live_in_out' => 'required',
+            'nannySkill' => 'required',
             'nannyExperience' => 'required',
             'nannyLanguage' => 'required',
 
@@ -139,8 +154,10 @@ class NannyController extends Controller
             'live_in_out' => $request->live_in_out,
             'experience' => $request->nannyExperience,
             'pet' => $request->pets,
-            'dog_small' => $request->smallDog,
-            'dog_big' => $request->bigDog,
+            'skill' => $request->nannySkill,
+            'pet_note' => $request->petNote,
+            // 'dog_small' => $request->smallDog,
+            // 'dog_big' => $request->bigDog,
             'vaccine' => $request->nannyVaccine,
             'note' => $request->note,
 

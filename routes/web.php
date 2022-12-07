@@ -1,10 +1,18 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\NannyController;
-use App\Http\Controllers\User\UserController;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MaidController;
+use App\Http\Controllers\NannyController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MaidCookController;
+use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\MaidPetCareController;
+use App\Http\Controllers\HouseKeepingController;
+use App\Http\Controllers\PremiumNannyController;
+use App\Http\Controllers\MaidElderCareController;
+use App\Http\Controllers\User\MainMaidController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,13 +32,43 @@ use Illuminate\Support\Facades\Route;
 //         return view('user.main.home');
 //     })->name('user#home');
 // });
+
+// login
+
+Route::middleware(['admin_auth'])->group(function(){
+    Route::get('loginPage', [AuthController::class, 'loginPage'])->name('auth#loginPage');
+});
+
 Route::get('/', function(){
     return view('user.main.home');
 });
 
 Route::get('/', [UserController::class, 'home'])->name('user#home');
 
-Route::get('loginPage', [AuthController::class, 'loginPage'])->name('auth#loginPage');
+
+
+// Route::get('/home/nanny/{id}', [NannyController::class, 'nannyDetail'])->name('nanny#detail');
+Route::get('requestPage', [UserController::class, 'requestForm'])->name('user#request');
+
+
+Route::get('nanny_detail/{id}', [UserController::class, 'nannyInfo'])->name('nanny#info');
+// Route::get('nanny_detail')
+
+Route::get('nanny/request/{id}', [UserController::class, 'nannyRequest'])->name('nanny#request');
+
+
+// maid page
+Route::get('maidPage', [MainMaidController::class, 'maidPage'])->name('mainmaid#page');
+
+Route::get('maid_detail/{id}', [MainMaidController::class, 'maidInfo'])->name('maid#info');
+
+// Route::get('maid/request/{id}', );
+Route::get('requestPage', [MainMaidController::class, 'requestForm'])->name('maid#request');
+
+
+
+
+// admin panel
 
 Route::middleware([
     'auth:sanctum',
@@ -70,6 +108,39 @@ Route::middleware([
         // nanny update
         Route::post('nanny/update', [NannyController::class, 'nannyUpdate'])->name('nanny#update');
 
+
+
+        // maid page
+        // Route::get('maidPage', [MaidController::class, 'maidPage'])->name('maid#page');
+
+        // Route::get('maid/createPage', [CategoryController::class, 'maidCreatePage'])->name('maid#createpage');
+        // Route::post('maid', [MaidController::class, 'maidCreate'])->name('maid#create');
+        Route::get('maidPage', [MaidController::class, 'maidPage'])->name('maid#page');
+
+        Route::get('maid/create', [CategoryController::class, 'maidCreatePage'])->name('maid#create');
+
+        Route::post('maid', [MaidController::class, 'maidCreate'])->name('maid#aftercreate');
+
+        Route::get('maid/detail/{id}', [MaidController::class, 'maidEdit'])->name('maid#updatePage');
+
+        Route::get('maid/delete/{id}', [MaidController::class, 'maidDelete'])->name('maid#delete');
+
+        Route::get('maid/editPage/{id}', [MaidController::class, 'editPage'])->name('maid#editPage');
+
+        Route::post('maid/update', [MaidController::class, 'maidUpdate'])->name('maid#update');
+
+
+
+
+
+
+
+
+
+
+
+
+
         // customers page
         Route::get('customer', [CategoryController::class, 'customerPage'])->name('customer#page');
 
@@ -82,6 +153,7 @@ Route::middleware([
     //         return view('user.home');
     //     })->name('user#home');
     // });
+
 });
 
 
