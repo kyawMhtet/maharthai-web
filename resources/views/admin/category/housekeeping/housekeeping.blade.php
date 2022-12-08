@@ -31,7 +31,7 @@
                             <h4 class="text-secondary">Search Key : <span class="text-danger">{{ request('key') }}</span></h4>
                         </div>
                         <div class="mb-3 col-3 offset-6">
-                            <form action="{{ route('houseKeeping#page') }}" method="get">
+                            <form action="" method="get">
                                 @csrf
                                 <div class="d-flex">
                                     <input type="text" name="key" class="form-control" placeholder="code#" value="{{ request('key') }}">
@@ -65,7 +65,7 @@
                     </div>
                 @endif()
 
-                    <h2>House Keeping</h2>
+
 
                     @if (count($housekeepings) != 0)
 
@@ -93,25 +93,25 @@
                                             </a>
                                         </div>
 
-                                        <div class="text-center">
+                                        {{-- <div class="text-center">
                                             <a href="">
                                                 <button class="btn" id="show">Show</button>
                                             </a>
                                             <a href="">
                                                 <button class="btn" id="hide">Hide</button>
                                             </a>
-                                        </div>
+                                        </div> --}}
 
 
                                     </div>
                                 @endforeach
                             </div>
                             <div class="mt-4">
-                                {{ $housekeeping->links() }}
+                                {{ $housekeepings->links() }}
 
                             </div>
                         </div>
-                        awefawefwef
+
 
 
                     @else

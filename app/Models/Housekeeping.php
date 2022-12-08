@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Maid extends Model
+class Housekeeping extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -13,7 +13,7 @@ class Maid extends Model
         // 'instock_status',
         'name',
         'photo',
-        'position' => 'Maid',
+        'position' => 'HouseKeeping',
         'date_of_birth',
         'nationality',
         'religion',

@@ -1,6 +1,6 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'Maid')
+@section('title', 'HouseKeeping')
 
 @section('content')
 
@@ -22,11 +22,11 @@
         font-size: 18px;
     }
 
-    .maid {
+    .housekeeping {
         transition: all 0.5s;
     }
 
-    .maid:hover {
+    .housekeeping:hover {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
@@ -77,35 +77,31 @@
 {{-- nanny workers --}}
 
 <div class="text-center mt-5 text-danger">
-    <h2>MAID WORKERS</h2>
+    <h2>Housekeeping WORKERS</h2>
 </div>
 
 <div class="container w-75 text-center mb-3">
     <div class="row m-auto">
-        @foreach ($maids as $maid)
+        @foreach ($housekeepings as $housekeeping)
             <div class="col mt-5">
 
-                <div class="maid card p-2 border border-0" style="width: 20rem;">
+                <div class="housekeeping card p-2 border border-0" style="width: 20rem;">
 
-                    <img class="card-img-top" src="{{ asset('storage/' . $maid->photo) }}" style="height: 300px; width: 300px;"
+                    <img class="card-img-top" src="{{ asset('storage/' . $housekeeping->photo) }}" style="height: 300px; width: 300px;"
                         alt="">
                     <div class="card-body text-start">
-                        <p><b>{{ $maid->code }}</b></p>
-                        <p><b>{{ $maid->full_part }}</b></p>
-                        <p><b>{{ $maid->salary }}</b></p>
-                        <p><b>{{ Str::words($maid->experience,15, '...') }}</b></p>
+                        <p><b>{{ $housekeeping->code }}</b></p>
+                        <p><b>{{ $housekeeping->full_part }}</b></p>
+                        <p><b>{{ $housekeeping->salary }}</b></p>
+                        <p><b>{{ Str::words($housekeeping->experience,15, '...') }}</b></p>
 
                     </div>
 
 
 
-                    <a href="{{ route('maid#info', $maid->id) }}" class="btn btn-danger mb-2 m-auto rounded-pill w-75">
+                    <a href="{{ route('housekeeping#info', $housekeeping->id) }}" class="btn btn-danger mb-2 m-auto rounded-pill w-75">
                         More Details
                     </a>
-
-
-
-
 
                 </div>
             </div>
@@ -114,7 +110,7 @@
 
 
     <div class="mt-5">
-        {{ $maids->links() }}
+        {{ $housekeepings->links() }}
     </div>
 </div>
 {{-- end nanny workers --}}
@@ -123,10 +119,10 @@
 {{-- hire for nanny --}}
 
 <div class="text-center mt-3 text-danger">
-    <h2>HIRE FOR MAID</h2>
+    <h2>HIRE FOR HOUSEKEEPING</h2>
 
     <div class="form w-50 m-auto mt-4">
-        <form action="">
+        <form action="https://formspree.io/f/mvoynkqy">
             <input type="text" class="form-control border border-0" placeholder="Name*">
             <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
             <input type="text" class="form-control border border-0" placeholder="Phone*">

@@ -101,7 +101,7 @@
 
                                                 <label for="cc-payment" class="control-label mb-1">Position</label>
                                                 <input id="cc-payment" name="housekeepingPosition" type="text"
-                                                    value="housekeeping, Maid"
+                                                    value="HouseKeeping"
                                                     class="form-control @error('housekeepingPosition') is-invalid  @enderror"
                                                     aria-label="Disabled input example" disabled>
                                                 @error('housekeepingPosition')
@@ -177,16 +177,6 @@
 
                                                 <br>
 
-                                                {{-- <label for="cc-payment" class="control-label mb-1">Salary</label>
-                                                <input id="cc-payment" name="housekeepingSalary" type="text"
-                                                    value="{{ old('housekeepingSalary') }}"
-                                                    class="form-control @error('housekeepingSalary') is-invalid  @enderror"
-                                                    aria-required="true" aria-invalid="false" placeholder="salary...">
-                                                @error('housekeepingSalary')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror --}}
 
                                                 <div class="mt-3 input-group">
                                                     <input type="text"
@@ -209,14 +199,14 @@
                                                     <div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="full_time" name="full_part" id="fulltime">
+                                                                value="full-time" @if (old('full_part') == 'full-time') checked @endif name="full_part" id="fulltime">
                                                             <label class="form-check-label" for="fulltime">
                                                                 Full-time
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="part_time" name="full_part" id="parttime">
+                                                                value="part-time" @if (old('full_part') == 'part-time') checked @endif name="full_part" id="parttime">
                                                             <label class="form-check-label" for="parttime">
                                                                 Part-time
                                                             </label>
@@ -226,19 +216,24 @@
                                                     <div class="ms-5">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="live_In" name="live_in_out" id="livein">
+                                                                value="live-In"
+                                                                @if (old('live_in_out') == 'live-In') checked @endif
+                                                                name="live_in_out" id="livein">
                                                             <label class="form-check-label" for="livein">
                                                                 Live-In
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="live_Out" name="live_in_out" id="liveout">
+                                                                value="live-Out"`
+                                                                @if (old('live_in_out') == 'live-Out') checked @endif
+                                                                name="live_in_out" id="liveout">
                                                             <label class="form-check-label" for="liveout">
                                                                 Live-Out
                                                             </label>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 </div>
 
                                                 @error('workingTime', 'liveIn')
@@ -250,8 +245,7 @@
                                                 <br>
                                                 Experience : <br>
                                                 <div class="form-floating">
-                                                    <textarea class="form-control" value="{{ old('housekeepingExperience') }}" name="housekeepingExperience" placeholder="Experience"
-                                                        id="experience"></textarea>
+                                                    <textarea class="form-control" value="" name="housekeepingExperience" placeholder="Experience"id="experience">{{ old('housekeepingExperience') }}</textarea>
                                                     <label for="experience">experience...</label>
                                                 </div>
                                                 @error('housekeepingExperience')
@@ -263,9 +257,7 @@
                                                 <br>
 
                                                 Skill : <br>
-                                                <textarea name="housekeepingSkill" class="form-control" id="" cols="10" rows="5">
-                                                    {{ old('housekeepingSkill') }}
-                                                </textarea>
+                                                <textarea name="housekeepingSkill" class="form-control" id="" cols="10" rows="5">{{ old('housekeepingSkill') }}</textarea>
                                                 @error('housekeepingSkill')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -291,34 +283,34 @@
                                                 Pets :
                                                 <div class="ms-3">
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" value="Yes"
+                                                        <input class="form-check-input" type="radio" value="Yes" @if (old('pets') == 'Yes') checked @endif
                                                             name="pets" id="">
                                                         <label class="form-check-label" for="">
                                                             Yes
                                                         </label>
                                                     </div>
                                                     <div class="form-check">
-                                                        <input class="form-check-input" type="radio" value="No"
+                                                        <input class="form-check-input" type="radio" value="No" @if (old('pets') == 'No') checked @endif
                                                             name="pets" id="">
                                                         <label class="form-check-label" for="">
                                                             No
                                                         </label>
                                                     </div>
-                                                    <textarea name="petNote" class="form-control" id="" cols="10" rows="5"></textarea>
+                                                    <textarea name="petNote" class="form-control" id="" cols="10" rows="5">{{ old('petNote') }}</textarea>
                                                 </div>
 
                                                 <br>
 
                                                 <div class="mt-3 input-group">
                                                     <span class="input-group-text">Vaccine</span>
-                                                    <textarea class="form-control" name="housekeepingVaccine" aria-label="With textarea"></textarea>
+                                                    <textarea class="form-control" name="housekeepingVaccine" aria-label="With textarea">{{ old('housekeepingVaccine') }}</textarea>
                                                 </div>
                                                 <br>
 
                                                 <h4 class="text-danger">Remark : </h4> <br>
                                                 Note : (optional)
                                                 <div>
-                                                    <textarea class="form-control" name="note" id="" cols="" rows=""></textarea>
+                                                    <textarea class="form-control" name="note" id="" cols="" rows="">{{ old('note') }}</textarea>
                                                 </div>
 
 

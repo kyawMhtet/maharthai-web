@@ -234,7 +234,7 @@
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="live_Out" @if(old('live_in_out', $nanny->live_in_out) == 'live-Out') checked @endif name="live_in_out" id="liveout">
+                                                                value="live-Out" @if(old('live_in_out', $nanny->live_in_out) == 'live-Out') checked @endif name="live_in_out" id="liveout">
                                                             <label class="form-check-label" for="liveout">
                                                                 Live-Out
                                                             </label>

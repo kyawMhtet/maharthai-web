@@ -9,10 +9,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MaidCookController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\MaidPetCareController;
-use App\Http\Controllers\HouseKeepingController;
+use App\Http\Controllers\HousekeepingController;
+
 use App\Http\Controllers\PremiumNannyController;
 use App\Http\Controllers\MaidElderCareController;
 use App\Http\Controllers\User\MainMaidController;
+use App\Http\Controllers\User\MainHousekeepingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +54,7 @@ Route::get('requestPage', [UserController::class, 'requestForm'])->name('user#re
 
 
 Route::get('nanny_detail/{id}', [UserController::class, 'nannyInfo'])->name('nanny#info');
-// Route::get('nanny_detail')
+
 
 Route::get('nanny/request/{id}', [UserController::class, 'nannyRequest'])->name('nanny#request');
 
@@ -62,9 +64,11 @@ Route::get('maidPage', [MainMaidController::class, 'maidPage'])->name('mainmaid#
 
 Route::get('maid_detail/{id}', [MainMaidController::class, 'maidInfo'])->name('maid#info');
 
-// Route::get('maid/request/{id}', );
-// Route::get('requestPage', [MainMaidController::class, 'requestForm'])->name('maid#request');
+// housekeeping page
 
+Route::get('housekeepingPage', [MainHousekeepingController::class, 'housekeepingPage'])->name('mainhousekeeping#page');
+
+Route::get('housekeeping_detail/{id}', [MainHousekeepingController::class, 'housekeepingInfo'])->name('housekeeping#info');
 
 
 
@@ -120,10 +124,7 @@ Route::middleware([
 
 
         // maid page
-        // Route::get('maidPage', [MaidController::class, 'maidPage'])->name('maid#page');
 
-        // Route::get('maid/createPage', [CategoryController::class, 'maidCreatePage'])->name('maid#createpage');
-        // Route::post('maid', [MaidController::class, 'maidCreate'])->name('maid#create');
         Route::get('maidPage', [MaidController::class, 'maidPage'])->name('maid#page');
 
         Route::get('maid/create', [CategoryController::class, 'maidCreatePage'])->name('maid#create');
@@ -137,6 +138,23 @@ Route::middleware([
         Route::get('maid/editPage/{id}', [MaidController::class, 'editPage'])->name('maid#editPage');
 
         Route::post('maid/update', [MaidController::class, 'maidUpdate'])->name('maid#update');
+
+
+        // housekeeping
+
+        Route::get('housekeepingPage', [HousekeepingController::class, 'housekeepingPage'])->name('housekeeping#page');
+
+        Route::get('housekeeping/create', [CategoryController::class, 'housekeepingCreatePage'])->name('housekeeping#create');
+
+        Route::post('housekeeping', [HousekeepingController::class, 'housekeepingCreate'])->name('housekeeping#aftercreate');
+
+        Route::get('housekeeping/detail/{id}', [HousekeepingController::class, 'housekeepingEdit'])->name('housekeeping#updatePage');
+
+        Route::get('housekeeping/delete/{id}', [HousekeepingController::class, 'housekeepingDelete'])->name('housekeeping#delete');
+
+        Route::get('housekeeping/editPage/{id}', [HousekeepingController::class, 'editPage'])->name('housekeeping#editPage');
+
+        Route::post('housekeeping/update', [HousekeepingController::class, 'housekeepingUpdate'])->name('housekeeping#update');
 
 
 

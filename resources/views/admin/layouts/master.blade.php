@@ -114,9 +114,9 @@
                                     <li class="text-center"><a class="dropdown-item" href="#">Maid, Cook</a></li>
                                     <li class="text-center"><a class="dropdown-item" href="#">Maid, Pet Care</a>
                                     </li>
-                                    <li class="text-center"><a class="dropdown-item" href="#r">Premium Nanny</a>
+                                    <li class="text-center"><a class="dropdown-item" href="#">Premium Nanny</a>
                                     </li>
-                                    <li class="text-center"><a class="dropdown-item" href="#r">HouseKeeping</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('housekeeping#page') }}">HouseKeeping</a>
                                     </li>
 
                                 </ul>
