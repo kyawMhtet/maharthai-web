@@ -12,94 +12,171 @@
             <div class="col ms-5">
                 <div class="col info">
                     <div class="d-flex">
-                        <p><b>Code: </b></p>
-                        <p class="ms-3">{{ old('maidCode', $maids->code) }}</p>
+                        <div class="col-2">
+                            <p><b>Code : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidCode', $maids->code) }}</p>
+                        </div>
+
                     </div>
                     <div class="d-flex">
-                        <p><b>Name: </b></p>
-                        <p class="ms-3">{{ old('maidName', $maids->name) }}</p>
+
+                        <div class="col-2">
+                            <p><b>Name : </b></p>
+                        </div>
+
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidName', $maids->name) }}</p>
+                        </div>
+                        {{-- <p><b>Name: </b></p>
+                        <p class="ms-3">{{ old('maidName', $maids->name) }}</p> --}}
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Position: </b></p>
+                        <div class="col-2">
+                            <p><b>Position : </b></p>
+                        </div>
+                        <div class="col">
                         <p class="ms-3">{{ old('maidPosition', $maids->position) }}</p>
+
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>DOB: </b></p>
+                        <div class="col-2">
+                        <p><b>DOB : </b></p>
+
+                        </div>
+
+                        <div class="col">
                         <p class="ms-3">{{ old('maidDoB', $maids->date_of_birth) }}</p>
+
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Nationality: </b></p>
-                        <p class="ms-3">{{ old('maidNationality', $maids->nationality) }}</p>
+                        <div class="col-2">
+                            <p><b>Nationality : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidNationality', $maids->nationality) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Religion: </b></p>
-                        <p class="ms-3">{{ old('maidReligion', $maids->religion) }}</p>
+                        <div class="col-2">
+                            <p><b>Religion : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidReligion', $maids->religion) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Weight: </b></p>
-                        <p class="ms-3">{{ old('maidWeight', $maids->weight) }}</p>
+                        <div class="col-2">
+                            <p><b>Weight : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidWeight', $maids->weight) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Height: </b></p>
-                        <p class="ms-3">{{ old('maidHeight', $maids->height) }}</p>
+                        <div class="col-2">
+                            <p><b>Height : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidHeight', $maids->height) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Salary: </b></p>
-                        <p class="ms-3">{{ old('maidSalary', $maids->salary) }}</p>
+                        <div class="col-2">
+                            <p><b>Salary : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidSalary', $maids->salary) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Language: </b></p>
-                        <p class="ms-3">{{ old('maidLanguage', $maids->language) }}</p>
+                        <div class="col-2">
+                            <p><b>Language : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidLanguage', $maids->language) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>status: </b></p>
-                        <p class="ms-3">{{ old('maidStatus', $maids->status) }}</p>
+                        <div class="col-2">
+                            <p><b>status : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidStatus', $maids->status) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Working Time: </b></p>
-                        <p class="ms-3">{{ old('full_part', $maids->full_part) }} / {{ old('live_in_out', $maids->live_in_out) }}</p>
+                        <div class="col-2">
+                            <p><b>Working Time : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('full_part', $maids->full_part) }} / {{ old('live_in_out', $maids->live_in_out) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Experience: </b></p>
-                        <p class="ms-3">{{ old('maidExperience', $maids->experience) }}</p>
+                        <div class="col-2">
+                            <p><b>Experience : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidExperience', $maids->experience) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Skill: </b></p>
-                        <p class="ms-3">{{ old('maidSkill', $maids->skill) }}</p>
+                        <div class="col-2">
+                            <p><b>Skill : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidSkill', $maids->skill) }}</p>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Pets: </b></p>
-                        <p class="ms-3">{{ old('pets', $maids->pet) }}</p>
+                        <div class="col-2">
+                            <p><b>Pets : </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('pets', $maids->pet) }}</p>
+                        </div>
                     </div>
 
-                    <div class="d-flex px-4 mb-3">
-                        <small>Note: </small>
-                        <small class="ms-3">{{ old('petNote', $maids->pet_note) }}</small>
+                    <div class="d-flex px-3 mb-3 py-1 text-white rounded" style="background: #BB2D3B;">
+                        <div class="col-1">
+                            <small>Note : </small>
+                        </div>
+                        <div class="col">
+                            <small class="ms-3">{{ old('petNote', $maids->pet_note) }}</small>
+                        </div>
                     </div>
 
                     <div class="d-flex">
-                        <p><b>Vaccine: </b></p>
-                        <p class="ms-3">{{ old('maidVaccine', $maids->vaccine) }}</p>
+                        <div class="col-2">
+                            <p><b>Vaccine: </b></p>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('maidVaccine', $maids->vaccine) }}</p>
+                        </div>
                     </div>
 
                     {{-- <p class="text-danger"><b>Remark:</b></p>
 
                     <div class="d-flex">
                         <p><b>Note: </b></p>
-                        <p class="ms-3">{{ old('maidNote', $maids->note) }}</p>
+                        <p class="ms-3">{{ old('nannyNote', $housekeepings->note) }}</p>
                     </div> --}}
 
 

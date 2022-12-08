@@ -96,9 +96,6 @@
                         <p>{{ Str::words($maid->experience,8, '...') }}</p>
 
                     </div>
-
-
-
                     <a href="{{ route('maid#info', $maid->id) }}" class="btn btn-danger mb-2 m-auto rounded-pill w-75">
                         More Details
                     </a>
@@ -124,28 +121,22 @@
 
 <div class="text-center mt-3 text-danger">
     <h2>HIRE FOR MAID</h2>
-
-    <div class="form w-50 m-auto mt-4">
-        <form action="">
-            <input type="text" class="form-control border border-0" placeholder="Name*">
-            <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
-            <input type="text" class="form-control border border-0" placeholder="Phone*">
-            <input type="text" class="form-control border border-0" placeholder="Full Time or Part Time*">
-            <input type="text" class="form-control border border-0" placeholder="Live In or Live Out*">
-            <textarea name="" class="form-control" id="" cols="10" rows="5">Note*</textarea>
-
-            <a href="" class="btn btn-danger w-25 py-2 mt-4" type="button">
-                <h5 class="m-auto">REQUEST</h5>
-            </a>
-        </form>
-    </div>
 </div>
 
-<p class="mt-5 text-center">
-    This site is protected by reCAPTCHA and the Google <span class="text-danger">Privacy Policy</span> and <span
-        class="text-danger">Terms of Service</span> apply.
-</p>
+<div class="form w-50 m-auto mt-4 text-center">
+    <form action="">
+        <input type="text" class="form-control border border-0" placeholder="Name*">
+        <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
+        <input type="text" class="form-control border border-0" placeholder="Phone*">
+        <input type="text" class="form-control border border-0" placeholder="Full Time or Part Time*">
+        <input type="text" class="form-control border border-0" placeholder="Live In or Live Out*">
+        <textarea name="" class="form-control" id="" placeholder="Note*" cols="10" rows="5"></textarea>
 
+        <a href="" class="btn btn-danger w-25 py-2 mt-4" type="button">
+            <h5 class="m-auto">REQUEST</h5>
+        </a>
+    </form>
+</div>
 
 <script>
     // $('#workerShowModal').modal('hide');

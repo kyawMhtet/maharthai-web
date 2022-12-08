@@ -77,7 +77,7 @@
 {{-- nanny workers --}}
 
 <div class="text-center mt-5 text-danger">
-    <h2>Housekeeping WORKERS</h2>
+    <h2>HOUSEKEEPING WORKERS</h2>
 </div>
 
 <div class="container w-75 text-center mb-3">
@@ -120,29 +120,23 @@
 
 <div class="text-center mt-3 text-danger">
     <h2>HIRE FOR HOUSEKEEPING</h2>
-
-    <div class="form w-50 m-auto mt-4">
-        <form action="https://formspree.io/f/mvoynkqy">
-            <input type="text" class="form-control border border-0" placeholder="Name*">
-            <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
-            <input type="text" class="form-control border border-0" placeholder="Phone*">
-            <input type="text" class="form-control border border-0" placeholder="Full Time or Part Time*">
-            <input type="text" class="form-control border border-0" placeholder="Live In or Live Out*">
-            <textarea name="" class="form-control" id="" cols="10" rows="5">Note*</textarea>
-
-            <a href="" class="btn btn-danger w-25 py-2 mt-4" type="button">
-                <h5 class="m-auto">REQUEST</h5>
-            </a>
-        </form>
-    </div>
 </div>
 
-<p class="mt-5 text-center">
-    This site is protected by reCAPTCHA and the Google <span class="text-danger">Privacy Policy</span> and <span
-        class="text-danger">Terms of Service</span> apply.
-</p>
 
+<div class="form w-50 m-auto mt-4 text-center">
+    <form action="">
+        <input type="text" class="form-control border border-0" placeholder="Name*">
+        <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
+        <input type="text" class="form-control border border-0" placeholder="Phone*">
+        <input type="text" class="form-control border border-0" placeholder="Full Time or Part Time*">
+        <input type="text" class="form-control border border-0" placeholder="Live In or Live Out*">
+        <textarea name="" class="form-control" id="" placeholder="Note*" cols="10" rows="5"></textarea>
 
+        <a href="" class="btn btn-danger w-25 py-2 mt-4" type="button">
+            <h5 class="m-auto">REQUEST</h5>
+        </a>
+    </form>
+</div>
 <script>
     // $('#workerShowModal').modal('hide');
 

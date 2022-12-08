@@ -20,7 +20,7 @@
                         <div class="table-data__tool-right">
                             <a href="{{ route('nanny#create') }}">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                    <i class="zmdi zmdi-plus"></i>Add Nanny
+                                    <i class="zmdi zmdi-plus"></i>Add Nanny, Maid
                                 </button>
                             </a>
                         </div>

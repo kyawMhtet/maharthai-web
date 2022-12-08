@@ -20,7 +20,7 @@
                         <div class="table-data__tool-right">
                             <a href="{{ route('nanny#create') }}">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                    <i class="zmdi zmdi-plus"></i>Add Nanny
+                                    <i class="zmdi zmdi-plus"></i>Add Nanny, Maid
                                 </button>
                             </a>
                         </div>
@@ -78,7 +78,7 @@
                                 @foreach ($nannies as $nanny)
                                     <div class="card p-2 shadow" id="" style="width: 22rem;">
                                         <img class="card-img-top" id="card"
-                                            src="{{ asset('storage/' . $nanny->photo) }}" style="height: auto; width: 310px;"
+                                            src="{{ asset('storage/' . $nanny->photo) }}" style="height: auto; width: 350px;"
                                             alt="">
                                         <div class="card-body d-flex" style="justify-content: space-between">
                                             <div class="nannyinfo">

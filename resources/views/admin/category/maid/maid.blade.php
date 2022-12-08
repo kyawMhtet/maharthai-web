@@ -77,7 +77,7 @@
                             @foreach ($maids as $maid)
                                 <div class="card p-2 shadow" id="" style="width: 22rem;">
                                     <img class="card-img-top" id="card"
-                                        src="{{ asset('storage/' . $maid->photo) }}" style="height: auto; width: 310px;"
+                                        src="{{ asset('storage/' . $maid->photo) }}" style="height: auto; width: 340px;"
                                         alt="">
                                     <div class="card-body d-flex" style="justify-content: space-between">
                                         <div class="maidinfo">

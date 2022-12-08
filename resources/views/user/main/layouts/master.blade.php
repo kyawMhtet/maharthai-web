@@ -26,6 +26,7 @@
         .info div .data {
             text-align: justify;
         }
+
         .nav-menu a {
             color: red;
         }
@@ -149,7 +150,6 @@
 
     @yield('content')
 
-
     <p class="mt-5 text-center">
         This site is protected by reCAPTCHA and the Google <span class="text-danger">Privacy Policy</span> and <span
             class="text-danger">Terms of Service</span> apply.
@@ -160,34 +160,5 @@
 
 </html>
 
-
-
-
-{{-- <div class="collapse navbar-collapse" id="menu">
-    <div class="nav-menu me-5 d-flex">
-        <a href="https://maharthailinaung.com/" class="navbar-brand me-5">Home</a>
-
-        <div class="dropdown-center mt-1">
-            <a href="" class="navbar-brand me-5 dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">Services</a>
-            <ul class="dropdown-menu">
-                <li><a href="{{ route('mainmaid#page') }}" class="dropdown-item">Maid</a></li>
-                <li><a href="{{ route('user#home') }}" class="dropdown-item">Nanny, Maid</a></li>
-                <li><a href="" class="dropdown-item">Maid, Eldercare</a></li>
-                <li><a href="" class="dropdown-item">Maid, Cook</a></li>
-                <li><a href="" class="dropdown-item">Maid, Pet Care</a></li>
-                <li><a href="" class="dropdown-item">Premium Nanny</a></li>
-                <li><a href="" class="dropdown-item">HouseKeeping</a></li>
-            </ul>
-        </div>
-        <div class="dropdown-center mt-1">
-            <a href="" class="navbar-brand me-5 dropdown-toggle" data-bs-toggle="dropdown"
-                aria-expanded="false">EN/TH</a>
-            <ul class="dropdown-menu">
-                <li><a href="" class="dropdown-item">ENG</a></li>
-                <li><a href="" class="dropdown-item">THAI</a></li>
-            </ul>
-        </div>
-    </div> --}}
 
 </div>
