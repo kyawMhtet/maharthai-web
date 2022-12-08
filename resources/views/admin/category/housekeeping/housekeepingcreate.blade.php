@@ -177,7 +177,7 @@
 
                                                 <br>
 
-
+                                                Salary
                                                 <div class="mt-3 input-group">
                                                     <input type="text"
                                                         class="form-control @error('housekeepingSalary') is-invalid  @enderror"

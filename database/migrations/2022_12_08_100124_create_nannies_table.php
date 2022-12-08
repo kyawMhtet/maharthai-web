@@ -19,7 +19,7 @@ return new class extends Migration
             // $table->boolean('instock_status')->nullable();
             $table->string('name');
             $table->string('photo')->nullable(true);
-            $table->string('position')->default("Nanny, Maid");
+            $table->string('position')->default("Nanny");
             $table->string('date_of_birth');
             $table->string('nationality');
             $table->string('religion');
