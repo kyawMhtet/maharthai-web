@@ -80,7 +80,7 @@
     <h2>MAID WORKERS</h2>
 </div>
 
-<div class="container text-center mb-3">
+<div class="container w-75 text-center mb-3">
     <div class="row m-auto">
         @foreach ($maids as $maid)
             <div class="col mt-5">
