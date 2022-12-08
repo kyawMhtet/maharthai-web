@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('full_part');
             $table->string('live_in_out');
             $table->longText('experience');
-            $table->string('skill');
+            $table->longText('skill');
             $table->string('pet');
             $table->longText('pet_note')->nullable(true);
             $table->string('vaccine');

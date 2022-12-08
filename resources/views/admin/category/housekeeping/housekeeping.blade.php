@@ -41,9 +41,9 @@
                         </div>
                     </div>
 
-                    {{-- <button type="button" class="btn btn-primary mb-3">
-                        Total - <span class="badge bg-secondary">{{ $nannies->total() }}</span>
-                      </button> --}}
+                    <button type="button" class="btn btn-primary mb-3">
+                        Total - <span class="badge bg-secondary">{{ $housekeepings->total() }}</span>
+                      </button>
 
                     @if (session('createSuccess'))
                         <div class="col-4 offset-8">
@@ -69,48 +69,64 @@
 
                     @if (count($housekeepings) != 0)
 
-                        <div class="container housekeeping-list" style="--bs-columns: 3;">
-                            <div class="row" style="grid-gap: 10px;">
-                                @foreach ($housekeepings as $housekeeping)
-                                    <div class="card p-2 shadow" id="" style="width: 22rem;">
-                                        <img class="card-img-top" id="card" src="{{ asset('storage/'. $housekeeping->photo ) }}" style="height: 350px" alt="">
-                                        <div class="card-body d-flex" style="justify-content: space-between">
-                                            <div class="housekeepinginfo">
-                                                <span><b>Code#</b></span> : <span class="text-end">{{ $housekeeping->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $housekeeping->note }}</span>
+                    <div class="container housekeeping-list" style="--bs-columns: 3;">
+                        <div class="row" style="grid-gap: 10px;">
+                            @foreach ($housekeepings as $housekeeping)
+                                <div class="card p-2 shadow" id="" style="width: 22rem;">
+                                    <img class="card-img-top" id="card"
+                                        src="{{ asset('storage/' . $housekeeping->photo) }}" style="height: auto; width: 310px;"
+                                        alt="">
+                                    <div class="card-body d-flex" style="justify-content: space-between">
+                                        <div class="housekeepinginfo">
+                                            <div class="d-flex">
+                                                <p><b>Code# :</b></p>
+                                                <p class="ms-">{{ $housekeeping->code }}</p>
+                                            </div>
+
+                                            <div class="d-flex">
+                                                <p><b>Note:</b></p>
+                                                {{-- <p class="ms-2">{{ $housekeeping->note }}</p> --}}
+                                                <p><b>{{ Str::words($housekeeping->note,15, '...') }}</b></p>
 
                                             </div>
+                                            {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $housekeeping->code }}</span><br>
+                                            <span><b>Note </b></span> : <span class="text-end">{{ $housekeeping->note }}</span> --}}
+
                                         </div>
-                                        <div class="card-body text-center">
-
-
-                                            <a href="{{ route('housekeeping#updatePage', $housekeeping->id) }}" class="card-link">
-                                                <button class="btn btn-secondary">View More</button>
-                                            </a>
-
-                                            <a href="{{ route('housekeeping#delete', $housekeeping->id) }}" class="card-link">
-                                                <button class="btn btn-danger">Delete</button>
-                                            </a>
-                                        </div>
-
-                                        {{-- <div class="text-center">
-                                            <a href="">
-                                                <button class="btn" id="show">Show</button>
-                                            </a>
-                                            <a href="">
-                                                <button class="btn" id="hide">Hide</button>
-                                            </a>
-                                        </div> --}}
-
-
                                     </div>
-                                @endforeach
-                            </div>
-                            <div class="mt-4">
-                                {{ $housekeepings->links() }}
+                                    <div class="card-body text-center">
+                                        {{-- <a href="{{ route('housekeeping#edit', $housekeeping->id) }}" class="card-link">
+                                            <button class="btn btn-secondary">Edit</button>
+                                        </a> --}}
 
-                            </div>
+                                        <a href="{{ route('housekeeping#updatePage', $housekeeping->id) }}" class="card-link">
+                                            <button class="btn btn-secondary">View More</button>
+                                        </a>
+
+                                        <a href="{{ route('housekeeping#delete', $housekeeping->id) }}" class="card-link">
+                                            <button class="btn btn-danger">Delete</button>
+                                        </a>
+                                    </div>
+
+                                    {{-- <div class="text-center">
+                                        <a href="">
+                                            <button class="btn" id="show">Show</button>
+                                        </a>
+                                        <a href="">
+                                            <button class="btn" id="hide">Hide</button>
+                                        </a>
+                                    </div> --}}
+
+                                    {{-- <button class="btn" type="button" id="show">Show</button>
+                                    <button class="btn" type="button" id="hide">Hide</button> --}}
+                                </div>
+                            @endforeach
                         </div>
+                        <div class="mt-4">
+                            {{ $housekeepings->links() }}
+                            {{-- {{ $nannies->appends(request()->query())->links() }} --}}
+                        </div>
+                    </div>
 
 
 

@@ -78,7 +78,7 @@
                                 @foreach ($nannies as $nanny)
                                     <div class="card p-2 shadow" id="" style="width: 22rem;">
                                         <img class="card-img-top" id="card"
-                                            src="{{ asset('storage/' . $nanny->photo) }}" style="height: 350px"
+                                            src="{{ asset('storage/' . $nanny->photo) }}" style="height: auto; width: 310px;"
                                             alt="">
                                         <div class="card-body d-flex" style="justify-content: space-between">
                                             <div class="nannyinfo">
@@ -90,7 +90,7 @@
                                                 <div class="d-flex">
                                                     <p><b>Note:</b></p>
                                                     {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
-                                                    <p>{{ Str::words($nanny->note, 15, '...') }}</p>
+                                                    <p><b>{{ Str::words($nanny->note,15, '...') }}</b></p>
 
                                                 </div>
                                                 {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>

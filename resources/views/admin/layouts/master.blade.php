@@ -108,6 +108,12 @@
                                         </a>
                                     </li>
 
+                                    <li class="text-center">
+                                        <a class="dropdown-item"
+                                            href="{{ route('housekeeping#page') }}">HouseKeeping
+                                        </a>
+                                    </li>
+
                                     <li class="text-center"><a class="dropdown-item" href="#">Maid, Eldercare</a>
                                     </li>
 
@@ -116,8 +122,7 @@
                                     </li>
                                     <li class="text-center"><a class="dropdown-item" href="#">Premium Nanny</a>
                                     </li>
-                                    <li class="text-center"><a class="dropdown-item" href="{{ route('housekeeping#page') }}">HouseKeeping</a>
-                                    </li>
+
 
                                 </ul>
                             </div>

@@ -74,12 +74,13 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('user#home') }}" class="dropdown-item">Nanny, Maid</a></li>
                         <li><a href="{{ route('mainmaid#page') }}" class="dropdown-item">Maid</a></li>
+                        <li><a href="{{ route('mainhousekeeping#page') }}" class="dropdown-item">HouseKeeping</a></li>
 
                         <li><a href="#" class="dropdown-item">Maid, Eldercare</a></li>
                         <li><a href="#" class="dropdown-item">Maid, Cook</a></li>
                         <li><a href="#" class="dropdown-item">Maid, Pet Care</a></li>
                         <li><a href="#" class="dropdown-item">Premium Nanny</a></li>
-                        <li><a href="{{ route('mainhousekeeping#page') }}" class="dropdown-item">HouseKeeping</a></li>
+
                     </ul>
                 </div>
                 <div class="dropdown-center mt-1">

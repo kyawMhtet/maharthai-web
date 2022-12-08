@@ -86,16 +86,16 @@
         <div class="row m-auto">
             @foreach ($nannies as $nanny)
                 <div class="col mt-5" >
-                    <div class="nanny card p-2 border border-0" style="width: 20rem; ">
+                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
                         {{-- <input type="hidden" name="nannyId" value="{{ $nanny->id }}"> --}}
-                        <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}" style="height: 300px; width: 300px;"
+                        <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}" style="height: 300px; width: 305px;"
                             alt="">
                         <div class="card-body text-start">
-                            <p><b>{{ $nanny->code }}</b></p>
-                            <p><b>{{ $nanny->full_part }}</b></p>
-                            <p><b>{{ $nanny->salary }}</b></p>
-                            {{-- <p><b>{{ $nanny->experience }}</b></p> --}}
-                            <p><b>{{ Str::words($nanny->experience,15, '...') }}</b></p>
+                            <p>{{ $nanny->code }}</p>
+                            <p>{{ $nanny->full_part }}</p>
+                            <p>{{ $nanny->salary }}</p>
+                            {{-- <p>{{ $nanny->experience }}</p> --}}
+                            <p>{{ Str::words($nanny->experience,8, '...') }}</p>
                         </div>
                         <a href="{{ route('nanny#info', $nanny->id) }}"
                             class="btn btn-danger mb-2 m-auto rounded-pill w-75">

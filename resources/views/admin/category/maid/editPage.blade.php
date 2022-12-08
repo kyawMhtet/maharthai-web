@@ -200,7 +200,7 @@
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="Part-time" @if (old('full_part', $maid->full_part) == 'Part-time') checked @endif name="full_part" id="parttime">
+                                                                value="part-time" @if (old('full_part', $maid->full_part) == 'part-time') checked @endif name="full_part" id="parttime">
                                                             <label class="form-check-label" for="parttime">
                                                                 Part-time
                                                             </label>
@@ -267,7 +267,7 @@
                                                 <label for="cc-payment" class="control-label mb-1">Language</label>
                                                 <input type="hidden" name="maidId" value="{{ $maid->id }}">
                                                 <input id="cc-payment" name="maidLanguage" type="text"
-                                                    value="{{ old('maidLanguage', $maid->experience) }}"
+                                                    value="{{ old('maidLanguage', $maid->language) }}"
                                                     class="form-control @error('maidLanguage') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="language...">
                                                 @error('maidLanguage')

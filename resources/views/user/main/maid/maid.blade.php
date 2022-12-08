@@ -85,15 +85,15 @@
         @foreach ($maids as $maid)
             <div class="col mt-5">
 
-                <div class="maid card p-2 border border-0" style="width: 20rem;">
+                <div class="maid card p-2 border border-0" style="width: 20rem; height: 600px;">
 
-                    <img class="card-img-top" src="{{ asset('storage/' . $maid->photo) }}" style="height: 300px; width: 300px;"
+                    <img class="card-img-top" src="{{ asset('storage/' . $maid->photo) }}" style="height: 300px; width: 305px;"
                         alt="">
                     <div class="card-body text-start">
-                        <p><b>{{ $maid->code }}</b></p>
-                        <p><b>{{ $maid->full_part }}</b></p>
-                        <p><b>{{ $maid->salary }}</b></p>
-                        <p><b>{{ Str::words($maid->experience,15, '...') }}</b></p>
+                        <p>{{ $maid->code }}</p>
+                        <p>{{ $maid->full_part }}</p>
+                        <p>{{ $maid->salary }}</p>
+                        <p>{{ Str::words($maid->experience,8, '...') }}</p>
 
                     </div>
 

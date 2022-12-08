@@ -215,7 +215,7 @@
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="Part-time" @if (old('full_part', $nanny->full_part) == 'Part-time') checked @endif name="full_part" id="parttime">
+                                                                value="part-time" @if (old('full_part', $nanny->full_part) == 'part-time') checked @endif name="full_part" id="parttime">
                                                             <label class="form-check-label" for="parttime">
                                                                 Part-time
                                                             </label>
@@ -282,7 +282,7 @@
                                                 <label for="cc-payment" class="control-label mb-1">Language</label>
                                                 <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
                                                 <input id="cc-payment" name="nannyLanguage" type="text"
-                                                    value="{{ old('nannyLanguage', $nanny->experience) }}"
+                                                    value="{{ old('nannyLanguage', $nanny->language) }}"
                                                     class="form-control @error('nannyLanguage') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="language...">
                                                 @error('nannyLanguage')
@@ -387,5 +387,17 @@
         </div>
     </div>
     <!-- END MAIN CONTENT-->
+    <script>
+        const image_input = document.querySelector("#image-input");
+        image_input.addEventListener("change", function() {
+            const reader = new FileReader();
+            reader.addEventListener("load", () => {
+                const uploaded_image = reader.result;
+                document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
+                document.querySelector("#display-image").style.display = "block";
 
+            });
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
 @endsection
