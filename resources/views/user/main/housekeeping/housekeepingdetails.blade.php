@@ -173,14 +173,7 @@
                         </div>
                     </div>
 
-                    <div class="d-flex">
-                        <div class="col-2">
-                            <h4 class="text-danger">Remark: </h4>
-                        </div>
-                        <div class="col">
-                            <p class="ms-3">{{ old('housekeepingRemark', $housekeeping->remark) }}</p>
-                        </div>
-                    </div>
+
 
                     <div class="d-flex px-3 mb-3 py-1 text-white rounded" style="background: #BB2D3B;">
                         <div class="col-1">
@@ -191,6 +184,14 @@
                         </div>
                     </div>
 
+                    <div class="d-flex">
+                        <div class="col-2">
+                            <h4 class="text-danger">Remark: </h4>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('housekeepingRemark', $housekeepings->remark) }}</p>
+                        </div>
+                    </div>
 
 
                     {{-- <p class="text-danger"><b>Remark:</b></p>
