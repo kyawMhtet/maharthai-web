@@ -160,7 +160,7 @@
                         </div>
                         <div class="col d-flex">
 
-                                <small class="">{{ old('petNote', $maid->pet_note) }}</small>
+                                <small class="">{{ old('petNote', $maids->pet_note) }}</small>
                         </div>
                     </div>
 
