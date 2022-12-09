@@ -103,17 +103,10 @@
                         </a>
                     </div>
 
-
-                    <a href="{{ route('housekeeping#info', $housekeeping->id) }}" class="btn btn-danger mb-2 m-auto rounded-pill w-75">
-                        More Details
-                    </a>
-
                 </div>
             </div>
         @endforeach
     </div>
-
-
     <div class="mt-5">
         {{ $housekeepings->links() }}
     </div>
