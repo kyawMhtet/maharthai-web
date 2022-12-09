@@ -87,16 +87,21 @@
 
                 <div class="housekeeping card p-2 border border-0" style="width: 20rem; height: 600px;">
 
-                    <img class="card-img-top" src="{{ asset('storage/' . $housekeeping->photo) }}" style="height: auto; width: 305px;"
+                    <img class="card-img-top" src="{{ asset('storage/' . $housekeeping->photo) }}" style="height: 305px; width: 305px;"
                         alt="">
                     <div class="card-body text-start">
                         <p>{{ $housekeeping->code }}</p>
-                        <p>{{ $housekeeping->full_part }}</p>
+                        <p>{{ $housekeeping->full_part }} / {{ $housekeeping->live_in_out }}</p>
                         <p>{{ $housekeeping->salary }}</p>
                         <p>{{ Str::words($housekeeping->experience,8, '...') }}</p>
 
                     </div>
-
+                    <div class="text-center mb-4">
+                        <a href="{{ route('housekeeping#info', $housekeeping->id) }}"
+                            class="btn btn-danger mb-2 rounded-pill w-75">
+                            More Details
+                        </a>
+                    </div>
 
 
                     <a href="{{ route('housekeeping#info', $housekeeping->id) }}" class="btn btn-danger mb-2 m-auto rounded-pill w-75">

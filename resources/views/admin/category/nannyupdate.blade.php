@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Maid List')
+@section('title', 'Nanny List')
 
 @section('content')
 
@@ -118,7 +118,7 @@
 
                         <div class="d-flex">
                             <p><b>Salary: </b></p>
-                            <p class="ms-3">{{ old('nannySalary', $nanny->salary) }}</p>
+                            <p class="ms-3">{{ old('nannySalary', $nanny->salary) }} <b>Baht</b></p>
                         </div>
 
                         <div class="d-flex">
@@ -161,7 +161,10 @@
                             <p class="ms-3">{{ old('nannyVaccine', $nanny->vaccine) }}</p>
                         </div>
 
-                        <p class="text-danger"><b>Remark:</b></p>
+                        <div class="d-flex">
+                            <h4 class="text-danger">Remark: </h4>
+                            <p class="ms-3">{{ old('nannyRemark', $nanny->remark) }}</p>
+                        </div>
 
                         <div class="d-flex">
                             <p><b>Note: </b></p>

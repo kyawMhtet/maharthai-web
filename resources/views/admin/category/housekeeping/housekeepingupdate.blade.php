@@ -70,7 +70,7 @@
 
                         <div class="d-flex">
                             <p><b>Salary: </b></p>
-                            <p class="ms-3">{{ old('housekeepingSalary', $housekeeping->salary) }}</p>
+                            <p class="ms-3">{{ old('housekeepingSalary', $housekeeping->salary) }} <b>Baht</b></p>
                         </div>
 
                         <div class="d-flex">
@@ -113,7 +113,10 @@
                             <p class="ms-3">{{ old('housekeepingVaccine', $housekeeping->vaccine) }}</p>
                         </div>
 
-                        <p class="text-danger"><b>Remark:</b></p>
+                        <div class="d-flex">
+                            <h4 class="text-danger">Remark: </h4>
+                            <p class="ms-3">{{ old('housekeepingRemark', $housekeeping->remark) }}</p>
+                        </div>
 
                         <div class="d-flex">
                             <p><b>Note: </b></p>

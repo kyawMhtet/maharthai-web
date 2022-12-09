@@ -39,13 +39,16 @@ use App\Http\Controllers\User\MainHousekeepingController;
 
 Route::middleware(['admin_auth'])->group(function(){
     Route::get('loginPage', [AuthController::class, 'loginPage'])->name('auth#loginPage');
+
 });
 
-Route::get('/', function(){
-    return view('user.main.home');
-});
+// Route::get('/', function(){
+//     return view('user.main.home');
+// });
 
 Route::get('/', [UserController::class, 'home'])->name('user#home');
+
+Route::get('NannyMaidPage', [UserController::class, 'home'])->name('user#home');
 
 
 
@@ -91,7 +94,7 @@ Route::middleware([
 
 
     // Route::get('/home', [UserController::class, 'home'])->name('user#home');
-
+    // Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
     // dashboard
     Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');

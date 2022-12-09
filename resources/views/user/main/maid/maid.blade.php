@@ -87,18 +87,20 @@
 
                 <div class="maid card p-2 border border-0" style="width: 20rem; height: 600px;">
 
-                    <img class="card-img-top" src="{{ asset('storage/' . $maid->photo) }}" style="height: 300px; width: 305px;"
+                    <img class="card-img-top" src="{{ asset('storage/' . $maid->photo) }}" style="height: 305px; width: 305px;"
                         alt="">
                     <div class="card-body text-start">
                         <p>{{ $maid->code }}</p>
-                        <p>{{ $maid->full_part }}</p>
+                        <p>{{ $maid->full_part }} / {{ $maid->live_in_out }}</p>
                         <p>{{ $maid->salary }}</p>
                         <p>{{ Str::words($maid->experience,8, '...') }}</p>
 
                     </div>
-                    <a href="{{ route('maid#info', $maid->id) }}" class="btn btn-danger mb-2 m-auto rounded-pill w-75">
-                        More Details
-                    </a>
+                    <div class="text-center mb-4">
+                        <a href="{{ route('maid#info', $maid->id) }}" class="btn btn-danger mb-2 rounded-pill w-75">
+                            More Details
+                        </a>
+                    </div>
 
 
 

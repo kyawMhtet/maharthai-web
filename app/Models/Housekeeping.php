@@ -29,6 +29,7 @@ class Housekeeping extends Model
         'pet',
         'pet_note',
         'note',
+        'remark',
         'vaccine',
     ];
 }

@@ -29,6 +29,7 @@ class Nanny extends Model
         'pet',
         'pet_note',
         'note',
+        'remark',
         'vaccine',
     ];
 }

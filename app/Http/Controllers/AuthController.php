@@ -12,6 +12,13 @@ class AuthController extends Controller
         return view('login');
     }
 
+    // logout
+    // public function logout()
+    // {
+    //     return redirect()->route('auth#loginPage');
+
+    // }
+
     // direct dashboard
     public function dashboard() {
         if(Auth::user()->role == 'admin') {

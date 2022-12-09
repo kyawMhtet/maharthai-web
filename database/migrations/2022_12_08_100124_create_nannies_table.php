@@ -19,7 +19,7 @@ return new class extends Migration
             // $table->boolean('instock_status')->nullable();
             $table->string('name');
             $table->string('photo')->nullable(true);
-            $table->string('position')->default("Nanny");
+            $table->string('position')->default("Nanny, Maid");
             $table->string('date_of_birth');
             $table->string('nationality');
             $table->string('religion');
@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('pet');
             $table->longText('pet_note')->nullable(true);
             $table->string('vaccine');
+            $table->longText('remark')->nullable(true);
             $table->longText('note')->nullable(true);
             $table->timestamps();
         });

@@ -246,7 +246,7 @@
                                                 <br>
                                                 Experience : <br>
                                                 <div class="form-floating">
-                                                    <textarea class="form-control" value="" name="maidExperience" placeholder="Experience" id="experience">{{ old('maidExperience') }}</textarea>
+                                                    <textarea class="form-control @error('maidExperience') is-invalid  @enderror" value="" name="maidExperience" placeholder="Experience" id="experience">{{ old('maidExperience') }}</textarea>
                                                     <label for="experience">experience...</label>
                                                 </div>
                                                 @error('maidExperience')
@@ -258,7 +258,10 @@
                                                 <br>
 
                                                 Skill : <br>
-                                                <textarea name="maidSkill" class="form-control" id="" cols="10" rows="5">{{ old('maidSkill') }}</textarea>
+                                                <div class="form-floating">
+                                                    <textarea name="maidSkill" class="form-control @error('maidSkill') is-invalid  @enderror" id="skill" cols="10" rows="5">{{ old('nannySkill') }}</textarea>
+                                                    <label for="skill">skill...</label>
+                                                </div>
 
 
                                                 @error('maidSkill')
@@ -320,7 +323,18 @@
 
                                                 <br>
 
-                                                <h4 class="text-danger">Remark : </h4> <br>
+                                                <div class="d-flex">
+                                                    <h4 class="text-danger mb-2">Remark : </h4>
+                                                    <p class="ms-2">(optional)</p>
+                                                </div>
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" value="" name="maidRemark" placeholder="" id="remark">{{ old('maidRemark') }}</textarea>
+                                                    <label for="remark">Remark*</label>
+                                                </div>
+
+
+                                                <br>
+
                                                 Note : (optional)
                                                 <div>
                                                     <textarea class="form-control" name="note" id="" cols="" rows="">{{ old('note') }}</textarea>
@@ -330,7 +344,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="mt-2 ms-3">
+                                        <div class="mt-2 ms-3 py-2">
                                             <button id="payment-button" type="submit"
                                                 class="btn btn-danger btn-info btn-block">
                                                 <span id="payment-button-amount">Create</span>

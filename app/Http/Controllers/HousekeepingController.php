@@ -17,7 +17,7 @@ class HousekeepingController extends Controller
                 $query->where('code', 'like', '%' . request('key') . '%');
             })
                 ->orderBy('id', 'desc')
-                ->paginate(3);
+                ->paginate(9);
             $housekeepings->appends(request()->all());
 
             return view('admin.category.housekeeping.housekeeping', compact('housekeepings'));
@@ -111,6 +111,7 @@ class HousekeepingController extends Controller
                 'housekeepingVaccine' => 'required',
                 'housekeepingExperience' => 'required',
                 'housekeepingLanguage' => 'required',
+                'housekeepingRemark' => 'required',
             ],)->validate();
         }
 
@@ -141,6 +142,7 @@ class HousekeepingController extends Controller
                 // 'dog_small' => $request->smallDog,
                 // 'dog_big' => $request->bigDog,
                 'vaccine' => $request->housekeepingVaccine,
+                'remark' => $request->housekeepingRemark,
                 'note' => $request->note,
 
             ];

@@ -11,7 +11,7 @@ class MainMaidController extends Controller
     //
     public function maidPage()
     {
-        $maids = Maid::orderBy('id', 'desc')->paginate(3);
+        $maids = Maid::orderBy('id', 'desc')->paginate(12);
         return view('user.main.maid.maid', compact('maids'));
     }
 

@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     //
     public function home(){
-        $nannies = Nanny::orderBy('id', 'desc')->paginate(3);
+        $nannies = Nanny::orderBy('id', 'desc')->paginate(12);
         return view('user.main.home', compact('nannies'));
     }
 

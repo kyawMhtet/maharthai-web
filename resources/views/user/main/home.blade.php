@@ -78,29 +78,34 @@
 
     {{-- nanny workers --}}
 
-    <div class="text-center mt-4 text-danger">
+    <div class="text-center mt-5 text-danger">
         <h2>NANNY, MAID WORKERS</h2>
     </div>
 
     <div class="container w-75 text-center mb-3">
         <div class="row m-auto">
             @foreach ($nannies as $nanny)
-                <div class="col mt-5" >
+                <div class="col-4 mt-5" >
                     <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
                         {{-- <input type="hidden" name="nannyId" value="{{ $nanny->id }}"> --}}
-                        <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}" style="height: 300px; width: 305px;"
+                        <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}" style="height: 305px; width: 305px;"
                             alt="">
                         <div class="card-body text-start">
-                            <p>{{ $nanny->code }}</p>
-                            <p>{{ $nanny->full_part }}</p>
-                            <p>{{ $nanny->salary }}</p>
-                            {{-- <p>{{ $nanny->experience }}</p> --}}
-                            <p>{{ Str::words($nanny->experience,8, '...') }}</p>
+                            <div>
+                                <p>{{ $nanny->code }}</p>
+                                <p>{{ $nanny->full_part }} / {{ $nanny->live_in_out }}</p>
+                                <p>{{ $nanny->salary }} <b>Baht</b></p>
+                                {{-- <p>{{ $nanny->experience }}</p> --}}
+                                <p>{{ Str::words($nanny->experience,8, '...') }}</p>
+                            </div>
+
                         </div>
-                        <a href="{{ route('nanny#info', $nanny->id) }}"
-                            class="btn btn-danger mb-2 m-auto rounded-pill w-75">
-                            More Details
-                        </a>
+                        <div class="text-center mb-4">
+                            <a href="{{ route('nanny#info', $nanny->id) }}"
+                                class="btn btn-danger rounded-pill w-75">
+                                More Details
+                            </a>
+                        </div>
 
                         {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
 

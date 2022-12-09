@@ -96,7 +96,7 @@
                             <p><b>Salary : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('maidSalary', $maids->salary) }}</p>
+                            <p class="ms-3">{{ old('maidSalary', $maids->salary) }} <b>Baht</b></p>
                         </div>
                     </div>
 
@@ -154,12 +154,13 @@
                         </div>
                     </div>
 
-                    <div class="d-flex px-3 mb-3 py-1 text-white rounded" style="background: #BB2D3B;">
-                        <div class="col-1">
-                            <small>Note : </small>
+                    <div class="d-flex p-2 rounded mb-2 text-white" style="background: rgba(187, 45, 59, 0.8);">
+                        <div class="col-2">
+                            <small class="ms-4 "><b>Note : </b></small>
                         </div>
-                        <div class="col">
-                            <small class="ms-3">{{ old('petNote', $maids->pet_note) }}</small>
+                        <div class="col d-flex">
+
+                                <small class="">{{ old('petNote', $maid->pet_note) }}</small>
                         </div>
                     </div>
 
@@ -171,6 +172,26 @@
                             <p class="ms-3">{{ old('maidVaccine', $maids->vaccine) }}</p>
                         </div>
                     </div>
+
+                    <div class="d-flex">
+                        <div class="col-2">
+                            <h4 class="text-danger">Remark: </h4>
+                        </div>
+                        <div class="col">
+                            <p class="ms-3">{{ old('housekeepingRemark', $housekeeping->remark) }}</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex px-3 mb-3 py-1 text-white rounded" style="background: #BB2D3B;">
+                        <div class="col-1">
+                            <small>Note : </small>
+                        </div>
+                        <div class="col">
+                            <small class="ms-3">{{ old('petNote', $maids->pet_note) }}</small>
+                        </div>
+                    </div>
+
+
 
                     {{-- <p class="text-danger"><b>Remark:</b></p>
 

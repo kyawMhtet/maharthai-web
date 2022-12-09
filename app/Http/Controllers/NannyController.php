@@ -18,7 +18,7 @@ class NannyController extends Controller
             $query->where('code', 'like', '%' . request('key') . '%');
         })
             ->orderBy('id', 'desc')
-            ->paginate(3);
+            ->paginate(9);
         $nannies->appends(request()->all());
 
         return view('admin.category.nanny', compact('nannies'));
@@ -131,6 +131,7 @@ class NannyController extends Controller
             'nannySkill' => 'required',
             'nannyExperience' => 'required',
             'nannyLanguage' => 'required',
+            'nannyRemark' => 'required',
 
         ], [
             // 'nannyCode.required' => 'u need to fill'
@@ -163,6 +164,7 @@ class NannyController extends Controller
             // 'dog_small' => $request->smallDog,
             // 'dog_big' => $request->bigDog,
             'vaccine' => $request->nannyVaccine,
+            'remark' => $request->nannyRemark,
             'note' => $request->note,
 
         ];

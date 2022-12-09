@@ -298,8 +298,23 @@
                                                 </div>
 
                                                 <br>
+                                                <div class="input-group">
+                                                    <span class="input-group-text">Vaccine</span>
+                                                    <input type="hidden" name="housekeepingId" value="{{ $housekeeping->id }}">
+                                                    <textarea class="form-control" name="housekeepingVaccine" aria-label="With textarea">{{ old('housekeepingVaccine', $housekeeping->vaccine) }}</textarea>
 
-                                                <p class="text-danger"><b>Remark :</b></p>
+
+                                                  </div>
+                                                  <br>
+                                                <div class="d-flex">
+                                                    <h4 class="text-danger mb-2">Remark : </h4>
+                                                    <p class="ms-2">(optional)</p>
+                                                </div>
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" value="" name="nannyRemark" placeholder="" id="remark">{{ old('nannyRemark') }}</textarea>
+
+                                                    <label for="remark">Remark...</label>
+                                                </div>
 
                                                 <br>
                                                 Note : (optional)
@@ -309,13 +324,7 @@
 
                                                 <br>
 
-                                                <div class="input-group">
-                                                    <span class="input-group-text">Vaccine</span>
-                                                    <input type="hidden" name="housekeepingId" value="{{ $housekeeping->id }}">
-                                                    <textarea class="form-control" name="housekeepingVaccine" aria-label="With textarea">{{ old('housekeepingVaccine', $housekeeping->vaccine) }}</textarea>
 
-
-                                                  </div>
                                             </div>
                                         </div>
 

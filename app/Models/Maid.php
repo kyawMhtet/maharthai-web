@@ -29,6 +29,7 @@ class Maid extends Model
         'pet',
         'pet_note',
         'note',
+        'remark',
         'vaccine',
     ];
 }

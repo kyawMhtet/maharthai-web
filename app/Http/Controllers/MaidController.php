@@ -16,7 +16,7 @@ class MaidController extends Controller
             $query->where('code', 'like', '%' . request('key') . '%');
         })
             ->orderBy('id', 'desc')
-            ->paginate(3);
+            ->paginate(9);
         $maids->appends(request()->all());
 
         return view('admin.category.maid.maid', compact('maids'));
@@ -109,6 +109,7 @@ class MaidController extends Controller
             'maidVaccine' => 'required',
             'maidExperience' => 'required',
             'maidLanguage' => 'required',
+            'maidRemark' => 'required',
         ],)->validate();
     }
 
@@ -140,6 +141,7 @@ class MaidController extends Controller
             // 'dog_small' => $request->smallDog,
             // 'dog_big' => $request->bigDog,
             'vaccine' => $request->maidVaccine,
+            'remark' => $request->maidRemark,
             'note' => $request->note,
 
         ];

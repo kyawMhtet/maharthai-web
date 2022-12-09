@@ -10,7 +10,7 @@ class MainHousekeepingController extends Controller
     //
     public function housekeepingPage()
     {
-        $housekeepings = Housekeeping::orderBy('id', 'desc')->paginate(3);
+        $housekeepings = Housekeeping::orderBy('id', 'desc')->paginate(12);
         return view('user.main.housekeeping.housekeeping', compact('housekeepings'));
     }
 

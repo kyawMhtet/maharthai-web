@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('pet');
             $table->longText('pet_note')->nullable(true);
             $table->string('vaccine');
+            $table->string('remark')->nullable(true);
             $table->longText('note')->nullable(true);
             $table->timestamps();
         });
