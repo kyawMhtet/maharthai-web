@@ -348,7 +348,7 @@
                                                     <p class="ms-2">(optional)</p>
                                                 </div>
                                                 <div class="form-floating">
-                                                    <textarea class="form-control" value="" name="nannyRemark" placeholder="" id="remark">{{ old('nannyRemark') }}</textarea>
+                                                    <textarea class="form-control" value="" name="nannyRemark" placeholder="" id="remark">{{ old('nannyRemark', $nanny->remark) }}</textarea>
 
                                                     <label for="remark">Remark...</label>
                                                 </div>
