@@ -176,7 +176,7 @@
 
                     <div class="d-flex">
                         <div class="col-2">
-                            <h4 class="text-danger">Remark: </h4>
+                            <h5 class="text-danger">Remark: </h5>
                         </div>
                         <div class="col">
                             <p class="ms-3">{{ old('maidcookRemark', $maidcooks->remark) }}</p>

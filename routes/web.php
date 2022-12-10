@@ -11,10 +11,11 @@ use App\Http\Controllers\MaidcookController;
 use App\Http\Controllers\User\UserController;
 
 use App\Http\Controllers\HousekeepingController;
-
+use App\Http\Controllers\MaideldercareController;
 use App\Http\Controllers\User\MainMaidController;
 use App\Http\Controllers\User\MainmaidcookController;
 use App\Http\Controllers\User\MainHousekeepingController;
+use App\Http\Controllers\User\MainmaideldercareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,14 @@ Route::get('maidcookPage', [MainmaidcookController::class, 'maidcookPage'])->nam
 Route::get('maidcook_detail/{id}', [MainmaidcookController::class, 'maidcookInfo'])->name('maidcook#info');
 
 Route::get('maidcookRequestPage', [MainmaidcookController::class, 'maidcookRequestPage'])->name('maidcookrequest#page');
+
+// maid, eldercar page
+
+Route::get('maideldercarePage', [MainmaideldercareController::class, 'maideldercarePage'])->name('mainmaideldercare#page');
+
+Route::get('maideldercare_detail/{id}', [MainmaideldercareController::class, 'maideldercareInfo'])->name('maideldercare#info');
+
+Route::get('maideldercareRequestPage', [MainmaideldercareController::class, 'maideldercareRequestPage'])->name('maideldercarerequest#page');
 
 
 
@@ -188,6 +197,23 @@ Route::middleware([
         Route::get('maidcook/editPage/{id}', [MaidcookController::class, 'editPage'])->name('maidcook#editPage');
 
         Route::post('maidcook/update', [MaidcookController::class, 'maidcookUpdate'])->name('maidcook#update');
+
+
+        // maid, eldercare
+
+        Route::get('maideldercarePage', [MaideldercareController::class, 'maideldercarePage'])->name('maideldercare#page');
+
+        Route::get('maideldercare/create', [CategoryController::class, 'maideldercareCreatePage'])->name('maideldercare#create');
+
+        Route::post('maideldercare', [MaideldercareController::class, 'maideldercareCreate'])->name('maideldercare#aftercreate');
+
+        Route::get('maideldercare/detail/{id}', [MaideldercareController::class, 'maideldercareEdit'])->name('maideldercare#updatePage');
+
+        Route::get('maideldercare/delete/{id}', [MaideldercareController::class, 'maideldercareDelete'])->name('maideldercare#delete');
+
+        Route::get('maideldercare/editPage/{id}', [MaideldercareController::class, 'editPage'])->name('maideldercare#editPage');
+
+        Route::post('maideldercare/update', [MaideldercareController::class, 'maideldercareUpdate'])->name('maideldercare#update');
 
 
 

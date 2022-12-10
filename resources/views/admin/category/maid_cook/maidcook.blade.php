@@ -44,9 +44,9 @@
                         </div>
                     </div>
 
-                    {{-- <button type="button" class="btn btn-primary mb-3">
-                        Total - <span class="badge bg-secondary">{{ $maids->total() }}</span>
-                    </button> --}}
+                    <button type="button" class="btn btn-primary mb-3">
+                        Total - <span class="badge bg-secondary">{{ $maidcooks->total() }}</span>
+                    </button>
 
                     @if (session('createSuccess'))
                         <div class="col-4 offset-8">

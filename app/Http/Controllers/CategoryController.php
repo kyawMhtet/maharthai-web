@@ -36,6 +36,12 @@ class CategoryController extends Controller
         return view('admin.category.maid_cook.maidcookcreate');
     }
 
+    // maideldercare create page
+    public function maideldercareCreatePage()
+    {
+        return view('admin.category.maid_eldercare.maideldercarecreate');
+    }
+
     // nanny create page
     public function nannyCreatePage()
     {

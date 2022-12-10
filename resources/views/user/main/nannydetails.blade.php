@@ -175,7 +175,7 @@
 
                     <div class="d-flex">
                         <div class="col-2">
-                            <p class="text-danger"><b>Remark :</b></p>
+                            <h5 class="text-danger"><b>Remark :</b></h5>
                         </div>
                         <div class="col">
                             <p class="ms-3">{{ old('nannyRemark', $nannies->remark) }}</p>

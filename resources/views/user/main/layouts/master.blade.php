@@ -78,9 +78,9 @@
 
                         <li><a href="{{ route('mainhousekeeping#page') }}" class="dropdown-item">HouseKeeping</a></li>
 
-                        <li><a href="#" class="dropdown-item">Maid, Eldercare</a></li>
+                        <li><a href="{{ route('mainmaideldercare#page') }}" class="dropdown-item">Maid, Eldercare</a></li>
                         <li><a href="{{ route('mainmaidcook#page') }}" class="dropdown-item">Maid, Cook</a></li>
-                        <li><a href="#" class="dropdown-item">Maid, Pet Care</a></li>
+                        <li><a href="" class="dropdown-item">Maid, Pet Care</a></li>
                         <li><a href="#" class="dropdown-item">Premium Nanny</a></li>
 
                     </ul>

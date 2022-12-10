@@ -18,9 +18,9 @@
                             </div>
                         </div>
                         <div class="table-data__tool-right">
-                            <a href="{{ route('nanny#create') }}">
+                            <a href="{{ route('maideldercare#create') }}">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                    <i class="zmdi zmdi-plus"></i>Add maid, eldercare
+                                    <i class="zmdi zmdi-plus"></i>Add Maid, Eldercare
                                 </button>
                             </a>
                         </div>
@@ -31,7 +31,7 @@
                             <h4 class="text-secondary">Search Key : <span class="text-danger">{{ request('key') }}</span></h4>
                         </div>
                         <div class="mb-3 col-3 offset-6">
-                            <form action="{{ route('nanny#page') }}" method="get">
+                            <form action="{{ route('maideldercare#page') }}" method="get">
                                 @csrf
                                 <div class="d-flex">
                                     <input type="text" name="key" class="form-control" placeholder="code#" value="{{ request('key') }}">
@@ -41,9 +41,9 @@
                         </div>
                     </div>
 
-                    {{-- <button type="button" class="btn btn-primary mb-3">
-                        Total - <span class="badge bg-secondary">{{ $nannies->total() }}</span>
-                      </button> --}}
+                    <button type="button" class="btn btn-primary mb-3">
+                        Total - <span class="badge bg-secondary">{{ $maideldercares->total() }}</span>
+                      </button>
 
                     @if (session('createSuccess'))
                         <div class="col-4 offset-8">
@@ -65,59 +65,57 @@
                     </div>
                 @endif()
 
-                    <h2>fawefawefawef</h2>
+                    @if (count($maideldercares) != 0)
 
-                    {{-- @if (count($nannies) != 0)
-
-                        <div class="container nanny-list" style="--bs-columns: 3;">
+                        <div class="container maideldercare-list" style="--bs-columns: 3;">
                             <div class="row" style="grid-gap: 10px;">
-                                @foreach ($nannies as $nanny)
+                                @foreach ($maideldercares as $maideldercare)
                                     <div class="card p-2 shadow" id="" style="width: 22rem;">
-                                        <img class="card-img-top" id="card" src="{{ asset('storage/'. $nanny->photo ) }}" style="height: 350px" alt="">
+                                        <img class="card-img-top" id="card" src="{{ asset('storage/'. $maideldercare->photo ) }}" style="height: 350px" alt="">
                                         <div class="card-body d-flex" style="justify-content: space-between">
-                                            <div class="nannyinfo">
-                                                <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $nanny->note }}</span>
+                                            <div class="maideldercareinfo">
+                                                <span><b>Code#</b></span> : <span class="text-end">{{ $maideldercare->code }}</span><br>
+                                                <span><b>Note </b></span> : <span class="text-end">{{ $maideldercare->note }}</span>
 
                                             </div>
                                         </div>
                                         <div class="card-body text-center">
 
 
-                                            <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
+                                            <a href="{{ route('maideldercare#updatePage', $maideldercare->id) }}" class="card-link">
                                                 <button class="btn btn-secondary">View More</button>
                                             </a>
 
-                                            <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
+                                            <a href="{{ route('maideldercare#delete', $maideldercare->id) }}" class="card-link">
                                                 <button class="btn btn-danger">Delete</button>
                                             </a>
                                         </div>
 
-                                        <div class="text-center">
+                                        {{-- <div class="text-center">
                                             <a href="">
                                                 <button class="btn" id="show">Show</button>
                                             </a>
                                             <a href="">
                                                 <button class="btn" id="hide">Hide</button>
                                             </a>
-                                        </div>
+                                        </div> --}}
 
 
                                     </div>
                                 @endforeach
                             </div>
                             <div class="mt-4">
-                                {{ $nannies->links() }}
+                                {{ $maideldercares->links() }}
 
                             </div>
                         </div>
-                        awefawefwef
+
 
 
                     @else
                       <h3 class="text-secondary text-center mt-5">No Data Found...</h3>
 
-                    @endif --}}
+                    @endif
                     <!-- END DATA TABLE -->
                 </div>
             </div>
