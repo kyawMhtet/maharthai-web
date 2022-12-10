@@ -99,7 +99,7 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Position</label>
-                                                <input id="cc-payment" name="maideldercarePosition" type="text" value="Maid, Cook"
+                                                <input id="cc-payment" name="maideldercarePosition" type="text" value="Maid, Eldercare"
                                                     class="form-control @error('maideldercarePosition') is-invalid  @enderror"
                                                     aria-label="Disabled input example" disabled>
                                                 @error('maideldercarePosition')
