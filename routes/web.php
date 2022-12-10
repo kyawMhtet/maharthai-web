@@ -6,13 +6,12 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MaidController;
 use App\Http\Controllers\NannyController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\MaidCookController;
+
+use App\Http\Controllers\MaidcookController;
 use App\Http\Controllers\User\UserController;
-use App\Http\Controllers\MaidPetCareController;
+
 use App\Http\Controllers\HousekeepingController;
 
-use App\Http\Controllers\PremiumNannyController;
-use App\Http\Controllers\MaidElderCareController;
 use App\Http\Controllers\User\MainMaidController;
 use App\Http\Controllers\User\MainHousekeepingController;
 
