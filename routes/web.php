@@ -163,19 +163,19 @@ Route::middleware([
 
         // maid, cook
 
-        Route::get('maidcookPage', [maidcookController::class, 'maidcookPage'])->name('maidcook#page');
+        Route::get('maidcookPage', [MaidcookController::class, 'maidcookPage'])->name('maidcook#page');
 
         Route::get('maidcook/create', [CategoryController::class, 'maidcookCreatePage'])->name('maidcook#create');
 
-        Route::post('maidcook', [maidcookController::class, 'maidcookCreate'])->name('maidcook#aftercreate');
+        Route::post('maidcook', [MaidcookController::class, 'maidcookCreate'])->name('maidcook#aftercreate');
 
-        Route::get('maidcook/detail/{id}', [maidcookController::class, 'maidcookEdit'])->name('maidcook#updatePage');
+        Route::get('maidcook/detail/{id}', [MaidcookController::class, 'maidcookEdit'])->name('maidcook#updatePage');
 
-        Route::get('maidcook/delete/{id}', [maidcookController::class, 'maidcookDelete'])->name('maidcook#delete');
+        Route::get('maidcook/delete/{id}', [MaidcookController::class, 'maidcookDelete'])->name('maidcook#delete');
 
-        Route::get('maidcook/editPage/{id}', [maidcookController::class, 'editPage'])->name('maidcook#editPage');
+        Route::get('maidcook/editPage/{id}', [MaidcookController::class, 'editPage'])->name('maidcook#editPage');
 
-        Route::post('maidcook/update', [maidcookController::class, 'maidcookUpdate'])->name('maidcook#update');
+        Route::post('maidcook/update', [MaidcookController::class, 'maidcookUpdate'])->name('maidcook#update');
 
 
 
