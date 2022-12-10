@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('maids', function (Blueprint $table) {
+        Schema::create('maidcooks', function (Blueprint $table) {
             $table->id();
             $table->string('code');
             // $table->boolean('instock_status')->nullable();
             $table->string('name');
             $table->string('photo')->nullable(true);
-            $table->string('position')->default("Maid");
+            $table->string('position')->default("Maid, Cook");
             $table->string('date_of_birth');
             $table->string('nationality');
             $table->string('religion');
@@ -48,6 +48,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maids');
+        Schema::dropIfExists('maidcooks');
     }
 };

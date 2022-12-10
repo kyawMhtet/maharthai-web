@@ -109,7 +109,7 @@ class MaidController extends Controller
             'maidVaccine' => 'required',
             'maidExperience' => 'required',
             'maidLanguage' => 'required',
-            'maidRemark' => 'required',
+            // 'maidRemark' => 'required',
         ],)->validate();
     }
 

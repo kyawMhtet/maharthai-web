@@ -131,7 +131,7 @@ class NannyController extends Controller
             'nannySkill' => 'required',
             'nannyExperience' => 'required',
             'nannyLanguage' => 'required',
-            'nannyRemark' => 'required',
+            // 'nannyRemark' => 'required',
 
         ], [
             // 'nannyCode.required' => 'u need to fill'

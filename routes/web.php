@@ -161,8 +161,21 @@ Route::middleware([
 
 
 
+        // maid, cook
 
+        Route::get('maidcookPage', [maidcookController::class, 'maidcookPage'])->name('maidcook#page');
 
+        Route::get('maidcook/create', [CategoryController::class, 'maidcookCreatePage'])->name('maidcook#create');
+
+        Route::post('maidcook', [maidcookController::class, 'maidcookCreate'])->name('maidcook#aftercreate');
+
+        Route::get('maidcook/detail/{id}', [maidcookController::class, 'maidcookEdit'])->name('maidcook#updatePage');
+
+        Route::get('maidcook/delete/{id}', [maidcookController::class, 'maidcookDelete'])->name('maidcook#delete');
+
+        Route::get('maidcook/editPage/{id}', [maidcookController::class, 'editPage'])->name('maidcook#editPage');
+
+        Route::post('maidcook/update', [maidcookController::class, 'maidcookUpdate'])->name('maidcook#update');
 
 
 
