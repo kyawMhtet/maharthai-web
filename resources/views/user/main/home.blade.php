@@ -128,7 +128,7 @@
 
     </div>
     <div class="form w-50 m-auto mt-4 text-center">
-        <form action="">
+        <form action="https://formspree.io/f/mvoynkqy" method="POST">
             <input type="text" class="form-control border border-0" placeholder="Name*">
             <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
             <input type="text" class="form-control border border-0" placeholder="Phone*">

@@ -13,6 +13,7 @@ use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\HousekeepingController;
 
 use App\Http\Controllers\User\MainMaidController;
+use App\Http\Controllers\User\MainmaidcookController;
 use App\Http\Controllers\User\MainHousekeepingController;
 
 /*
@@ -66,11 +67,23 @@ Route::get('maidPage', [MainMaidController::class, 'maidPage'])->name('mainmaid#
 
 Route::get('maid_detail/{id}', [MainMaidController::class, 'maidInfo'])->name('maid#info');
 
+Route::get('maidRequestPage', [MainMaidController::class, 'maidRequestPage'])->name('maidrequest#page');
+
 // housekeeping page
 
 Route::get('housekeepingPage', [MainHousekeepingController::class, 'housekeepingPage'])->name('mainhousekeeping#page');
 
 Route::get('housekeeping_detail/{id}', [MainHousekeepingController::class, 'housekeepingInfo'])->name('housekeeping#info');
+
+Route::get('housekeepingRequestPage', [MainHousekeepingController::class, 'housekeepingRequestPage'])->name('housekeepingrequest#page');
+
+// maid, cook page
+
+Route::get('maidcookPage', [MainmaidcookController::class, 'maidcookPage'])->name('mainmaidcook#page');
+
+Route::get('maidcook_detail/{id}', [MainmaidcookController::class, 'maidcookInfo'])->name('maidcook#info');
+
+Route::get('maidcookRequestPage', [MainmaidcookController::class, 'maidcookRequestPage'])->name('maidcookrequest#page');
 
 
 

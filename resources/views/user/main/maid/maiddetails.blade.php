@@ -152,15 +152,12 @@
                         <div class="col">
                             <p class="ms-3">{{ old('pets', $maids->pet) }}</p>
                         </div>
-                    </div>
 
-                    <div class="d-flex p-2 rounded mb-2 text-white" style="background: rgba(187, 45, 59, 0.8);">
-                        <div class="col-2">
-                            <small class="ms-4 "><b>Note : </b></small>
+                        <div class="">
+                            <small class="ms-3"><b> - </b></small>
                         </div>
-                        <div class="col d-flex">
-
-                                <small class="">{{ old('petNote', $maids->pet_note) }}</small>
+                        <div class="d-flex px-4 pb-2 mb-3">
+                                <small class="shadow-sm p-2" style="color: rgb(187, 45, 59);">{{ old('petNote', $maids->pet_note) }}</small>
                         </div>
                     </div>
 
@@ -173,9 +170,9 @@
                         </div>
                     </div>
 
-                    <div class="d-flex">
+                    <div class="d-flex mt-2">
                         <div class="col-2">
-                            <h4 class="text-danger">Remark: </h4>
+                            <h5 class="text-danger">Remark: </h5>
                         </div>
                         <div class="col">
                             <p class="ms-3">{{ old('maidRemark', $maids->remark) }}</p>
@@ -199,7 +196,7 @@
 
         <div class="mt-4">
             <a href="{{ route('mainmaid#page') }}" class="btn btn-primary px-3">Back</a>
-            <a href="{{ route('user#request') }}" class="btn btn-danger px-3 float-end">Request</a>
+            <a href="{{ route('maidrequest#page') }}" class="btn btn-danger px-3 float-end">Request</a>
         </div>
 
     </div>

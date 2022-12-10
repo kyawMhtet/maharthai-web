@@ -1,6 +1,6 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'Request Form')
+@section('title', 'Maid, Cook Request Form')
 
 
 @section('content')
@@ -14,7 +14,7 @@
 
                 <div>
                     <p>Code*</p>
-                    <input type="text" name="housekeepingCode" value="" class="form-control" placeholder="J..." required>
+                    <input type="text" name="maidCode" value="" class="form-control" placeholder="J..." required>
                 </div>
                 <div>
                     <p>Name*</p>
@@ -33,7 +33,7 @@
 
 
                 <div class="mt-3 text-end">
-                    <a href="{{ route('mainhousekeeping#page') }}" type="button" class="btn btn-primary">Back</a>
+                    <a href="{{ route('mainmaidcook#page') }}" type="button" class="btn btn-primary">Back</a>
                     <button class="btn btn-danger" type="submit">Send</button>
                 </div>
             </form>

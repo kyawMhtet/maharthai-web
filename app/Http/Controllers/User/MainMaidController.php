@@ -21,8 +21,13 @@ class MainMaidController extends Controller
         return view('user.main.maid.maiddetails', compact('maids'));
     }
 
-    public function requestForm()
+    public function maidRequestPage()
     {
         return view('user.main.maid.requestform');
     }
+
+    // public function requestForm()
+    // {
+    //     return view('user.main.maid.requestform');
+    // }
 }

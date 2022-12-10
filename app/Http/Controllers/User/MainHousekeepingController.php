@@ -20,8 +20,13 @@ class MainHousekeepingController extends Controller
         return view('user.main.housekeeping.housekeepingdetails', compact('housekeepings'));
     }
 
-    public function requestForm()
+    public function housekeepingRequestPage()
     {
-        return view('user.main.maid.requestform');
+        return view('user.main.housekeeping.requestform');
     }
+
+    // public function requestForm()
+    // {
+    //     return view('user.main.housekeeping.requestform');
+    // }
 }

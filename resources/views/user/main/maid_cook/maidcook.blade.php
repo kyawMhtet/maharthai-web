@@ -1,6 +1,6 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'HouseKeeping')
+@section('title', 'Maid, Cook')
 
 @section('content')
 
@@ -77,27 +77,27 @@
 {{-- nanny workers --}}
 
 <div class="text-center mt-5 text-danger">
-    <h2>HOUSEKEEPING WORKERS</h2>
+    <h2>MAID, COOK WORKERS</h2>
 </div>
 
 <div class="container w-75 text-center mb-3">
     <div class="row m-auto">
-        @foreach ($housekeepings as $housekeeping)
+        @foreach ($maidcooks as $maidcook)
             <div class="col mt-5">
 
-                <div class="housekeeping card p-2 border border-0" style="width: 20rem; height: 600px;">
+                <div class="maidcook card p-2 border border-0" style="width: 20rem; height: 600px;">
 
-                    <img class="card-img-top" src="{{ asset('storage/' . $housekeeping->photo) }}" style="height: 305px; width: 305px;"
+                    <img class="card-img-top" src="{{ asset('storage/' . $maidcook->photo) }}" style="height: 305px; width: 305px;"
                         alt="">
                     <div class="card-body text-start">
-                        <p>{{ $housekeeping->code }}</p>
-                        <p>{{ $housekeeping->full_part }} / {{ $housekeeping->live_in_out }}</p>
-                        <p>{{ $housekeeping->salary }}</p>
-                        <p>{{ Str::words($housekeeping->experience,8, '...') }}</p>
+                        <p>{{ $maidcook->code }}</p>
+                        <p>{{ $maidcook->full_part }} / {{ $maidcook->live_in_out }}</p>
+                        <p>{{ $maidcook->salary }}</p>
+                        <p>{{ Str::words($maidcook->experience,8, '...') }}</p>
 
                     </div>
                     <div class="text-center mb-4">
-                        <a href="{{ route('housekeeping#info', $housekeeping->id) }}"
+                        <a href="{{ route('maidcook#info', $maidcook->id) }}"
                             class="btn btn-danger mb-2 rounded-pill w-75">
                             More Details
                         </a>
@@ -108,7 +108,7 @@
         @endforeach
     </div>
     <div class="mt-5">
-        {{ $housekeepings->links() }}
+        {{ $maidcooks->links() }}
     </div>
 </div>
 {{-- end nanny workers --}}
@@ -117,7 +117,7 @@
 {{-- hire for nanny --}}
 
 <div class="text-center mt-3 text-danger">
-    <h2>HIRE FOR HOUSEKEEPING</h2>
+    <h2>HIRE FOR MAID, COOK</h2>
 </div>
 
 

@@ -111,6 +111,7 @@ class HousekeepingController extends Controller
                 'housekeepingVaccine' => 'required',
                 'housekeepingExperience' => 'required',
                 'housekeepingLanguage' => 'required',
+                'pets' => 'required',
                 // 'housekeepingRemark' => 'required',
             ],)->validate();
         }

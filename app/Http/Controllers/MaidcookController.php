@@ -23,6 +23,7 @@ class MaidcookController extends Controller
         return view('admin.category.maid_cook.maidcook', compact('maidcooks'));
     }
 
+
     // maidcook after create
     public function maidcookCreate(Request $request)
     {
@@ -116,6 +117,7 @@ class MaidcookController extends Controller
             'maidcookSkill' => 'required',
             'maidcookExperience' => 'required',
             'maidcookLanguage' => 'required',
+            'pets' => 'required',
             // 'maidcookRemark' => 'required',
 
         ], [

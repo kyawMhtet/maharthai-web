@@ -152,17 +152,16 @@
                         <div class="col">
                             <p class="ms-3">{{ old('pets', $nannies->pet) }}</p>
                         </div>
-                    </div>
 
-                    <div class="d-flex p-2 rounded mb-2 text-white" style="background: rgba(187, 45, 59, 0.8);">
-                        <div class="col-2">
-                            <small class="ms-4 "><b>Note : </b></small>
+                        <div class="">
+                            <small class="ms-3"><b> - </b></small>
                         </div>
-                        <div class="col d-flex">
+                        <div class="d-flex px-4 pb-2 mb-3">
 
-                                <small class="">{{ old('petNote', $nannies->pet_note) }}</small>
+                                <small class="shadow-sm p-2" style="color: rgb(187, 45, 59);">{{ old('petNote', $nannies->pet_note) }}</small>
                         </div>
                     </div>
+
 
 
                     <div class="d-flex">

@@ -1,12 +1,12 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'HouseKeeping details')
+@section('title', 'Maid, Cook details')
 
 @section('content')
     <div class="container-lg shadow-lg p-5 mt-5">
         <div class="row">
             <div class="col-3">
-                <img class="card-img-top rounded" src="{{ asset('storage/' . $housekeepings->photo) }}" style="height: 300px; width: 300px;"
+                <img class="card-img-top rounded" src="{{ asset('storage/' . $maidcooks->photo) }}" style="height: 300px; width: 300px;"
                 alt="">
             </div>
             <div class="col ms-5">
@@ -16,7 +16,7 @@
                             <p><b>Code : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingCode', $housekeepings->code) }}</p>
+                            <p class="ms-3">{{ old('maidcookCode', $maidcooks->code) }}</p>
                         </div>
 
                     </div>
@@ -27,10 +27,10 @@
                         </div>
 
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingName', $housekeepings->name) }}</p>
+                            <p class="ms-3">{{ old('maidcookName', $maidcooks->name) }}</p>
                         </div>
                         {{-- <p><b>Name: </b></p>
-                        <p class="ms-3">{{ old('housekeepingName', $housekeepings->name) }}</p> --}}
+                        <p class="ms-3">{{ old('maidcookName', $maidcooks->name) }}</p> --}}
                     </div>
 
                     <div class="d-flex">
@@ -38,7 +38,7 @@
                             <p><b>Position : </b></p>
                         </div>
                         <div class="col">
-                        <p class="ms-3">{{ old('housekeepingPosition', $housekeepings->position) }}</p>
+                        <p class="ms-3">{{ old('maidcookPosition', $maidcooks->position) }}</p>
 
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="col">
-                        <p class="ms-3">{{ old('housekeepingDoB', $housekeepings->date_of_birth) }}</p>
+                        <p class="ms-3">{{ old('maidcookDoB', $maidcooks->date_of_birth) }}</p>
 
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                             <p><b>Nationality : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingNationality', $housekeepings->nationality) }}</p>
+                            <p class="ms-3">{{ old('maidcookNationality', $maidcooks->nationality) }}</p>
                         </div>
                     </div>
 
@@ -69,7 +69,7 @@
                             <p><b>Religion : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingReligion', $housekeepings->religion) }}</p>
+                            <p class="ms-3">{{ old('maidcookReligion', $maidcooks->religion) }}</p>
                         </div>
                     </div>
 
@@ -78,7 +78,7 @@
                             <p><b>Weight : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingWeight', $housekeepings->weight) }}</p>
+                            <p class="ms-3">{{ old('maidcookWeight', $maidcooks->weight) }}</p>
                         </div>
                     </div>
 
@@ -87,7 +87,7 @@
                             <p><b>Height : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingHeight', $housekeepings->height) }}</p>
+                            <p class="ms-3">{{ old('maidcookHeight', $maidcooks->height) }}</p>
                         </div>
                     </div>
 
@@ -96,7 +96,7 @@
                             <p><b>Salary : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingSalary', $housekeepings->salary) }} <b>Baht</b></p>
+                            <p class="ms-3">{{ old('maidcookSalary', $maidcooks->salary) }} <b>Baht</b></p>
                         </div>
                     </div>
 
@@ -105,7 +105,7 @@
                             <p><b>Language : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingLanguage', $housekeepings->language) }}</p>
+                            <p class="ms-3">{{ old('maidcookLanguage', $maidcooks->language) }}</p>
                         </div>
                     </div>
 
@@ -114,7 +114,7 @@
                             <p><b>status : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingStatus', $housekeepings->status) }}</p>
+                            <p class="ms-3">{{ old('maidcookStatus', $maidcooks->status) }}</p>
                         </div>
                     </div>
 
@@ -123,7 +123,7 @@
                             <p><b>Working Time : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('full_part', $housekeepings->full_part) }} / {{ old('live_in_out', $housekeepings->live_in_out) }}</p>
+                            <p class="ms-3">{{ old('full_part', $maidcooks->full_part) }} / {{ old('live_in_out', $maidcooks->live_in_out) }}</p>
                         </div>
                     </div>
 
@@ -132,7 +132,7 @@
                             <p><b>Experience : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingExperience', $housekeepings->experience) }}</p>
+                            <p class="ms-3">{{ old('maidcookExperience', $maidcooks->experience) }}</p>
                         </div>
                     </div>
 
@@ -141,7 +141,7 @@
                             <p><b>Skill : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingSkill', $housekeepings->skill) }}</p>
+                            <p class="ms-3">{{ old('maidcookSkill', $maidcooks->skill) }}</p>
                         </div>
                     </div>
 
@@ -150,7 +150,7 @@
                             <p><b>Pets : </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('pets', $housekeepings->pet) }}</p>
+                            <p class="ms-3">{{ old('pets', $maidcooks->pet) }}</p>
                         </div>
 
                         <div class="">
@@ -158,18 +158,16 @@
                         </div>
                         <div class="d-flex px-4 pb-2 mb-3">
 
-                                <small class="shadow-sm p-2" style="color: rgb(187, 45, 59);">{{ old('petNote', $housekeepings->pet_note) }}</small>
+                                <small class="shadow-sm p-2" style="color: rgb(187, 45, 59);">{{ old('petNote', $maidcooks->pet_note) }}</small>
                         </div>
                     </div>
-
-
 
                     <div class="d-flex">
                         <div class="col-2">
                             <p><b>Vaccine: </b></p>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingVaccine', $housekeepings->vaccine) }}</p>
+                            <p class="ms-3">{{ old('maidcookVaccine', $maidcooks->vaccine) }}</p>
                         </div>
                     </div>
 
@@ -181,7 +179,7 @@
                             <h4 class="text-danger">Remark: </h4>
                         </div>
                         <div class="col">
-                            <p class="ms-3">{{ old('housekeepingRemark', $housekeepings->remark) }}</p>
+                            <p class="ms-3">{{ old('maidcookRemark', $maidcooks->remark) }}</p>
                         </div>
                     </div>
 
@@ -190,7 +188,7 @@
 
                     <div class="d-flex">
                         <p><b>Note: </b></p>
-                        <p class="ms-3">{{ old('nannyNote', $housekeepings->note) }}</p>
+                        <p class="ms-3">{{ old('nannyNote', $maidcooks->note) }}</p>
                     </div> --}}
 
 
@@ -200,8 +198,8 @@
 
 
         <div class="mt-4">
-            <a href="{{ route('mainhousekeeping#page') }}" class="btn btn-primary px-3">Back</a>
-            <a href="{{ route('housekeepingrequest#page') }}" class="btn btn-danger px-3 float-end">Request</a>
+            <a href="{{ route('mainmaidcook#page') }}" class="btn btn-primary px-3">Back</a>
+            <a href="{{ route('maidcookrequest#page') }}" class="btn btn-danger px-3 float-end">Request</a>
         </div>
 
     </div>
