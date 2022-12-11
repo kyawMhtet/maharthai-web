@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="table-data__tool-right">
-                            <a href="{{ route('premiumNannyCreate#page') }}">
+                            <a href="{{ route('premiumnanny#create') }}">
                                 <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                     <i class="zmdi zmdi-plus"></i>Add Premium Nanny
                                 </button>
@@ -28,7 +28,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-3 offset-8">
-                                <a href="{{ route('premiumNanny#page') }}"><button class="btn bg-dark text-white my-3">
+                                <a href="{{ route('premiumnanny#page') }}"><button class="btn bg-dark text-white my-3">
                                         Back</button></a>
                             </div>
                         </div>
@@ -36,20 +36,20 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2 p-2">Category Form</h3>
+                                        <h3 class="text-center title-2 p-2">Premium Nanny Form</h3>
                                     </div>
                                     <hr>
-                                    <form action="{{ route('premiumNanny#aftercreate') }}" method="post"
+                                    <form action="{{ route('premiumnanny#aftercreate') }}" method="post"
                                         enctype="multipart/form-data" novalidate="novalidate">
                                         @csrf
                                         <div class="form-group p-3">
                                             <div class="mb-2">
                                                 <label for="cc-payment" class="control-label mb-1">Code#</label>
-                                                <input id="cc-payment" name="premiumNannyCode" type="text"
-                                                    value="{{ old('premiumNannyCode') }}"
-                                                    class="form-control @error('premiumNannyCode') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyCode" type="text"
+                                                    value="{{ old('premiumnannyCode') }}"
+                                                    class="form-control @error('premiumnannyCode') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="code#">
-                                                @error('premiumNannyCode')
+                                                @error('premiumnannyCode')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -59,11 +59,11 @@
 
                                                 <div id="display-image"></div>
                                                 <label for="cc-payment" class="control-label mb-1">Photo</label>
-                                                <input accept="image/jpeg, image/png" name="premiumNannyPhoto"
-                                                    value="{{ old('premiumNannyPhoto') }}" id="image-input" type="file"
-                                                    class="form-control @error('premiumNannyPhoto') is-invalid  @enderror"
+                                                <input accept="image/jpeg, image/png" name="premiumnannyPhoto"
+                                                    value="{{ old('premiumnannyPhoto') }}" id="image-input" type="file"
+                                                    class="form-control @error('premiumnannyPhoto') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="upload photo...">
-                                                @error('premiumNannyPhoto')
+                                                @error('premiumnannyPhoto')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -72,11 +72,11 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Name</label>
-                                                <input id="cc-payment" name="premiumNannyName" type="text"
-                                                    value="{{ old('premiumNannyName') }}"
-                                                    class="form-control @error('premiumNannyName') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyName" type="text"
+                                                    value="{{ old('premiumnannyName') }}"
+                                                    class="form-control @error('premiumnannyName') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="Enter name...">
-                                                @error('premiumNannyName')
+                                                @error('premiumnannyName')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -85,12 +85,12 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Date of Birth</label>
-                                                <input id="cc-payment" name="premiumNannyDoB" type="text"
-                                                    value="{{ old('premiumNannyDoB') }}"
-                                                    class="form-control @error('premiumNannyDoB') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyDoB" type="text"
+                                                    value="{{ old('premiumnannyDoB') }}"
+                                                    class="form-control @error('premiumnannyDoB') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false"
                                                     placeholder="Date of Birth...">
-                                                @error('premiumNannyDoB')
+                                                @error('premiumnannyDoB')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -99,11 +99,10 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Position</label>
-                                                <input id="cc-payment" name="premiumNannyPosition" type="text"
-                                                    value="Nanny, Maid"
-                                                    class="form-control @error('premiumNannyPosition') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyPosition" type="text" value="Premium Nanny"
+                                                    class="form-control @error('premiumnannyPosition') is-invalid  @enderror"
                                                     aria-label="Disabled input example" disabled>
-                                                @error('premiumNannyPosition')
+                                                @error('premiumnannyPosition')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -112,11 +111,11 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Nationality</label>
-                                                <input id="cc-payment" name="premiumNannyNationality" type="text"
-                                                    value="{{ old('premiumNannyNationality') }}"
-                                                    class="form-control @error('premiumNannyNationality') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyNationality" type="text"
+                                                    value="{{ old('premiumnannyNationality') }}"
+                                                    class="form-control @error('premiumnannyNationality') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="nationality...">
-                                                @error('premiumNannyNationality')
+                                                @error('premiumnannyNationality')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -125,11 +124,11 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Religion</label>
-                                                <input id="cc-payment" name="premiumNannyReligion" type="text"
-                                                    value="{{ old('premiumNannyReligion') }}"
-                                                    class="form-control @error('premiumNannyReligion') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyReligion" type="text"
+                                                    value="{{ old('premiumnannyReligion') }}"
+                                                    class="form-control @error('premiumnannyReligion') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="religion...">
-                                                @error('premiumNannyReligion')
+                                                @error('premiumnannyReligion')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -138,11 +137,11 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Weight</label>
-                                                <input id="cc-payment" name="premiumNannyWeight" type="text"
-                                                    value="{{ old('premiumNannyWeight') }}"
-                                                    class="form-control @error('premiumNannyWeight') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyWeight" type="text"
+                                                    value="{{ old('premiumnannyWeight') }}"
+                                                    class="form-control @error('premiumnannyWeight') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="weight...">
-                                                @error('premiumNannyWeight')
+                                                @error('premiumnannyWeight')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -151,11 +150,11 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Height</label>
-                                                <input id="cc-payment" name="premiumNannyHeight" type="text"
-                                                    value="{{ old('premiumNannyHeight') }}"
-                                                    class="form-control @error('premiumNannyHeight') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyHeight" type="text"
+                                                    value="{{ old('premiumnannyHeight') }}"
+                                                    class="form-control @error('premiumnannyHeight') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="height...">
-                                                @error('premiumNannyHeight')
+                                                @error('premiumnannyHeight')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -164,11 +163,11 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Status</label>
-                                                <input id="cc-payment" name="premiumNannyStatus" type="text"
-                                                    value="{{ old('premiumNannyStatus') }}"
-                                                    class="form-control @error('premiumNannyStatus') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyStatus" type="text"
+                                                    value="{{ old('premiumnannyStatus') }}"
+                                                    class="form-control @error('premiumnannyStatus') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="status...">
-                                                @error('premiumNannyStatus')
+                                                @error('premiumnannyStatus')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -176,26 +175,16 @@
 
                                                 <br>
 
-                                                {{-- <label for="cc-payment" class="control-label mb-1">Salary</label>
-                                                <input id="cc-payment" name="nannySalary" type="text"
-                                                    value="{{ old('nannySalary') }}"
-                                                    class="form-control @error('nannySalary') is-invalid  @enderror"
-                                                    aria-required="true" aria-invalid="false" placeholder="salary...">
-                                                @error('nannySalary')
-                                                    <div class="invalid-feedback">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror --}}
-
+                                                Salary
                                                 <div class="mt-3 input-group">
                                                     <input type="text"
-                                                        class="form-control @error('premiumNannySalary') is-invalid  @enderror"
-                                                        name="premiumNannySalary" value="{{ old('premiumNannySalary') }}"
+                                                        class="form-control @error('premiumnannySalary') is-invalid  @enderror"
+                                                        name="premiumnannySalary" value="{{ old('premiumnannySalary') }}"
                                                         placeholder="salary...">
                                                     <span class="input-group-text">Baht</span>
 
                                                 </div>
-                                                @error('premiumNannySalary')
+                                                @error('premiumnannySalary')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -208,14 +197,18 @@
                                                     <div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="full_time" name="full_part" id="fulltime">
+                                                                value="full-time"
+                                                                @if (old('full_part') == 'full-time') checked @endif
+                                                                name="full_part" id="fulltime">
                                                             <label class="form-check-label" for="fulltime">
                                                                 Full-time
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="part_time" name="full_part" id="parttime">
+                                                                value="part-time"
+                                                                @if (old('full_part') == 'part-time') checked @endif
+                                                                name="full_part" id="parttime">
                                                             <label class="form-check-label" for="parttime">
                                                                 Part-time
                                                             </label>
@@ -225,14 +218,18 @@
                                                     <div class="ms-5">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="live_In" name="live_in_out" id="livein">
+                                                                value="live-In"
+                                                                @if (old('live_in_out') == 'live-In') checked @endif
+                                                                name="live_in_out" id="livein">
                                                             <label class="form-check-label" for="livein">
                                                                 Live-In
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="radio"
-                                                                value="live_Out" name="live_in_out" id="liveout">
+                                                                value="live-Out"
+                                                                @if (old('live_in_out') == 'live-Out') checked @endif
+                                                                name="live_in_out" id="liveout">
                                                             <label class="form-check-label" for="liveout">
                                                                 Live-Out
                                                             </label>
@@ -249,11 +246,10 @@
                                                 <br>
                                                 Experience : <br>
                                                 <div class="form-floating">
-                                                    <textarea class="form-control" value="{{ old('premiumNannyExperience') }}" name="premiumNannyExperience" placeholder="Experience"
-                                                        id="experience"></textarea>
+                                                    <textarea class="form-control @error('premiumnannyExperience') is-invalid  @enderror" value="" name="premiumnannyExperience" placeholder="Experience" id="experience">{{ old('premiumnannyExperience') }}</textarea>
                                                     <label for="experience">experience...</label>
                                                 </div>
-                                                @error('premiumNannyExperience')
+                                                @error('premiumnannyExperience')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -262,10 +258,13 @@
                                                 <br>
 
                                                 Skill : <br>
-                                                <textarea name="premiumNannySkill" class="form-control" id="" cols="10" rows="5">
-                                                    {{ old('premiumNannySkill') }}
-                                                </textarea>
-                                                @error('premiumNannySkill')
+                                                <div class="form-floating">
+                                                    <textarea name="premiumnannySkill" class="form-control @error('premiumnannySkill') is-invalid  @enderror" id="skill" cols="10" rows="5">{{ old('nannySkill') }}</textarea>
+                                                    <label for="skill">skill...</label>
+                                                </div>
+
+
+                                                @error('premiumnannySkill')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -274,11 +273,11 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Language</label>
-                                                <input id="cc-payment" name="premiumNannyLanguage" type="text"
-                                                    value="{{ old('premiumNannyLanguage') }}"
-                                                    class="form-control @error('premiumNannyLanguage') is-invalid  @enderror"
+                                                <input id="cc-payment" name="premiumnannyLanguage" type="text"
+                                                    value="{{ old('premiumnannyLanguage') }}"
+                                                    class="form-control @error('premiumnannyLanguage') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="language...">
-                                                @error('premiumNannyLanguage')
+                                                @error('premiumnannyLanguage')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -291,6 +290,7 @@
                                                 <div class="ms-3">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" value="Yes"
+                                                            @if (old('pets') == 'Yes') checked @endif
                                                             name="pets" id="">
                                                         <label class="form-check-label" for="">
                                                             Yes
@@ -298,33 +298,53 @@
                                                     </div>
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="radio" value="No"
+                                                            @if (old('pets') == 'No') checked @endif
                                                             name="pets" id="">
                                                         <label class="form-check-label" for="">
                                                             No
                                                         </label>
                                                     </div>
-                                                    <textarea name="petNote" class="form-control" id="" cols="10" rows="5"></textarea>
+                                                    <small>Note:</small>
+                                                    <textarea name="petNote" class="form-control @error('petNote') is-invalid  @enderror" id="" cols="10" rows="5">{{ old('petNote') }}</textarea>
                                                 </div>
+
 
                                                 <br>
 
                                                 <div class="mt-3 input-group">
                                                     <span class="input-group-text">Vaccine</span>
-                                                    <textarea class="form-control" name="premiumNannyVaccine" aria-label="With textarea"></textarea>
+                                                    <textarea class="form-control @error('premiumnannyVaccine') is-invalid  @enderror" name="premiumnannyVaccine" aria-label="With textarea">{{ old('premiumnannyVaccine') }}</textarea>
                                                 </div>
+                                                @error('premiumnannyVaccine')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+
                                                 <br>
 
-                                                <h4 class="text-danger">Remark : </h4> <br>
+                                                <div class="d-flex">
+                                                    <h4 class="text-danger mb-2">Remark : </h4>
+                                                    <p class="ms-2">(optional)</p>
+                                                </div>
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" value="" name="premiumnannyRemark" placeholder="" id="remark">{{ old('premiumnannyRemark') }}</textarea>
+                                                    <label for="remark">Remark*</label>
+                                                </div>
+
+
+                                                <br>
+
                                                 Note : (optional)
                                                 <div>
-                                                    <textarea class="form-control" name="note" id="" cols="" rows=""></textarea>
+                                                    <textarea class="form-control" name="note" id="" cols="" rows="">{{ old('note') }}</textarea>
                                                 </div>
 
 
                                             </div>
                                         </div>
 
-                                        <div class="mt-2 ms-3">
+                                        <div class="mt-2 ms-3 py-2">
                                             <button id="payment-button" type="submit"
                                                 class="btn btn-danger btn-info btn-block">
                                                 <span id="payment-button-amount">Create</span>
@@ -357,6 +377,8 @@
         });
     </script>
     <!-- END MAIN CONTENT-->
+
+
 
 
 @endsection

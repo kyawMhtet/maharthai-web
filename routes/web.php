@@ -9,13 +9,18 @@ use App\Http\Controllers\CategoryController;
 
 use App\Http\Controllers\MaidcookController;
 use App\Http\Controllers\User\UserController;
-
+use App\Http\Controllers\MaidpetcareController;
 use App\Http\Controllers\HousekeepingController;
+use App\Http\Controllers\PremiumnannyController;
 use App\Http\Controllers\MaideldercareController;
 use App\Http\Controllers\User\MainMaidController;
+// main
 use App\Http\Controllers\User\MainmaidcookController;
+use App\Http\Controllers\User\MainmaidpetcareController;
 use App\Http\Controllers\User\MainHousekeepingController;
+use App\Http\Controllers\User\MainpremiumnannyController;
 use App\Http\Controllers\User\MainmaideldercareController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -86,13 +91,32 @@ Route::get('maidcook_detail/{id}', [MainmaidcookController::class, 'maidcookInfo
 
 Route::get('maidcookRequestPage', [MainmaidcookController::class, 'maidcookRequestPage'])->name('maidcookrequest#page');
 
-// maid, eldercar page
+
+// maid, eldercare page
 
 Route::get('maideldercarePage', [MainmaideldercareController::class, 'maideldercarePage'])->name('mainmaideldercare#page');
 
 Route::get('maideldercare_detail/{id}', [MainmaideldercareController::class, 'maideldercareInfo'])->name('maideldercare#info');
 
 Route::get('maideldercareRequestPage', [MainmaideldercareController::class, 'maideldercareRequestPage'])->name('maideldercarerequest#page');
+
+
+// maid, pet care page
+
+Route::get('maidpetcarePage', [MainmaidpetcareController::class, 'maidpetcarePage'])->name('mainmaidpetcare#page');
+
+Route::get('maidpetcare_detail/{id}', [MainmaidpetcareController::class, 'maidpetcareInfo'])->name('maidpetcare#info');
+
+Route::get('maidpetcareRequestPage', [MainmaidpetcareController::class, 'maidpetcareRequestPage'])->name('maidpetcarerequest#page');
+
+// premium nanny page
+
+Route::get('premiumnannyPage', [MainpremiumnannyController::class, 'premiumnannyPage'])->name('mainpremiumnanny#page');
+
+Route::get('premiumnanny_detail/{id}', [MainpremiumnannyController::class, 'premiumnannyInfo'])->name('premiumnanny#info');
+
+Route::get('premiumnannyRequestPage', [MainpremiumnannyController::class, 'premiumnannyRequestPage'])->name('premiumnannyrequest#page');
+
 
 
 
@@ -216,8 +240,38 @@ Route::middleware([
         Route::post('maideldercare/update', [MaideldercareController::class, 'maideldercareUpdate'])->name('maideldercare#update');
 
 
+        // maid, pet care
+
+        Route::get('maidpetcarePage', [MaidpetcareController::class, 'maidpetcarePage'])->name('maidpetcare#page');
+
+        Route::get('maidpetcare/create', [CategoryController::class, 'maidpetcareCreatePage'])->name('maidpetcare#create');
+
+        Route::post('maidpetcare', [MaidpetcareController::class, 'maidpetcareCreate'])->name('maidpetcare#aftercreate');
+
+        Route::get('maidpetcare/detail/{id}', [MaidpetcareController::class, 'maidpetcareEdit'])->name('maidpetcare#updatePage');
+
+        Route::get('maidpetcare/delete/{id}', [MaidpetcareController::class, 'maidpetcareDelete'])->name('maidpetcare#delete');
+
+        Route::get('maidpetcare/editPage/{id}', [MaidpetcareController::class, 'editPage'])->name('maidpetcare#editPage');
+
+        Route::post('maidpetcare/update', [MaidpetcareController::class, 'maidpetcareUpdate'])->name('maidpetcare#update');
 
 
+        // premium nanny
+
+        Route::get('premiumnannyPage', [PremiumnannyController::class, 'premiumnannyPage'])->name('premiumnanny#page');
+
+        Route::get('premiumnanny/create', [CategoryController::class, 'premiumnannyCreatePage'])->name('premiumnanny#create');
+
+        Route::post('premiumnanny', [PremiumnannyController::class, 'premiumnannyCreate'])->name('premiumnanny#aftercreate');
+
+        Route::get('premiumnanny/detail/{id}', [PremiumnannyController::class, 'premiumnannyEdit'])->name('premiumnanny#updatePage');
+
+        Route::get('premiumnanny/delete/{id}', [PremiumnannyController::class, 'premiumnannyDelete'])->name('premiumnanny#delete');
+
+        Route::get('premiumnanny/editPage/{id}', [PremiumnannyController::class, 'editPage'])->name('premiumnanny#editPage');
+
+        Route::post('premiumnanny/update', [PremiumnannyController::class, 'premiumnannyUpdate'])->name('premiumnanny#update');
 
 
 

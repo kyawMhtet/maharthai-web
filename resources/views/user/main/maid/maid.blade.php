@@ -92,7 +92,7 @@
                     <div class="card-body text-start">
                         <p>{{ $maid->code }}</p>
                         <p>{{ $maid->full_part }} / {{ $maid->live_in_out }}</p>
-                        <p>{{ $maid->salary }}</p>
+                        <p>{{ $maid->salary }} <b>Baht</b></p>
                         <p>{{ Str::words($maid->experience,8, '...') }}</p>
 
                     </div>
@@ -127,11 +127,11 @@
 
 <div class="form w-50 m-auto mt-4 text-center">
     <form action="https://formspree.io/f/mvoynkqy" method="POST">
-        <input type="text" class="form-control border border-0" placeholder="Name*">
-        <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
-        <input type="text" class="form-control border border-0" placeholder="Phone*">
-        <input type="text" class="form-control border border-0" placeholder="Full Time or Part Time*">
-        <input type="text" class="form-control border border-0" placeholder="Live In or Live Out*">
+        <input type="text" class="form-control border border-0" placeholder="Name*" required>
+        <input type="email" class="form-control border border-0" placeholder="example@gmail.com" required>
+        <input type="text" class="form-control border border-0" placeholder="Phone*" required>
+        <input type="text" class="form-control border border-0" placeholder="Full Time or Part Time*" required>
+        <input type="text" class="form-control border border-0" placeholder="Live In or Live Out*" required>
         <textarea name="" class="form-control" id="" placeholder="Note*" cols="10" rows="5"></textarea>
 
         <a href="" class="btn btn-danger w-25 py-2 mt-4" type="button">

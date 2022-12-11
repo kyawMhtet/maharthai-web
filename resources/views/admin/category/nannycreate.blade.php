@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Nanny List')
+@section('title', 'Nanny, Maid List')
 
 @section('content')
 
@@ -13,7 +13,7 @@
                     <div class="table-data__tool">
                         <div class="table-data__tool-left">
                             <div class="overview-wrap">
-                                <h2 class="title-1">Nanny List</h2>
+                                <h2 class="title-1">Nanny, Maid List</h2>
 
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2 p-2">Category Form</h3>
+                                        <h3 class="text-center title-2 p-2">Nanny, Maid Form</h3>
                                     </div>
                                     <hr>
                                     <form action="{{ route('nanny#aftercreate') }}" method="post"

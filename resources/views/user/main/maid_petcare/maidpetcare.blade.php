@@ -1,6 +1,6 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'Maid, Cook')
+@section('title', 'Maid, Pet Care')
 
 @section('content')
 
@@ -22,11 +22,11 @@
         font-size: 18px;
     }
 
-    .maidcook {
+    .maidpetcare {
         transition: all 0.5s;
     }
 
-    .maidcook:hover {
+    .maidpetcare:hover {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
@@ -77,27 +77,27 @@
 {{-- nanny workers --}}
 
 <div class="text-center mt-5 text-danger">
-    <h2>MAID, COOK WORKERS</h2>
+    <h2>MAID, PET CARE  WORKERS</h2>
 </div>
 
 <div class="container w-75 text-center mb-3">
     <div class="row m-auto">
-        @foreach ($maidcooks as $maidcook)
+        @foreach ($maidpetcares as $maidpetcare)
             <div class="col mt-5">
 
-                <div class="maidcook card p-2 border border-0" style="width: 20rem; height: 600px;">
+                <div class="maidpetcare card p-2 border border-0" style="width: 20rem; height: 600px;">
 
-                    <img class="card-img-top" src="{{ asset('storage/' . $maidcook->photo) }}" style="height: 305px; width: 305px;"
+                    <img class="card-img-top" src="{{ asset('storage/' . $maidpetcare->photo) }}" style="height: 305px; width: 305px;"
                         alt="">
                     <div class="card-body text-start">
-                        <p>{{ $maidcook->code }}</p>
-                        <p>{{ $maidcook->full_part }} / {{ $maidcook->live_in_out }}</p>
-                        <p>{{ $maidcook->salary }} <b>Baht</b></p>
-                        <p>{{ Str::words($maidcook->experience,8, '...') }}</p>
+                        <p>{{ $maidpetcare->code }}</p>
+                        <p>{{ $maidpetcare->full_part }} / {{ $maidpetcare->live_in_out }}</p>
+                        <p>{{ $maidpetcare->salary }} <b>Baht</b></p>
+                        <p>{{ Str::words($maidpetcare->experience,8, '...') }}</p>
 
                     </div>
                     <div class="text-center mb-4">
-                        <a href="{{ route('maidcook#info', $maidcook->id) }}"
+                        <a href="{{ route('maidpetcare#info', $maidpetcare->id) }}"
                             class="btn btn-danger mb-2 rounded-pill w-75">
                             More Details
                         </a>
@@ -108,7 +108,7 @@
         @endforeach
     </div>
     <div class="mt-5">
-        {{ $maidcooks->links() }}
+        {{ $maidpetcares->links() }}
     </div>
 </div>
 {{-- end nanny workers --}}
@@ -117,7 +117,7 @@
 {{-- hire for nanny --}}
 
 <div class="text-center mt-3 text-danger">
-    <h2>HIRE FOR MAID, COOK</h2>
+    <h2>HIRE FOR MAID, PET CARE</h2>
 </div>
 
 

@@ -80,8 +80,8 @@
 
                         <li><a href="{{ route('mainmaideldercare#page') }}" class="dropdown-item">Maid, Eldercare</a></li>
                         <li><a href="{{ route('mainmaidcook#page') }}" class="dropdown-item">Maid, Cook</a></li>
-                        <li><a href="" class="dropdown-item">Maid, Pet Care</a></li>
-                        <li><a href="#" class="dropdown-item">Premium Nanny</a></li>
+                        <li><a href="{{ route('mainmaidpetcare#page') }}" class="dropdown-item">Maid, Pet Care</a></li>
+                        <li><a href="{{ route('mainpremiumnanny#page') }}" class="dropdown-item">Premium Nanny</a></li>
 
                     </ul>
                 </div>

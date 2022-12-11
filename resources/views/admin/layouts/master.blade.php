@@ -117,9 +117,9 @@
                                     </li>
 
                                     <li class="text-center"><a class="dropdown-item" href="{{ route('maidcook#page') }}">Maid, Cook</a></li>
-                                    <li class="text-center"><a class="dropdown-item" href="#">Maid, Pet Care</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('maidpetcare#page') }}">Maid, Pet Care</a>
                                     </li>
-                                    <li class="text-center"><a class="dropdown-item" href="#">Premium Nanny</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('premiumnanny#page') }}">Premium Nanny</a>
                                     </li>
 
 
