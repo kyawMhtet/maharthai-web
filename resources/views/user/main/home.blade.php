@@ -123,7 +123,7 @@
     {{-- hire for nanny --}}
 
     <div class="text-center mt-5 text-danger">
-        <h2>HIRE FOR NANNY</h2>
+        <h2>HIRE FOR NANNY, MAID</h2>
 
 
     </div>
