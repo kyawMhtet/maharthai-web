@@ -259,7 +259,7 @@
 
                                                 Skill : <br>
                                                 <div class="form-floating">
-                                                    <textarea name="maideldercareSkill" class="form-control @error('maideldercareSkill') is-invalid  @enderror" id="skill" cols="10" rows="5">{{ old('nannySkill') }}</textarea>
+                                                    <textarea name="maideldercareSkill" class="form-control @error('maideldercareSkill') is-invalid  @enderror" id="skill" cols="10" rows="5">{{ old('maideldercareSkill') }}</textarea>
                                                     <label for="skill">skill...</label>
                                                 </div>
 

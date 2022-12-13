@@ -197,7 +197,7 @@
             if ($eventOption == 'full-time') {
                 $.ajax({
                     type: 'get',
-                    url: 'http://localhost/maharthai/public/filter/maid/list',
+                    url: '{{ route('filter#maidlist') }}',
                     data: {
                         'status': 'full-time'
                     },
@@ -240,7 +240,7 @@
             } else if ($eventOption == 'part-time') {
                 $.ajax({
                     type: 'get',
-                    url: 'http://localhost/maharthai/public/filter/maid/list',
+                    url: '{{ route('filter#maidlist') }}',
                     data: {
                         'status': 'part-time'
                     },
@@ -283,7 +283,7 @@
             } else if($eventOption == 'live-In') {
                 $.ajax({
                     type: 'get',
-                    url: 'http://localhost/maharthai/public/filter/maid/list',
+                    url: '{{ route('filter#maidlist') }}',
                     data: {
                         'status' : 'live-In'
                     },
@@ -325,7 +325,7 @@
             } else if($eventOption == 'live-Out') {
                 $.ajax({
                     type : 'get',
-                    url : 'http://localhost/maharthai/public/filter/maid/list',
+                    url : '{{ route('filter#maidlist') }}',
                     data : {
                         'status' : 'live-Out'
                     },

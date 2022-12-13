@@ -24,13 +24,6 @@ class NannyController extends Controller
         return view('admin.category.nanny', compact('nannies'));
     }
 
-    // nanny hide
-    // public function nannyHide($id)
-    // {
-    //     Nanny::where('id', $id)->first();
-
-    // }
-
     // nanny after create
     public function nannyCreate(Request $request)
     {
