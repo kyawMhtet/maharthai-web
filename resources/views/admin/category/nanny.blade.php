@@ -111,18 +111,6 @@
                                                 <button class="btn btn-danger">Delete</button>
                                             </a>
                                         </div>
-
-                                        {{-- <div class="text-center">
-                                            <a href="">
-                                                <button class="btn" id="show">Show</button>
-                                            </a>
-                                            <a href="">
-                                                <button class="btn" id="hide">Hide</button>
-                                            </a>
-                                        </div> --}}
-
-                                        {{-- <button class="btn" type="button" id="show">Show</button>
-                                        <button class="btn" type="button" id="hide">Hide</button> --}}
                                     </div>
                                 @endforeach
                             </div>

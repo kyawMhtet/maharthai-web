@@ -19,16 +19,9 @@ class UserController extends Controller
         $nannies = Nanny::where('id', $id)->first();
         // dd($nannies);
         return view('user.main.nannydetails', compact('nannies'));
-
-
-        // $nannies = Nanny::find($id);
-        // return response()->json($nannies);
-
-        // $nannies = Nanny::all();
-        // return view('user.main.home', compact('nannies'));
-
-        // return Nanny::findOrFail($id);
     }
+
+
 
 
 

@@ -153,10 +153,10 @@
                             <p class="ms-3">{{ old('pets', $maids->pet) }}</p>
                         </div>
 
-                        <div class="">
+                        <div class="col">
                             <small class="ms-3"><b> - </b></small>
                         </div>
-                        <div class="d-flex px-4 pb-2 mb-3">
+                        <div class="col-10 d-flex px-4 pb-2 mb-3">
                                 <small class="shadow-sm p-2" style="color: rgb(187, 45, 59);">{{ old('petNote', $maids->pet_note) }}</small>
                         </div>
                     </div>

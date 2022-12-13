@@ -1,20 +1,22 @@
 <?php
 
+use App\Models\Nanny;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MaidController;
 use App\Http\Controllers\NannyController;
-use App\Http\Controllers\CategoryController;
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MaidcookController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\MaidpetcareController;
 use App\Http\Controllers\HousekeepingController;
 use App\Http\Controllers\PremiumnannyController;
 use App\Http\Controllers\MaideldercareController;
-use App\Http\Controllers\User\MainMaidController;
+use App\Http\Controllers\User\AjaxController;
 // main
+use App\Http\Controllers\User\MainMaidController;
 use App\Http\Controllers\User\MainmaidcookController;
 use App\Http\Controllers\User\MainmaidpetcareController;
 use App\Http\Controllers\User\MainHousekeepingController;
@@ -61,11 +63,31 @@ Route::get('NannyMaidPage', [UserController::class, 'home'])->name('user#home');
 // Route::get('/home/nanny/{id}', [NannyController::class, 'nannyDetail'])->name('nanny#detail');
 Route::get('requestPage', [UserController::class, 'requestForm'])->name('user#request');
 
-
 Route::get('nanny_detail/{id}', [UserController::class, 'nannyInfo'])->name('nanny#info');
 
-
 Route::get('nanny/request/{id}', [UserController::class, 'nannyRequest'])->name('nanny#request');
+
+// Route::get('nanny/fulltime', [UserController::class, 'nannyfulltimeFilter'])->name('nanny#fulltimefilter');
+
+// Route::get('nanny/parttime', [UserController::class, 'nannypartimeFilter'])->name('nanny#partimefilter');
+
+
+// Filtering
+
+Route::prefix('filter')->group(function(){
+    Route::get('nanny/list', [AjaxController::class, 'nannyList'])->name('filter#nannylist');
+    // maid
+    Route::get('maid/list', [AjaxController::class, 'maidList'])->name('filter#maidlist');
+
+    // housekeeping
+    Route::get('housekeeping/list', [AjaxController::class, 'housekeepingList'])->name('filter#housekeepinglist');
+
+    // maid, cook
+    Route::get('maidcook/list', [AjaxController::class, 'maidcookList'])->name('filter#maidcooklist');
+});
+
+
+
 
 
 // maid page

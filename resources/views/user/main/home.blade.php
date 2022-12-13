@@ -45,6 +45,11 @@
     {{-- navbar --}}
 
 
+
+
+    </form>
+    </div>
+
     {{-- carousel slide --}}
 
     <div class="container w-75 mt-2">
@@ -75,7 +80,44 @@
 
     {{-- end carousel slide --}}
 
+    <div class="container w-25 mt-5">
+        <div class="shadow-sm py-2 rounded text-danger">
+            <form action="" method="get">
+                @csrf
+                <div class="d-flex ms-5">
+                    <div>
+                        <div class="form-check">
+                            <input class="workingtime" type="radio" value="full-time" name="full_part" id="fulltime">
+                            <label class="form-check-label" for="fulltime">
+                                Full-time
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="workingtime" type="radio" value="part-time" name="full_part" id="parttime">
+                            <label class="form-check-label" for="parttime">
+                                Part-time
+                            </label>
+                        </div>
+                    </div>
 
+                    <div class="ms-4">
+                        <div class="form-check">
+                            <input class="workingtime" type="radio" value="live-In" name="live_in_out" id="livein">
+                            <label class="form-check-label" for="livein">
+                                Live-In
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="workingtime" type="radio" value="live-Out" name="live_in_out" id="liveout">
+                            <label class="form-check-label" for="liveout">
+                                Live-Out
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     {{-- nanny workers --}}
 
     <div class="text-center mt-5 text-danger">
@@ -83,26 +125,25 @@
     </div>
 
     <div class="container w-75 text-center mb-3">
-        <div class="row m-auto">
+        <div class="row m-auto" id="nannyList">
             @foreach ($nannies as $nanny)
-                <div class="col-4 mt-5" >
+                <div class="col-4 mt-5">
                     <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
-                        {{-- <input type="hidden" name="nannyId" value="{{ $nanny->id }}"> --}}
-                        <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}" style="height: 305px; width: 305px;"
-                            alt="">
+
+                        <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}"
+                            style="height: 305px; width: 305px;" alt="">
                         <div class="card-body text-start">
                             <div>
                                 <p>{{ $nanny->code }}</p>
                                 <p>{{ $nanny->full_part }} / {{ $nanny->live_in_out }}</p>
                                 <p>{{ $nanny->salary }} <b>Baht</b></p>
-                                {{-- <p>{{ $nanny->experience }}</p> --}}
-                                <p>{{ Str::words($nanny->experience,8, '...') }}</p>
+
+                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
                             </div>
 
                         </div>
                         <div class="text-center mb-4">
-                            <a href="{{ route('nanny#info', $nanny->id) }}"
-                                class="btn btn-danger rounded-pill w-75">
+                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
                                 More Details
                             </a>
                         </div>
@@ -144,35 +185,197 @@
 
 
     <script>
-        // $('#workerShowModal').modal('hide');
+        $(document).ready(function() {
+            // $.ajax({
+            //     type : 'get' ,
+            //     url : 'http://localhost/maharthai/public/ajax/nanny/list' ,
+            //     dataType : 'json' ,
+            //     success : function(response){
+            //         console.log('response');
+            //     }
+            // });
 
-        // $(document).ready(function(){
-        //     $('detail').click(function(){
-        //         const id = $(this).attr('data-id');
-        //         $.ajax({
-        //             url: 'nanny_detail'+id,
-        //             type: 'GET',
-        //             data: {
-        //                 "id" : id
-        //             },
-        //             success: function(data){
-        //                 console.log(data);
-        //                 $('#nanny-name').html(data.name);
-        //             }
-        //         });
-        //     });
-        // });
 
-        // $(document).ready(function(){
-        //     $('body').on('click', '#show-woker', function() {
-        //         var userURL = $(this).data('url');
-        //         $.get(userURL, function (data){
-        //             $('#workerShowModal').modal('show');
-        //         });
-        //     });
-        // });
+            // input[type=radio][name=full_part]
+
+            $('.workingtime').change(function() {
+                $eventOption = $('.workingtime:checked').val();
+                // console.log($eventOption);
+                if ($eventOption == 'full-time') {
+                    $.ajax({
+                        type: 'get',
+                        url: 'http://localhost/maharthai/public/filter/nanny/list',
+                        data: {
+                            'status': 'full-time'
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            // console.log(response[0].full_part);
+                            $list = '';
+                            for ($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                <div class="col-4 mt-5">
+                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
+
+                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
+                            style="height: 305px; width: 305px;" alt="">
+                        <div class="card-body text-start">
+                            <div>
+                                <p>${response[$i].code}</p>
+                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
+                                <p>${response[$i].salary} <b>Baht</b></p>
+
+                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
+                            </div>
+
+                        </div>
+                        <div class="text-center mb-4">
+                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
+                                More Details
+                            </a>
+                        </div>
+
+                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
+
+                    </div>
+                </div>
+                            `;
+                            }
+                            $('#nannyList').html($list);
+                        }
+                    });
+                } else if ($eventOption == 'part-time') {
+                    $.ajax({
+                        type: 'get',
+                        url: 'http://localhost/maharthai/public/filter/nanny/list',
+                        data: {
+                            'status': 'part-time'
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            // console.log(response[0].full_part);
+                            $list = '';
+                            for ($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                <div class="col-4 mt-5">
+                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
+
+                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
+                            style="height: 305px; width: 305px;" alt="">
+                        <div class="card-body text-start">
+                            <div>
+                                <p>${response[$i].code}</p>
+                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
+                                <p>${response[$i].salary} <b>Baht</b></p>
+
+                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
+                            </div>
+
+                        </div>
+                        <div class="text-center mb-4">
+                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
+                                More Details
+                            </a>
+                        </div>
+
+                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
+
+                    </div>
+                </div>
+                            `;
+                            }
+                            $('#nannyList').html($list);
+                        }
+                    });
+                } else if($eventOption == 'live-In') {
+                    $.ajax({
+                        type: 'get',
+                        url: 'http://localhost/maharthai/public/filter/nanny/list',
+                        data: {
+                            'status' : 'live-In'
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            $list = '';
+                            for($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                <div class="col-4 mt-5">
+                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
+
+                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
+                            style="height: 305px; width: 305px;" alt="">
+                        <div class="card-body text-start">
+                            <div>
+                                <p>${response[$i].code}</p>
+                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
+                                <p>${response[$i].salary} <b>Baht</b></p>
+
+                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
+                            </div>
+
+                        </div>
+                        <div class="text-center mb-4">
+                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
+                                More Details
+                            </a>
+                        </div>
+
+                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
+
+                    </div>
+                </div>
+                            `;
+                            }
+                            $('#nannyList').html($list);
+                        }
+                    });
+                } else if($eventOption == 'live-Out') {
+                    $.ajax({
+                        type : 'get',
+                        url : 'http://localhost/maharthai/public/filter/nanny/list',
+                        data : {
+                            'status' : 'live-Out'
+                        },
+                        dataType : 'json',
+                        success : function(response) {
+                            $list = '';
+                            for($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                <div class="col-4 mt-5">
+                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
+
+                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
+                            style="height: 305px; width: 305px;" alt="">
+                        <div class="card-body text-start">
+                            <div>
+                                <p>${response[$i].code}</p>
+                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
+                                <p>${response[$i].salary} <b>Baht</b></p>
+
+                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
+                            </div>
+
+                        </div>
+                        <div class="text-center mb-4">
+                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
+                                More Details
+                            </a>
+                        </div>
+
+                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
+
+                    </div>
+                </div>
+                            `;
+                            }
+                            $('#nannyList').html($list);
+
+                        }
+                    });
+                }
+            });
+        });
     </script>
-
 
 
 @endsection

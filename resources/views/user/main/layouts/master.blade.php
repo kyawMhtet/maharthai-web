@@ -15,6 +15,8 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
 
+
+    {{-- JQuery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -96,56 +98,9 @@
             </div>
         </div>
     </nav>
+
+
     {{-- navbar --}}
-
-    {{-- <nav class="navbar navbar-expand-lg bg-light sticky-top shadow-sm-bottom">
-        <div class="container-fluid p-3">
-
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler m-auto" data-bs-target="#menu" data-bs-toggle="collapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-
-
-        </div>
-    </nav> --}}
-
-
-    {{-- <nav class="navbar fixed-top navbar-expand-lg bg-light ">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-
-            <div id="menu" class="collapse navbar-collapse text-center">
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-lg-3 my-3 my-lg-0">
-                        <a href="" class="nav-link">Home</a>
-                    </li>
-
-                    <li class="nav-item mx-lg-3 my-3 my-lg-0">
-                        <div class="dropdown-center mt-1">
-                            <a href="" class="navbar-brand me-5 dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false">Services</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{{ route('mainmaid#page') }}" class="dropdown-item">Maid</a></li>
-                                <li><a href="{{ route('user#home') }}" class="dropdown-item">Nanny, Maid</a></li>
-                                <li><a href="" class="dropdown-item">Maid, Eldercare</a></li>
-                                <li><a href="" class="dropdown-item">Maid, Cook</a></li>
-                                <li><a href="" class="dropdown-item">Maid, Pet Care</a></li>
-                                <li><a href="" class="dropdown-item">Premium Nanny</a></li>
-                                <li><a href="" class="dropdown-item">HouseKeeping</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-    </nav> --}}
 
     {{-- end navbar --}}
 
