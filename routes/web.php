@@ -84,6 +84,16 @@ Route::prefix('filter')->group(function(){
 
     // maid, cook
     Route::get('maidcook/list', [AjaxController::class, 'maidcookList'])->name('filter#maidcooklist');
+
+    // maid, eldercare
+    Route::get('maideldercare/list', [AjaxController::class, 'maideldercareList'])->name('filter#maideldercarelist');
+
+    // maid, petcare
+    Route::get('maidpetcare/list', [AjaxController::class, 'maidpetcareList'])->name('filter#maidpetcarelist');
+
+    // premium, nanny
+    Route::get('premiumnanny/list', [AjaxController::class, 'premiumnannyList'])->name('filter#premiumnannylist');
+
 });
 
 
