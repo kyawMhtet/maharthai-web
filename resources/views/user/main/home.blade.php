@@ -188,7 +188,7 @@
         $(document).ready(function() {
             // $.ajax({
             //     type : 'get' ,
-            //     url : 'http://localhost/maharthai/public/ajax/nanny/list' ,
+            //     url : 'http://178.128.125.39//ajax/nanny/list' ,
             //     dataType : 'json' ,
             //     success : function(response){
             //         console.log('response');
@@ -204,7 +204,7 @@
                 if ($eventOption == 'full-time') {
                     $.ajax({
                         type: 'get',
-                        url: 'http://localhost/maharthai/public/filter/nanny/list',
+                        url: 'http://178.128.125.39//filter/nanny/list',
                         data: {
                             'status': 'full-time'
                         },
@@ -247,7 +247,7 @@
                 } else if ($eventOption == 'part-time') {
                     $.ajax({
                         type: 'get',
-                        url: 'http://localhost/maharthai/public/filter/nanny/list',
+                        url: 'http://178.128.125.39//filter/nanny/list',
                         data: {
                             'status': 'part-time'
                         },
@@ -290,7 +290,7 @@
                 } else if($eventOption == 'live-In') {
                     $.ajax({
                         type: 'get',
-                        url: 'http://localhost/maharthai/public/filter/nanny/list',
+                        url: 'http://178.128.125.39//filter/nanny/list',
                         data: {
                             'status' : 'live-In'
                         },
@@ -332,7 +332,7 @@
                 } else if($eventOption == 'live-Out') {
                     $.ajax({
                         type : 'get',
-                        url : 'http://localhost/maharthai/public/filter/nanny/list',
+                        url : 'http://178.128.125.39//filter/nanny/list',
                         data : {
                             'status' : 'live-Out'
                         },
