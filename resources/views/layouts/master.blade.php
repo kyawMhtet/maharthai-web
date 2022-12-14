@@ -39,13 +39,15 @@
 <body class="animsition">
     <div class="page-wrapper">
         <div class="page-content--bge5">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="login-wrap">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#">
-                                <img src="{{ asset('admin/images/icon/logo.png') }}" alt="CoolAdmin">
-                            </a>
+                            {{-- <a href="#">
+                                <img src="{{ asset('admin/images/icon/logo.png') }}" alt="MaharThaiAdmin">
+
+                            </a> --}}
+                            <h4>Mahar Thai Lin Aung Admin Panel</h4>
                         </div>
                         @yield('content')
                     </div>

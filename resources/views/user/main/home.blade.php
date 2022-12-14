@@ -47,12 +47,8 @@
 
 
 
-    </form>
-    </div>
-
     {{-- carousel slide --}}
-
-    <div class="container w-75 mt-2">
+    <div class="slider container mt-5">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -78,10 +74,11 @@
         </div>
     </div>
 
+
     {{-- end carousel slide --}}
 
-    <div class="container w-25 mt-5">
-        <div class="shadow-sm py-2 rounded text-danger">
+    <div class=" container w-25 mt-5">
+        <div class=" shadow-sm py-2 rounded text-danger">
             <form action="" method="get">
                 @csrf
                 <div class="d-flex ms-5">
@@ -127,7 +124,7 @@
     <div class="container w-75 text-center mb-3">
         <div class="row m-auto" id="nannyList">
             @foreach ($nannies as $nanny)
-                <div class="col-4 mt-5">
+                <div class="col col-lg-4 col-md-6 col-sm-8 mt-5 text-center">
                     <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
 
                         <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}"

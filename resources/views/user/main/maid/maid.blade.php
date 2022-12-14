@@ -44,8 +44,7 @@
 
 
 {{-- carousel slide --}}
-
-<div class="container w-75 mt-2">
+<div class="slider container mt-5">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -70,6 +69,7 @@
         </button>
     </div>
 </div>
+
 
 {{-- end carousel slide --}}
 
@@ -120,7 +120,7 @@
 <div class="container w-75 text-center mb-3">
     <div class="row m-auto" id="maidList">
         @foreach ($maids as $maid)
-            <div class="col mt-5">
+            <div class="col col-lg-4 col-md-6 col-sm-8 mt-5 text-center">
 
                 <div class="maid card p-2 border border-0" style="width: 20rem; height: 600px;">
 
