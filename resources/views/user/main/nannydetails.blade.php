@@ -4,12 +4,12 @@
 
 @section('content')
     <div class="container-lg shadow-lg p-5 mt-5">
-        <div class="row">
+        <div class="row p-2 detail">
             <div class="col-3">
                 <img class="card-img-top rounded" src="{{ asset('storage/' . $nannies->photo) }}" style="height: 300px; width: 300px;"
                 alt="">
             </div>
-            <div class="col ms-5">
+            <div class="col">
                 <div class="col info">
                     <div class="d-flex">
                         <div class="col-2">
@@ -153,10 +153,10 @@
                             <p class="ms-3">{{ old('pets', $nannies->pet) }}</p>
                         </div>
 
-                        <div class="col">
+                        <div class="col pet-column">
                             <small class="ms-3"><b> - </b></small>
                         </div>
-                        <div class="col-10 d-flex px-4 pb-2 mb-3">
+                        <div class="col-10 pet-note d-flex px-4 pb-2 mb-3">
 
                                 <small class="shadow-sm p-2" style="color: rgb(187, 45, 59);">{{ old('petNote', $nannies->pet_note) }}</small>
                         </div>

@@ -117,6 +117,7 @@ class PremiumnannyController extends Controller
             'premiumnannyExperience' => 'required',
             'premiumnannyLanguage' => 'required',
             'pets' => 'required',
+            'premiumnannyStock' => 'required',
             // 'premiumnannyRemark' => 'required',
 
         ], [
@@ -152,7 +153,7 @@ class PremiumnannyController extends Controller
             'vaccine' => $request->premiumnannyVaccine,
             'remark' => $request->premiumnannyRemark,
             'note' => $request->note,
-
+            'stockstatus' => $request->premiumnannyStock,
         ];
     }
 }

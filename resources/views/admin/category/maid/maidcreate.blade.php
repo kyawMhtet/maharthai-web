@@ -311,6 +311,15 @@
 
                                                 <br>
 
+                                                <b>Available/Not Available : </b>
+                                                <div class="mt-3 input-group">
+                                                    <select class="form-select" name="maidStock" aria-label="Default select example">
+
+                                                        <option value="Available" selected>Available</option>
+                                                        <option value="Not Available">Not Available</option>
+                                                      </select>
+                                                </div>
+
                                                 <div class="mt-3 input-group">
                                                     <span class="input-group-text">Vaccine</span>
                                                     <textarea class="form-control @error('maidVaccine') is-invalid  @enderror" name="maidVaccine" aria-label="With textarea">{{ old('maidVaccine') }}</textarea>

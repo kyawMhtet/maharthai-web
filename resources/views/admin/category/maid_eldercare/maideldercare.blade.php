@@ -74,8 +74,21 @@
                                         <img class="card-img-top" id="card" src="{{ asset('storage/'. $maideldercare->photo ) }}" style="height: 350px" alt="">
                                         <div class="card-body d-flex" style="justify-content: space-between">
                                             <div class="maideldercareinfo">
-                                                <span><b>Code#</b></span> : <span class="text-end">{{ $maideldercare->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $maideldercare->note }}</span>
+                                                <div class="d-flex">
+                                                    <p><b>Code# :</b></p>
+                                                    <p class="ms-">{{ $maideldercare->code }}</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <p><b>Note:</b></p>
+                                                    {{-- <p class="ms-2">{{ $maideldercare->note }}</p> --}}
+                                                    <p><b>{{ Str::words($maideldercare->note,15, '...') }}</b></p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <p><b>Available/Not Available: </b></p>
+                                                    <p class="ms-">{{ $maideldercare->stockstatus }}</p>
+                                                </div>
 
                                             </div>
                                         </div>

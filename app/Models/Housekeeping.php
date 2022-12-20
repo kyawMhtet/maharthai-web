@@ -31,5 +31,6 @@ class Housekeeping extends Model
         'note',
         'remark',
         'vaccine',
+        'stockstatus',
     ];
 }

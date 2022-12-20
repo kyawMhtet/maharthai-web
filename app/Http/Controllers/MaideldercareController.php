@@ -117,6 +117,7 @@ class MaideldercareController extends Controller
             'maideldercareExperience' => 'required',
             'maideldercareLanguage' => 'required',
             'pets' => 'required',
+            'maideldercareStock' => 'required',
             // 'maideldercareRemark' => 'required',
 
         ], [
@@ -152,7 +153,7 @@ class MaideldercareController extends Controller
             'vaccine' => $request->maideldercareVaccine,
             'remark' => $request->maideldercareRemark,
             'note' => $request->note,
-
+            'stockstatus' => $request->maideldercareStock,
         ];
     }
 }

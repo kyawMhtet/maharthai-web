@@ -76,42 +76,90 @@
                         <div class="container nanny-list" style="--bs-columns: 3;">
                             <div class="row" style="grid-gap: 10px;">
                                 @foreach ($nannies as $nanny)
-                                    <div class="card p-2 shadow" id="" style="width: 22rem;">
-                                        <img class="card-img-top" id="card"
-                                            src="{{ asset('storage/' . $nanny->photo) }}" style="height: auto; width: 350px;"
-                                            alt="">
-                                        <div class="card-body d-flex" style="justify-content: space-between">
-                                            <div class="nannyinfo">
-                                                <div class="d-flex">
-                                                    <p><b>Code# :</b></p>
-                                                    <p class="ms-">{{ $nanny->code }}</p>
-                                                </div>
+                                    @if ($nanny->stockstatus == 'Available')
+                                        <div class="card p-2 shadow" id="" style="width: 22rem;">
+                                            <img class="card-img-top" id="card"
+                                                src="{{ asset('storage/' . $nanny->photo) }}"
+                                                style="height: auto; width: 350px;" alt="">
+                                            <div class="card-body d-flex" style="justify-content: space-between">
+                                                <div class="nannyinfo">
+                                                    <div class="d-flex">
 
-                                                <div class="d-flex">
-                                                    <p><b>Note:</b></p>
-                                                    {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
-                                                    <p><b>{{ Str::words($nanny->note,15, '...') }}</b></p>
+                                                        <p><b>Code# :</b></p>
+                                                        <p class="ms-">{{ $nanny->code }}</p>
 
-                                                </div>
-                                                {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <p><b>Available/Not Available : </b></p>
+                                                        <p>{{ $nanny->stockstatus }}</p>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <p><b>Note:</b></p>
+                                                        {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
+                                                        <p><b>{{ Str::words($nanny->note, 15, '...') }}</b></p>
+
+                                                    </div>
+                                                    {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
                                                 <span><b>Note </b></span> : <span class="text-end">{{ $nanny->note }}</span> --}}
 
+                                                </div>
+                                            </div>
+                                            <div class="card-body text-center">
+
+                                                <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
+                                                    <button class="btn btn-secondary">View More</button>
+                                                </a>
+
+                                                <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </a>
                                             </div>
                                         </div>
-                                        <div class="card-body text-center">
-                                            {{-- <a href="{{ route('nanny#edit', $nanny->id) }}" class="card-link">
-                                                <button class="btn btn-secondary">Edit</button>
-                                            </a> --}}
+                                    @elseif ($nanny->stockstatus == 'Not Available')
+                                        <div class="card p-2 shadow" id="" style="width: 22rem;">
+                                            <img class="card-img-top" id="card"
+                                                src="{{ asset('storage/' . $nanny->photo) }}"
+                                                style="height: auto; width: 350px;" alt="">
+                                            <div class="card-body d-flex" style="justify-content: space-between">
+                                                <div class="nannyinfo">
+                                                    <div class="d-flex">
 
-                                            <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
-                                                <button class="btn btn-secondary">View More</button>
-                                            </a>
+                                                        <p><b>Code# :</b></p>
+                                                        <p class="ms-">{{ $nanny->code }}</p>
 
-                                            <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
-                                                <button class="btn btn-danger">Delete</button>
-                                            </a>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <p><b>Available/Not Available : </b></p>
+                                                        <p class="text-danger">{{ $nanny->stockstatus }}</p>
+                                                    </div>
+
+                                                    <div class="d-flex">
+                                                        <p><b>Note:</b></p>
+                                                        {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
+                                                        <p><b>{{ Str::words($nanny->note, 15, '...') }}</b></p>
+
+                                                    </div>
+                                                    {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
+                                                <span><b>Note </b></span> : <span class="text-end">{{ $nanny->note }}</span> --}}
+
+                                                </div>
+                                            </div>
+                                            <div class="card-body text-center">
+
+
+                                                <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
+                                                    <button class="btn btn-secondary">View More</button>
+                                                </a>
+
+                                                <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endforeach
                             </div>
                             <div class="mt-4">
@@ -124,22 +172,16 @@
 
                     @endif
                     <!-- END DATA TABLE -->
+
+
+
                 </div>
             </div>
         </div>
     </div>
     <!-- END MAIN CONTENT-->
 
-    <script>
-        // $(document).ready(function(){
-        //     $("#card").show();
 
-        //     if(sessionStorage.getItem("Show") == "false")
-        //     {
-        //         $("#card").hide();
-
-        //     }
-        // });
-    </script>
+    <script></script>
 
 @endsection

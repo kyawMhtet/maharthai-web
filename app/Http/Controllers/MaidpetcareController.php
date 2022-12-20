@@ -117,6 +117,7 @@ class MaidpetcareController extends Controller
             'maidpetcareExperience' => 'required',
             'maidpetcareLanguage' => 'required',
             'pets' => 'required',
+            'maidpetcareStock' => 'required',
             // 'maidpetcareRemark' => 'required',
 
         ], [
@@ -152,7 +153,7 @@ class MaidpetcareController extends Controller
             'vaccine' => $request->maidpetcareVaccine,
             'remark' => $request->maidpetcareRemark,
             'note' => $request->note,
-
+            'stockstatus' => $request->maidpetcareStock,
         ];
     }
 }

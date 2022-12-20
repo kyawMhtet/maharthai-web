@@ -59,4 +59,15 @@ class CategoryController extends Controller
     {
         return view('admin.category.nannycreate');
     }
+
+
+
+    // Type(2)
+
+    // Driver
+    public function driverCreatePage()
+    {
+        return view('admin.category.Type2.driver.drivercreate');
+    }
+
 }

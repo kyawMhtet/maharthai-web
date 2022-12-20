@@ -8,6 +8,7 @@ use App\Http\Controllers\MaidController;
 use App\Http\Controllers\NannyController;
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\MaidcookController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\MaidpetcareController;
@@ -201,6 +202,12 @@ Route::middleware([
         // nanny update
         Route::post('nanny/update', [NannyController::class, 'nannyUpdate'])->name('nanny#update');
 
+        // nanny hide
+        // Route::get('nanny/hide/{id}', [NannyController::class, 'nannyHide'])->name('nanny#hide');
+
+        // nanny status
+        Route::post('nanny/stock', [NannyController::class, 'nannyStock'])->name('nanny#stock');
+
 
 
         // maid page
@@ -304,6 +311,25 @@ Route::middleware([
         Route::get('premiumnanny/editPage/{id}', [PremiumnannyController::class, 'editPage'])->name('premiumnanny#editPage');
 
         Route::post('premiumnanny/update', [PremiumnannyController::class, 'premiumnannyUpdate'])->name('premiumnanny#update');
+
+
+        // Type (2)
+
+        // Driver
+
+        Route::get('driverPage', [DriverController::class, 'driverPage'])->name('driver#page');
+
+        Route::get('driver/create', [CategoryController::class, 'driverCreatePage'])->name('driver#create');
+
+        Route::post('driver', [DriverController::class, 'driverCreate'])->name('driver#aftercreate');
+
+        Route::get('driver/detail/{id}', [DriverController::class, 'driverEdit'])->name('driver#updatePage');
+
+        Route::get('driver/delete/{id}', [DriverController::class, 'driverDelete'])->name('driver#delete');
+
+        Route::get('driver/editPage/{id}', [DriverController::class, 'editPage'])->name('driver#editPage');
+
+        Route::post('driver/update', [DriverController::class, 'driverUpdate'])->name('driver#update');
 
 
 

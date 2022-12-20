@@ -31,5 +31,6 @@ class Maideldercare extends Model
         'note',
         'remark',
         'vaccine',
+        'stockstatus',
     ];
 }

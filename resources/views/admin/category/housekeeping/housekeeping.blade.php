@@ -87,17 +87,16 @@
                                                 <p><b>Note:</b></p>
                                                 {{-- <p class="ms-2">{{ $housekeeping->note }}</p> --}}
                                                 <p><b>{{ Str::words($housekeeping->note,15, '...') }}</b></p>
-
                                             </div>
-                                            {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $housekeeping->code }}</span><br>
-                                            <span><b>Note </b></span> : <span class="text-end">{{ $housekeeping->note }}</span> --}}
+
+                                            <div class="d-flex">
+                                                <p><b>Available/Not Available: </b></p>
+                                                <p class="ms-">{{ $housekeeping->stockstatus }}</p>
+                                            </div>
 
                                         </div>
                                     </div>
                                     <div class="card-body text-center">
-                                        {{-- <a href="{{ route('housekeeping#edit', $housekeeping->id) }}" class="card-link">
-                                            <button class="btn btn-secondary">Edit</button>
-                                        </a> --}}
 
                                         <a href="{{ route('housekeeping#updatePage', $housekeeping->id) }}" class="card-link">
                                             <button class="btn btn-secondary">View More</button>

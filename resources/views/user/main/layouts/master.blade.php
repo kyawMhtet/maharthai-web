@@ -15,6 +15,9 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
 
+    {{-- responsive --}}
+
+   <link rel="stylesheet" href="{{ asset('responsive/responsive.css') }}">
 
     {{-- JQuery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
@@ -72,6 +75,8 @@
         .offcanvas-body li a {
             font-size: 17px;
         }
+
+
 
     </style>
     {{-- <nav class="navbar navbar-expand-lg bg-light sticky-top shadow-sm-bottom">
@@ -218,7 +223,7 @@
 
     @yield('content')
 
-    <p class="mt-5 text-center">
+    <p class="mt-5 text-center footer">
         This site is protected by reCAPTCHA and the Google <span class="text-danger">Privacy Policy</span> and <span
             class="text-danger">Terms of Service</span> apply.
     </p>

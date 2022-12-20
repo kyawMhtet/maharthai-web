@@ -41,7 +41,6 @@ class NannyController extends Controller
         $data['photo'] = $fileName;
         // dd($data);
 
-
         // }
         Nanny::create($data);
 
@@ -103,6 +102,22 @@ class NannyController extends Controller
         return redirect()->route('nanny#page');
     }
 
+    // stock validation check
+    private function stockValidationCheck($request)
+    {
+        Validator::make($request->all(), [
+            'nannyStock' => 'required',
+        ])->validate();
+    }
+
+    //request stock data
+    private function requestStockData($request)
+    {
+        return [
+            'stockstatus' => $request->nannyStock,
+        ];
+    }
+
     // nanny validation check
     private function nannyValidationCheck($request)
     {
@@ -125,6 +140,8 @@ class NannyController extends Controller
             'nannyExperience' => 'required',
             'nannyLanguage' => 'required',
             'pets' => 'required',
+            'nannyStock' => 'required',
+
             // 'nannyRemark' => 'required',
 
         ], [
@@ -160,6 +177,7 @@ class NannyController extends Controller
             'vaccine' => $request->nannyVaccine,
             'remark' => $request->nannyRemark,
             'note' => $request->note,
+            'stockstatus' => $request->nannyStock,
 
         ];
     }

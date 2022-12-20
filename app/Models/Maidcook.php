@@ -31,5 +31,6 @@ class Maidcook extends Model
         'note',
         'remark',
         'vaccine',
+        'stockstatus',
     ];
 }

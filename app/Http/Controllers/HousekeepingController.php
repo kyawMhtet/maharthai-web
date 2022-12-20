@@ -112,6 +112,7 @@ class HousekeepingController extends Controller
                 'housekeepingExperience' => 'required',
                 'housekeepingLanguage' => 'required',
                 'pets' => 'required',
+                'housekeepingStock' => 'required',
                 // 'housekeepingRemark' => 'required',
             ],)->validate();
         }
@@ -145,7 +146,7 @@ class HousekeepingController extends Controller
                 'vaccine' => $request->housekeepingVaccine,
                 'remark' => $request->housekeepingRemark,
                 'note' => $request->note,
-
+                'stockstatus' => $request->housekeepingStock,
             ];
         }
 }

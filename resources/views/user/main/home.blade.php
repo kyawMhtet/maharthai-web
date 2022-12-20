@@ -77,7 +77,7 @@
 
     {{-- end carousel slide --}}
 
-    <div class=" container w-25 mt-5">
+    <div class="filter container w-25 mt-5">
         <div class=" shadow-sm py-2 rounded text-danger">
             <form action="" method="get">
                 @csrf
@@ -121,34 +121,39 @@
         <h2>NANNY, MAID WORKERS</h2>
     </div>
 
-    <div class="container w-75 text-center mb-3">
-        <div class="row m-auto" id="nannyList">
+    <div class="list container w-75 text-center mb-3">
+        <div class="row m-auto " id="nannyList">
             @foreach ($nannies as $nanny)
-                <div class="col col-lg-4 col-md-6 col-sm-8 mt-5 text-center">
-                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
+                @if ($nanny->stockstatus == 'Available')
+                    <div class="col col-lg-4 col-md-7 col-sm-8 list-item  mt-5 text-center">
+                        <div class="nanny card listitem p-2 border border-0" style="width: 20rem; height: 600px; ">
 
-                        <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}"
-                            style="height: 305px; width: 305px;" alt="">
-                        <div class="card-body text-start">
-                            <div>
-                                <p>{{ $nanny->code }}</p>
-                                <p>{{ $nanny->full_part }} / {{ $nanny->live_in_out }}</p>
-                                <p>{{ $nanny->salary }} <b>Baht</b></p>
+                            <img class="card-img-top" src="{{ asset('storage/' . $nanny->photo) }}"
+                                style="height: 305px; width: 305px;" alt="">
+                            <div class="card-body text-start">
+                                <div>
+                                    <p>{{ $nanny->code }}</p>
+                                    <p>{{ $nanny->full_part }} / {{ $nanny->live_in_out }}</p>
+                                    <p>{{ $nanny->salary }} <b>Baht</b></p>
 
-                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
+
+                                    <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
+                                </div>
+
+                            </div>
+                            <div class="text-center mb-4">
+                                <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
+                                    More Details
+                                </a>
                             </div>
 
-                        </div>
-                        <div class="text-center mb-4">
-                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
-                                More Details
-                            </a>
-                        </div>
+                            {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
 
-                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
-
+                        </div>
                     </div>
-                </div>
+                @elseif ($nanny->stockstatus == 'Not Available')
+
+                @endif
             @endforeach
         </div>
         <div class="mt-5">
@@ -284,17 +289,17 @@
                             $('#nannyList').html($list);
                         }
                     });
-                } else if($eventOption == 'live-In') {
+                } else if ($eventOption == 'live-In') {
                     $.ajax({
                         type: 'get',
                         url: '{{ route('filter#nannylist') }}',
                         data: {
-                            'status' : 'live-In'
+                            'status': 'live-In'
                         },
                         dataType: 'json',
                         success: function(response) {
                             $list = '';
-                            for($i = 0; $i < response.length; $i++) {
+                            for ($i = 0; $i < response.length; $i++) {
                                 $list += `
                                 <div class="col-4 mt-5">
                     <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
@@ -326,17 +331,17 @@
                             $('#nannyList').html($list);
                         }
                     });
-                } else if($eventOption == 'live-Out') {
+                } else if ($eventOption == 'live-Out') {
                     $.ajax({
-                        type : 'get',
-                        url : '{{ route('filter#nannylist') }}',
-                        data : {
-                            'status' : 'live-Out'
+                        type: 'get',
+                        url: '{{ route('filter#nannylist') }}',
+                        data: {
+                            'status': 'live-Out'
                         },
-                        dataType : 'json',
-                        success : function(response) {
+                        dataType: 'json',
+                        success: function(response) {
                             $list = '';
-                            for($i = 0; $i < response.length; $i++) {
+                            for ($i = 0; $i < response.length; $i++) {
                                 $list += `
                                 <div class="col-4 mt-5">
                     <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">

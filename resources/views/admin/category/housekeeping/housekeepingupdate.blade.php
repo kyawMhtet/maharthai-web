@@ -118,6 +118,11 @@
                             <p class="ms-3">{{ old('housekeepingRemark', $housekeeping->remark) }}</p>
                         </div>
 
+                        {{-- <div class="d-flex">
+                            <p class="">Available/Not Available: </p>
+                            <p class="ms-3">{{ old('housekeepingStock', $housekeeping->stockstatus) }}</p>
+                        </div> --}}
+
                         <div class="d-flex">
                             <p><b>Note: </b></p>
                             <p class="ms-3">{{ old('housekeepingNote', $housekeeping->note) }}</p>

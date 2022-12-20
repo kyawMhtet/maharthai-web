@@ -118,6 +118,7 @@ class MaidcookController extends Controller
             'maidcookExperience' => 'required',
             'maidcookLanguage' => 'required',
             'pets' => 'required',
+            'maidcookStock' => 'required',
             // 'maidcookRemark' => 'required',
 
         ], [
@@ -153,7 +154,7 @@ class MaidcookController extends Controller
             'vaccine' => $request->maidcookVaccine,
             'remark' => $request->maidcookRemark,
             'note' => $request->note,
-
+            'stockstatus' => $request->maidcookStock,
         ];
     }
 }

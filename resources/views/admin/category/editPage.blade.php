@@ -335,6 +335,21 @@
 
                                                 <br>
 
+                                                Available/Not Available :
+                                                <div class="ms-3">
+                                                    <div>
+                                                        <select class="form-select" name="nannyStock" aria-label="Default select example">
+                                                            {{-- <option value="" selected>Available or Not Available</option> --}}
+                                                            <option value="Available"
+                                                            @if(old('nannyStock', $nanny->stockstatus) == 'Available') selected @endif>Available</option>
+                                                            <option value="Not Available"
+                                                            @if(old('nannyStock', $nanny->stockstatus) == 'Not Available') selected @endif>Not Available</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+
+                                                <br>
+
                                                 <div class="input-group">
                                                     <span class="input-group-text">Vaccine</span>
                                                     <input type="hidden" name="nannyId" value="{{ $nanny->id }}">

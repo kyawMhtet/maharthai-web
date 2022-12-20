@@ -74,8 +74,24 @@
                                         <img class="card-img-top" id="card" src="{{ asset('storage/'. $maidpetcare->photo ) }}" style="height: 350px" alt="">
                                         <div class="card-body d-flex" style="justify-content: space-between">
                                             <div class="maidpetcareinfo">
-                                                <span><b>Code#</b></span> : <span class="text-end">{{ $maidpetcare->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $maidpetcare->note }}</span>
+                                                <div class="d-flex">
+                                                    <p><b>Code# :</b></p>
+                                                    <p class="ms-">{{ $maidpetcare->code }}</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <p><b>Available/Not Available :</b></p>
+                                                    <p class="ms-">{{ $maidpetcare->stockstatus }}</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <p><b>Note:</b></p>
+                                                    {{-- <p class="ms-2">{{ $maidpetcare->note }}</p> --}}
+                                                    <p><b>{{ Str::words($maidpetcare->note,15, '...') }}</b></p>
+
+                                                </div>
+
+
 
                                             </div>
                                         </div>

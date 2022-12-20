@@ -31,5 +31,6 @@ class Premiumnanny extends Model
         'note',
         'remark',
         'vaccine',
+        'stockstatus',
     ];
 }

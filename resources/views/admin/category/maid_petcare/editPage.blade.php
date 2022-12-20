@@ -235,7 +235,7 @@
                                                 @enderror
 
                                                 <br>
-                                                Experience  <br>
+                                                Experience:  <br>
                                                 <div class="form-floating">
                                                     <textarea class="form-control"  name="maidpetcareExperience" placeholder="Experience" id="experience">{{ old('maidpetcareExperience', $maidpetcare->experience) }}</textarea>
                                                     <label for="experience"></label>
@@ -295,6 +295,21 @@
                                                         <input type="hidden" name="maidpetcareId" value="{{ $maidpetcare->id }}">
                                                       </div>
                                                     <textarea name="petNote" class="form-control" id="" cols="10" rows="5">{{ old('petNote', $maidpetcare->pet_note) }}</textarea>
+                                                </div>
+
+                                                <br>
+
+                                                Available/Not Available :
+                                                <div class="ms-3">
+                                                    <div>
+                                                        <select class="form-select" name="maidpetcareStock" aria-label="Default select example">
+                                                            {{-- <option value="" selected>Available or Not Available</option> --}}
+                                                            <option value="Available"
+                                                            @if(old('maidpetcareStock', $maidpetcare->stockstatus) == 'Available') selected @endif>Available</option>
+                                                            <option value="Not Available"
+                                                            @if(old('maidpetcareStock', $maidpetcare->stockstatus) == 'Not Available') selected @endif>Not Available</option>
+                                                          </select>
+                                                    </div>
                                                 </div>
 
                                                 <br>

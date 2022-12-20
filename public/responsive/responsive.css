@@ -1,0 +1,29 @@
+@media(max-width: 576px)
+{
+    .list {
+        margin-right: 85px;
+    }
+
+}
+
+@media(max-width: 576px)
+{
+    .info {
+        /* background-color: blueviolet; */
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 0px;
+    }
+    .pet-note {
+        width: 55%;
+        margin-right: 80px;
+
+    }
+
+    .d-flex .col-2{
+        /* background-color: green; */
+        width: 45%;
+    }
+}
+
+

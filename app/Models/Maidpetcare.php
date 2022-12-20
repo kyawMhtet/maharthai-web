@@ -31,5 +31,6 @@ class Maidpetcare extends Model
         'note',
         'remark',
         'vaccine',
+        'stockstatus',
     ];
 }

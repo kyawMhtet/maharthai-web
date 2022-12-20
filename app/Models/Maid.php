@@ -31,5 +31,6 @@ class Maid extends Model
         'note',
         'remark',
         'vaccine',
+        'stockstatus',
     ];
 }

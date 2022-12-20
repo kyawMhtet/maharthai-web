@@ -110,6 +110,7 @@ class MaidController extends Controller
             'maidExperience' => 'required',
             'maidLanguage' => 'required',
             'pets' => 'required',
+            'maidStock' => 'required',
             // 'maidRemark' => 'required',
         ],)->validate();
     }
@@ -144,7 +145,7 @@ class MaidController extends Controller
             'vaccine' => $request->maidVaccine,
             'remark' => $request->maidRemark,
             'note' => $request->note,
-
+            'stockstatus' => $request->maidStock,
         ];
     }
 }

@@ -308,6 +308,17 @@
                                                     <textarea name="petNote" class="form-control @error('petNote') is-invalid  @enderror" id="" cols="10" rows="5">{{ old('petNote') }}</textarea>
                                                 </div>
 
+                                                <br>
+
+
+                                                <b>Available/Not Available :</b>
+                                                <div class="mt-3 input-group">
+                                                    <select class="form-select" name="premiumnannyStock" aria-label="Default select example">
+                                                        {{-- <option value="" selected>Available or Not Available</option> --}}
+                                                        <option value="Available" selected>Available</option>
+                                                        <option value="Not Available">Not Available</option>
+                                                      </select>
+                                                </div>
 
                                                 <br>
 

@@ -72,7 +72,7 @@
 
 {{-- end carousel slide --}}
 
-<div class="container w-25 mt-5">
+<div class="filter container w-25 mt-5">
     <div class="shadow-sm py-2 rounded text-danger">
         <form action="" method="get">
             @csrf
@@ -116,9 +116,10 @@
     <h2>MAID, COOK WORKERS</h2>
 </div>
 
-<div class="container w-75 text-center mb-3">
+<div class="list container w-75 text-center mb-3">
     <div class="row m-auto" id="maidcookList">
         @foreach ($maidcooks as $maidcook)
+            @if ($maidcook->stockstatus == 'Available')
             <div class="col col-lg-4 col-md-6 col-sm-8 mt-5 text-center">
 
                 <div class="maidcook card p-2 border border-0" style="width: 20rem; height: 600px;">
@@ -141,6 +142,10 @@
 
                 </div>
             </div>
+
+            @elseif ($maidcook->stockstatus == 'Not Available')
+
+            @endif
         @endforeach
     </div>
     <div class="mt-5">

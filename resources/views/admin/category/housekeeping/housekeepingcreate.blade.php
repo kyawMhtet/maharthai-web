@@ -304,6 +304,18 @@
 
                                                 <br>
 
+                                                <b>Available/Not Available :</b>
+                                                <div class="mt-3 input-group">
+                                                    <select class="form-select" name="housekeepingStock" aria-label="Default select example">
+                                                        {{-- <option value="" selected>Available or Not Available</option> --}}
+                                                        <option value="Available" selected>Available</option>
+                                                        <option value="Not Available">Not Available</option>
+                                                      </select>
+                                                </div>
+
+
+                                                <br>
+
                                                 <div class="mt-3 input-group">
                                                     <span class="input-group-text">Vaccine</span>
                                                     <textarea class="form-control" name="housekeepingVaccine" aria-label="With textarea">{{ old('housekeepingVaccine') }}</textarea>
@@ -320,6 +332,8 @@
                                                 </div>
 
                                                 <br>
+
+
 
                                                 Note : (optional)
                                                 <div>

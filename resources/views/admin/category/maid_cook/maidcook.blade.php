@@ -87,6 +87,11 @@
                                             </div>
 
                                             <div class="d-flex">
+                                                <p><b>Available/Not Available :</b></p>
+                                                <p class="ms-">{{ $maidcook->stockstatus }}</p>
+                                            </div>
+
+                                            <div class="d-flex">
                                                 <p><b>Note:</b></p>
 
                                                 <p><b>{{ Str::words($maidcook->note,15, '...') }}</b></p>

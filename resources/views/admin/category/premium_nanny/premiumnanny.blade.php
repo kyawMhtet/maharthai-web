@@ -74,8 +74,22 @@
                                         <img class="card-img-top" id="card" src="{{ asset('storage/'. $premiumnanny->photo ) }}" style="height: 350px" alt="">
                                         <div class="card-body d-flex" style="justify-content: space-between">
                                             <div class="premiumnannyinfo">
-                                                <span><b>Code#</b></span> : <span class="text-end">{{ $premiumnanny->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $premiumnanny->note }}</span>
+                                                <div class="d-flex">
+                                                    <p><b>Code# :</b></p>
+                                                    <p class="ms-">{{ $premiumnanny->code }}</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <p><b>Available/Not Available :</b></p>
+                                                    <p class="ms-">{{ $premiumnanny->stockstatus }}</p>
+                                                </div>
+
+                                                <div class="d-flex">
+                                                    <p><b>Note:</b></p>
+
+                                                    <p><b>{{ Str::words($premiumnanny->note,15, '...') }}</b></p>
+
+                                                </div>
 
                                             </div>
                                         </div>

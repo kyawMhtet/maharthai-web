@@ -18,9 +18,7 @@
     <link rel="stylesheet" type="text/css" href="print.css">
 
     {{-- jquery --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
     {{-- font-awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- Fontfaces CSS-->
@@ -64,6 +62,14 @@
         } */
         li a {
             text-decoration: none;
+        }
+
+        .testing {
+            background: #ece023;
+            width: 30px;
+            height: 40px;
+            margin: 2px;
+            float: left;
         }
     </style>
 
@@ -113,13 +119,17 @@
                                         </a>
                                     </li>
 
-                                    <li class="text-center"><a class="dropdown-item" href="{{ route('maideldercare#page') }}">Maid, Eldercare</a>
+                                    <li class="text-center"><a class="dropdown-item"
+                                            href="{{ route('maideldercare#page') }}">Maid, Eldercare</a>
                                     </li>
 
-                                    <li class="text-center"><a class="dropdown-item" href="{{ route('maidcook#page') }}">Maid, Cook</a></li>
-                                    <li class="text-center"><a class="dropdown-item" href="{{ route('maidpetcare#page') }}">Maid, Pet Care</a>
+                                    <li class="text-center"><a class="dropdown-item"
+                                            href="{{ route('maidcook#page') }}">Maid, Cook</a></li>
+                                    <li class="text-center"><a class="dropdown-item"
+                                            href="{{ route('maidpetcare#page') }}">Maid, Pet Care</a>
                                     </li>
-                                    <li class="text-center"><a class="dropdown-item" href="{{ route('premiumnanny#page') }}">Premium Nanny</a>
+                                    <li class="text-center"><a class="dropdown-item"
+                                            href="{{ route('premiumnanny#page') }}">Premium Nanny</a>
                                     </li>
 
 
@@ -135,14 +145,15 @@
                                     <i class="fas fa-chart-bar"></i>Type 2 (Driver)</a>
                                 <ul class="dropdown-menu">
                                     {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
-                                    <li class="text-center"><a class="dropdown-item" href="">Driver</a></li>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('driver#page') }}">Driver</a></li>
 
                                     <li class="text-center"><a class="dropdown-item" href="">Gardener</a>
                                     </li>
 
                                     <li class="text-center"><a class="dropdown-item" href="">General
                                             Workers</a></li>
-
+                                    <li class="text-center"><a class="dropdown-item" href="">Sale Man</a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -227,47 +238,7 @@
                                 </button>
                             </form> --}}
                             <div class="header-button">
-                                {{-- <div class="noti-wrap">
-                                    <div class="noti__item js-item-menu">
-                                        <i class="zmdi zmdi-notifications"></i>
-                                        <span class="quantity">3</span>
-                                        <div class="notifi-dropdown js-dropdown">
-                                            <div class="notifi__title">
-                                                <p>You have 3 Notifications</p>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c1 img-cir img-40">
-                                                    <i class="zmdi zmdi-email-open"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>You got a email notification</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c2 img-cir img-40">
-                                                    <i class="zmdi zmdi-account-box"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>Your account has been blocked</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__item">
-                                                <div class="bg-c3 img-cir img-40">
-                                                    <i class="zmdi zmdi-file-text"></i>
-                                                </div>
-                                                <div class="content">
-                                                    <p>You got a new file</p>
-                                                    <span class="date">April 12, 2018 06:50</span>
-                                                </div>
-                                            </div>
-                                            <div class="notifi__footer">
-                                                <a href="#">All notifications</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> --}}
+
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">

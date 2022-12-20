@@ -235,7 +235,7 @@
                                                 @enderror
 
                                                 <br>
-                                                Experience  <br>
+                                                Experience:  <br>
                                                 <div class="form-floating">
                                                     <textarea class="form-control"  name="maidcookExperience" placeholder="Experience" id="experience">{{ old('maidcookExperience', $maidcook->experience) }}</textarea>
                                                     <label for="experience"></label>
@@ -298,6 +298,22 @@
                                                 </div>
 
                                                 <br>
+
+                                                Available/Not Available :
+                                                <div class="ms-3">
+                                                    <div>
+                                                        <select class="form-select" name="maidcookStock" aria-label="Default select example">
+                                                            {{-- <option value="" selected>Available or Not Available</option> --}}
+                                                            <option value="Available"
+                                                            @if(old('maidcookStock', $maidcook->stockstatus) == 'Available') selected @endif>Available</option>
+                                                            <option value="Not Available"
+                                                            @if(old('maidcookStock', $maidcook->stockstatus) == 'Not Available') selected @endif>Not Available</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+
+                                                <br>
+
                                                 <div class="input-group">
                                                     <span class="input-group-text">Vaccine</span>
                                                     <input type="hidden" name="maidcookId" value="{{ $maidcook->id }}">

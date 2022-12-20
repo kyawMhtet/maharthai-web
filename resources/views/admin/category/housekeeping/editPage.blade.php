@@ -298,6 +298,21 @@
                                                 </div>
 
                                                 <br>
+
+                                                Available/Not Available :
+                                                <div class="ms-3">
+                                                    <div>
+                                                        <select class="form-select" name="housekeepingStock" aria-label="Default select example">
+                                                            {{-- <option value="" selected>Available or Not Available</option> --}}
+                                                            <option value="Available"
+                                                            @if(old('housekeepingStock', $housekeeping->stockstatus) == 'Available') selected @endif>Available</option>
+                                                            <option value="Not Available"
+                                                            @if(old('housekeepingStock', $housekeeping->stockstatus) == 'Not Available') selected @endif>Not Available</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+
+                                                <br>
                                                 <div class="input-group">
                                                     <span class="input-group-text">Vaccine</span>
                                                     <input type="hidden" name="housekeepingId" value="{{ $housekeeping->id }}">
@@ -315,6 +330,8 @@
 
                                                     <label for="remark">Remark...</label>
                                                 </div>
+
+
 
                                                 <br>
                                                 Note : (optional)

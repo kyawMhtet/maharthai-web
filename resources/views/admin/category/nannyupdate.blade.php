@@ -161,6 +161,11 @@
                             <p class="ms-3">{{ old('nannyVaccine', $nanny->vaccine) }}</p>
                         </div>
 
+                        {{-- <div class="d-flex">
+                            <p><b>Available/Not Available:</b></p>
+                            <p class="ms-3">{{ old('nannyStock', $nanny->stockstatus) }}</p>
+                        </div> --}}
+
                         <div class="d-flex">
                             <h4 class="text-danger">Remark: </h4>
                             <p class="ms-3">{{ old('nannyRemark', $nanny->remark) }}</p>
