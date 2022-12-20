@@ -119,7 +119,7 @@
 <div class="list container w-75 text-center mb-3">
     <div class="row m-auto" id="maidcookList">
         @foreach ($maidcooks as $maidcook)
-            @if ($maidcook->stockstatus == 'Available')
+            @if ($maidcook->stockstatus == 'Available' || $maidcook->stockstatus == 'null' || $maidcook == '')
             <div class="col col-lg-4 col-md-6 col-sm-8 mt-5 text-center">
 
                 <div class="maidcook card p-2 border border-0" style="width: 20rem; height: 600px;">
