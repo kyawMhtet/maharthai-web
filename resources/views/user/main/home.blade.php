@@ -124,7 +124,7 @@
     <div class="list container w-75 text-center mb-3">
         <div class="row m-auto " id="nannyList">
             @foreach ($nannies as $nanny)
-                @if ($nanny->stockstatus == 'Available')
+                @if ($nanny->stockstatus == 'Available' || $nanny->stockstatus == 'null' || $nanny->stockstatus == '')
                     <div class="col col-lg-4 col-md-7 col-sm-8 list-item  mt-5 text-center">
                         <div class="nanny card listitem p-2 border border-0" style="width: 20rem; height: 600px; ">
 
