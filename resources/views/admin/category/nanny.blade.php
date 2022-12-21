@@ -76,90 +76,46 @@
                         <div class="container nanny-list" style="--bs-columns: 3;">
                             <div class="row" style="grid-gap: 10px;">
                                 @foreach ($nannies as $nanny)
-                                    @if ($nanny->stockstatus == 'Available')
-                                        <div class="card p-2 shadow" id="" style="width: 22rem;">
-                                            <img class="card-img-top" id="card"
-                                                src="{{ asset('storage/' . $nanny->photo) }}"
-                                                style="height: auto; width: 350px;" alt="">
-                                            <div class="card-body d-flex" style="justify-content: space-between">
-                                                <div class="nannyinfo">
-                                                    <div class="d-flex">
+                                    <div class="card p-2 shadow" id="" style="width: 22rem;">
+                                        <img class="card-img-top" id="card"
+                                            src="{{ asset('storage/' . $nanny->photo) }}"
+                                            style="height: auto; width: 350px;" alt="">
+                                        <div class="card-body d-flex" style="justify-content: space-between">
+                                            <div class="nannyinfo">
+                                                <div class="d-flex">
 
-                                                        <p><b>Code# :</b></p>
-                                                        <p class="ms-">{{ $nanny->code }}</p>
-
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <p><b>Available/Not Available : </b></p>
-                                                        <p>{{ $nanny->stockstatus }}</p>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <p><b>Note:</b></p>
-                                                        {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
-                                                        <p><b>{{ Str::words($nanny->note, 15, '...') }}</b></p>
-
-                                                    </div>
-                                                    {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $nanny->note }}</span> --}}
+                                                    <p><b>Code# :</b></p>
+                                                    <p class="ms-">{{ $nanny->code }}</p>
 
                                                 </div>
-                                            </div>
-                                            <div class="card-body text-center">
 
-                                                <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
-                                                    <button class="btn btn-secondary">View More</button>
-                                                </a>
+                                                <div class="d-flex">
+                                                    <p><b>Available/Not Available : </b></p>
+                                                    <p>{{ $nanny->stockstatus }}</p>
+                                                </div>
 
-                                                <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    @elseif ($nanny->stockstatus == 'Not Available')
-                                        <div class="card p-2 shadow" id="" style="width: 22rem;">
-                                            <img class="card-img-top" id="card"
-                                                src="{{ asset('storage/' . $nanny->photo) }}"
-                                                style="height: auto; width: 350px;" alt="">
-                                            <div class="card-body d-flex" style="justify-content: space-between">
-                                                <div class="nannyinfo">
-                                                    <div class="d-flex">
-
-                                                        <p><b>Code# :</b></p>
-                                                        <p class="ms-">{{ $nanny->code }}</p>
-
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <p><b>Available/Not Available : </b></p>
-                                                        <p class="text-danger">{{ $nanny->stockstatus }}</p>
-                                                    </div>
-
-                                                    <div class="d-flex">
-                                                        <p><b>Note:</b></p>
-                                                        {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
-                                                        <p><b>{{ Str::words($nanny->note, 15, '...') }}</b></p>
-
-                                                    </div>
-                                                    {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
-                                                <span><b>Note </b></span> : <span class="text-end">{{ $nanny->note }}</span> --}}
+                                                <div class="d-flex">
+                                                    <p><b>Note:</b></p>
+                                                    {{-- <p class="ms-2">{{ $nanny->note }}</p> --}}
+                                                    <p><b>{{ Str::words($nanny->note, 15, '...') }}</b></p>
 
                                                 </div>
-                                            </div>
-                                            <div class="card-body text-center">
+                                                {{-- <span><b>Code#</b></span> : <span class="text-end">{{ $nanny->code }}</span><br>
+                                        <span><b>Note </b></span> : <span class="text-end">{{ $nanny->note }}</span> --}}
 
-
-                                                <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
-                                                    <button class="btn btn-secondary">View More</button>
-                                                </a>
-
-                                                <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
-                                                    <button class="btn btn-danger">Delete</button>
-                                                </a>
                                             </div>
                                         </div>
-                                    @endif
+                                        <div class="card-body text-center">
+
+                                            <a href="{{ route('nanny#updatePage', $nanny->id) }}" class="card-link">
+                                                <button class="btn btn-secondary">View More</button>
+                                            </a>
+
+                                            <a href="{{ route('nanny#delete', $nanny->id) }}" class="card-link">
+                                                <button class="btn btn-danger">Delete</button>
+                                            </a>
+                                        </div>
+                                    </div>
                                 @endforeach
                             </div>
                             <div class="mt-4">
