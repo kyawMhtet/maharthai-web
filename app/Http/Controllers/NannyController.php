@@ -69,54 +69,43 @@ class NannyController extends Controller
         return view('admin.category.editPage', compact('nanny'));
     }
 
-    // nanny detail
-    // public function nannyDetail($id)
-    // {
-    //     $nanny = Nanny::where('id', $id)->first();
-    //     return back(compact('nanny'));
-    //     // <!-- dd($nanny->id); -->
-    // }
-
     // nanny update
-    public function nannyUpdate(Request $request)
+    public function nannyUpdate(Request $request, $id)
     {
-        //    dd('id', $request->all());
         $this->nannyValidationCheck($request);
         $data = $this->requestNannyData($request);
 
         // photo
         if ($request->hasFile('nannyPhoto')) {
-            $dbPhoto = Nanny::where('id', $request->nannyId)->first();
-            $dbPhoto = $dbPhoto->nannyPhoto;
 
+
+            $dbPhoto = Nanny::where('id', $id)->first();
+            $dbPhoto = $dbPhoto->photo;
+
+            // dd($dbPhoto);
             if ($dbPhoto != null) {
                 Storage::delete('public/' . $dbPhoto);
             }
+
+            $fileName = uniqid() . $request->file('nannyPhoto')->getClientOriginalName();
+            $request->file('nannyPhoto')->storeAs('public', $fileName);
+            $data['photo'] = $fileName;
+        } else {
+
+            $dbPhoto = Nanny::where('id', $id)->first();
+
+            $dbPhoto = $dbPhoto->photo;
+
+
+            $data['photo'] = $dbPhoto;
+
         }
 
-        $fileName = uniqid() . $request->file('nannyPhoto')->getClientOriginalName();
-        $request->file('nannyPhoto')->storeAs('public', $fileName);
-        $data['photo'] = $fileName;
-
-        Nanny::where('id', $request->nannyId)->update($data);
+        Nanny::where('id', $id)->update($data);
         return redirect()->route('nanny#page');
     }
 
-    // stock validation check
-    private function stockValidationCheck($request)
-    {
-        Validator::make($request->all(), [
-            'nannyStock' => 'required',
-        ])->validate();
-    }
 
-    //request stock data
-    private function requestStockData($request)
-    {
-        return [
-            'stockstatus' => $request->nannyStock,
-        ];
-    }
 
     // nanny validation check
     private function nannyValidationCheck($request)
@@ -124,7 +113,7 @@ class NannyController extends Controller
         // dd("validae");
         Validator::make($request->all(), [
             'nannyCode' => 'required|unique:nannies,code,' . $request->nannyId,
-            'nannyPhoto' => 'required|mimes:jpg,jpeg,png|file',
+            'nannyPhoto' => 'mimes:jpg,jpeg,png|file',
             'nannyName' => 'required',
             'nannyDoB' => 'required',
             // 'nannyPosition' => 'required',

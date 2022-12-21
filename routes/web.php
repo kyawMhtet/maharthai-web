@@ -200,13 +200,13 @@ Route::middleware([
         Route::get('nanny/detail/{id}', [NannyController::class, 'nannyEdit'] )->name('nanny#updatePage');
 
         // nanny update
-        Route::post('nanny/update', [NannyController::class, 'nannyUpdate'])->name('nanny#update');
+        Route::post('nanny/update/{id}', [NannyController::class, 'nannyUpdate'])->name('nanny#update');
 
         // nanny hide
         // Route::get('nanny/hide/{id}', [NannyController::class, 'nannyHide'])->name('nanny#hide');
 
         // nanny status
-        Route::post('nanny/stock', [NannyController::class, 'nannyStock'])->name('nanny#stock');
+        // Route::post('nanny/stock', [NannyController::class, 'nannyStock'])->name('nanny#stock');
 
 
 
@@ -224,7 +224,7 @@ Route::middleware([
 
         Route::get('maid/editPage/{id}', [MaidController::class, 'editPage'])->name('maid#editPage');
 
-        Route::post('maid/update', [MaidController::class, 'maidUpdate'])->name('maid#update');
+        Route::post('maid/update/{id}', [MaidController::class, 'maidUpdate'])->name('maid#update');
 
 
         // housekeeping
@@ -241,7 +241,7 @@ Route::middleware([
 
         Route::get('housekeeping/editPage/{id}', [HousekeepingController::class, 'editPage'])->name('housekeeping#editPage');
 
-        Route::post('housekeeping/update', [HousekeepingController::class, 'housekeepingUpdate'])->name('housekeeping#update');
+        Route::post('housekeeping/update/{id}', [HousekeepingController::class, 'housekeepingUpdate'])->name('housekeeping#update');
 
 
 
@@ -259,7 +259,7 @@ Route::middleware([
 
         Route::get('maidcook/editPage/{id}', [MaidcookController::class, 'editPage'])->name('maidcook#editPage');
 
-        Route::post('maidcook/update', [MaidcookController::class, 'maidcookUpdate'])->name('maidcook#update');
+        Route::post('maidcook/update/{id}', [MaidcookController::class, 'maidcookUpdate'])->name('maidcook#update');
 
 
         // maid, eldercare
@@ -276,7 +276,7 @@ Route::middleware([
 
         Route::get('maideldercare/editPage/{id}', [MaideldercareController::class, 'editPage'])->name('maideldercare#editPage');
 
-        Route::post('maideldercare/update', [MaideldercareController::class, 'maideldercareUpdate'])->name('maideldercare#update');
+        Route::post('maideldercare/update/{id}', [MaideldercareController::class, 'maideldercareUpdate'])->name('maideldercare#update');
 
 
         // maid, pet care
@@ -293,7 +293,7 @@ Route::middleware([
 
         Route::get('maidpetcare/editPage/{id}', [MaidpetcareController::class, 'editPage'])->name('maidpetcare#editPage');
 
-        Route::post('maidpetcare/update', [MaidpetcareController::class, 'maidpetcareUpdate'])->name('maidpetcare#update');
+        Route::post('maidpetcare/update/{id}', [MaidpetcareController::class, 'maidpetcareUpdate'])->name('maidpetcare#update');
 
 
         // premium nanny
@@ -310,7 +310,7 @@ Route::middleware([
 
         Route::get('premiumnanny/editPage/{id}', [PremiumnannyController::class, 'editPage'])->name('premiumnanny#editPage');
 
-        Route::post('premiumnanny/update', [PremiumnannyController::class, 'premiumnannyUpdate'])->name('premiumnanny#update');
+        Route::post('premiumnanny/update/{id}', [PremiumnannyController::class, 'premiumnannyUpdate'])->name('premiumnanny#update');
 
 
         // Type (2)
@@ -329,7 +329,7 @@ Route::middleware([
 
         Route::get('driver/editPage/{id}', [DriverController::class, 'editPage'])->name('driver#editPage');
 
-        Route::post('driver/update', [DriverController::class, 'driverUpdate'])->name('driver#update');
+        Route::post('driver/update/{id}', [DriverController::class, 'driverUpdate'])->name('driver#update');
 
 
 

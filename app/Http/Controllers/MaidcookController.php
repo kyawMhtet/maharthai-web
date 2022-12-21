@@ -72,7 +72,7 @@ class MaidcookController extends Controller
 
 
     // maidcook update
-    public function maidcookUpdate(Request $request)
+    public function maidcookUpdate(Request $request, $id)
     {
         //    dd('id', $request->all());
         $this->maidcookValidationCheck($request);
@@ -80,19 +80,29 @@ class MaidcookController extends Controller
 
         // photo
         if ($request->hasFile('maidcookPhoto')) {
-            $dbPhoto = Maidcook::where('id', $request->maidcookId)->first();
-            $dbPhoto = $dbPhoto->maidcookPhoto;
 
+
+            $dbPhoto = Maidcook::where('id', $id)->first();
+            $dbPhoto = $dbPhoto->photo;
+
+            // dd($dbPhoto);
             if ($dbPhoto != null) {
                 Storage::delete('public/' . $dbPhoto);
             }
+
+            $fileName = uniqid() . $request->file('maidcookPhoto')->getClientOriginalName();
+            $request->file('maidcookPhoto')->storeAs('public', $fileName);
+            $data['photo'] = $fileName;
+        } else {
+
+            $dbPhoto = Maidcook::where('id', $id)->first();
+
+            $dbPhoto = $dbPhoto->photo;
+
+
+            $data['photo'] = $dbPhoto;
         }
-
-        $fileName = uniqid() . $request->file('maidcookPhoto')->getClientOriginalName();
-        $request->file('maidcookPhoto')->storeAs('public', $fileName);
-        $data['photo'] = $fileName;
-
-        Maidcook::where('id', $request->maidcookId)->update($data);
+        Maidcook::where('id', $id)->update($data);
         return redirect()->route('maidcook#page');
     }
 
@@ -102,7 +112,7 @@ class MaidcookController extends Controller
         // dd("validae");
         Validator::make($request->all(), [
             'maidcookCode' => 'required|unique:maidcooks,code,' . $request->maidcookId,
-            'maidcookPhoto' => 'required|mimes:jpg,jpeg,png|file',
+            'maidcookPhoto' => 'mimes:jpg,jpeg,png|file',
             'maidcookName' => 'required',
             'maidcookDoB' => 'required',
             // 'maidcookPosition' => 'required',

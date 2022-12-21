@@ -71,7 +71,7 @@ class PremiumnannyController extends Controller
 
 
     // premiumnanny update
-    public function premiumnannyUpdate(Request $request)
+    public function premiumnannyUpdate(Request $request, $id)
     {
         //    dd('id', $request->all());
         $this->premiumnannyValidationCheck($request);
@@ -79,19 +79,31 @@ class PremiumnannyController extends Controller
 
         // photo
         if ($request->hasFile('premiumnannyPhoto')) {
-            $dbPhoto = Premiumnanny::where('id', $request->premiumnannyId)->first();
-            $dbPhoto = $dbPhoto->premiumnannyPhoto;
 
+
+            $dbPhoto = Premiumnanny::where('id', $id)->first();
+            $dbPhoto = $dbPhoto->photo;
+
+            // dd($dbPhoto);
             if ($dbPhoto != null) {
                 Storage::delete('public/' . $dbPhoto);
             }
+
+            $fileName = uniqid() . $request->file('premiumnannyPhoto')->getClientOriginalName();
+            $request->file('premiumnannyPhoto')->storeAs('public', $fileName);
+            $data['photo'] = $fileName;
+        } else {
+
+            $dbPhoto = Premiumnanny::where('id', $id)->first();
+
+            $dbPhoto = $dbPhoto->photo;
+
+
+            $data['photo'] = $dbPhoto;
+
         }
 
-        $fileName = uniqid() . $request->file('premiumnannyPhoto')->getClientOriginalName();
-        $request->file('premiumnannyPhoto')->storeAs('public', $fileName);
-        $data['photo'] = $fileName;
-
-        Premiumnanny::where('id', $request->premiumnannyId)->update($data);
+        Premiumnanny::where('id', $id)->update($data);
         return redirect()->route('premiumnanny#page');
     }
 
@@ -101,7 +113,7 @@ class PremiumnannyController extends Controller
         // dd("validae");
         Validator::make($request->all(), [
             'premiumnannyCode' => 'required|unique:premiumnannies,code,' . $request->premiumnannyId,
-            'premiumnannyPhoto' => 'required|mimes:jpg,jpeg,png|file',
+            'premiumnannyPhoto' => 'mimes:jpg,jpeg,png|file',
             'premiumnannyName' => 'required',
             'premiumnannyDoB' => 'required',
             // 'premiumnannyPosition' => 'required',

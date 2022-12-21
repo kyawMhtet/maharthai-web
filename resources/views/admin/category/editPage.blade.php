@@ -40,8 +40,28 @@
                                         <h3 class="text-center title-2 p-2">Edit Nanny Info</h3>
                                     </div>
                                     <hr>
-                                    <form action="{{ route('nanny#update', $nanny->id) }}" method="post"
-                                        enctype="multipart/form-data" novalidate="novalidate">
+
+                                    {{-- <form action="{{ route('photo#update') }}" method="post" enctype="multipart/form-data"
+                                        novalidate="novalidate">
+                                        <label for="cc-payment" class="control-label mb-1">Photo</label>
+                                        <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
+                                        @if ($nanny->photo != null)
+                                            <img src="{{ asset('storage/' . $nanny->photo) }}" class="img-thumbnail"
+                                                alt="...">
+                                        @endif
+
+                                        <button id="" type="submit"
+                                        class="btn btn-danger btn-info btn-block">
+                                        <input type="submit" class="btn text-white" value="Update">
+
+                                        <i class="fa-solid fa-circle-right"></i>
+                                    </button>
+                                    </form> --}}
+
+                                    {{-- enctype="multipart/form-data" --}}
+
+                                    <form action="{{ route('nanny#update', $nanny->id) }}" method="post" enctype="multipart/form-data"
+                                        novalidate="novalidate">
                                         @csrf
                                         <div class="form-group p-3">
                                             <div class="mb-2">
@@ -51,6 +71,7 @@
                                                     value="{{ old('nannyCode', $nanny->code) }}"
                                                     class="form-control @error('nannyCode') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="code#">
+
                                                 @error('nannyCode')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -69,6 +90,8 @@
                                                     value="{{ old('nannyPhoto', $nanny->nannyPhoto) }}"
                                                     class="form-control @error('nannyPhoto') is-invalid  @enderror"
                                                     aria-required="true" aria-invalid="false" placeholder="upload photo...">
+
+
                                                 @error('nannyPhoto')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -125,8 +148,7 @@
                                                 <input id="cc-payment" name="nannyNationality" type="text"
                                                     value="{{ old('nannyNationality', $nanny->nationality) }}"
                                                     class="form-control @error('nannyNationality') is-invalid  @enderror"
-                                                    aria-required="true" aria-invalid="false"
-                                                    placeholder="nationality...">
+                                                    aria-required="true" aria-invalid="false" placeholder="nationality...">
                                                 @error('nannyNationality')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
@@ -338,13 +360,16 @@
                                                 Available/Not Available :
                                                 <div class="ms-3">
                                                     <div>
-                                                        <select class="form-select" name="nannyStock" aria-label="Default select example">
+                                                        <select class="form-select" name="nannyStock"
+                                                            aria-label="Default select example">
                                                             {{-- <option value="" selected>Available or Not Available</option> --}}
                                                             <option value="Available"
-                                                            @if(old('nannyStock', $nanny->stockstatus) == 'Available') selected @endif>Available</option>
+                                                                @if (old('nannyStock', $nanny->stockstatus) == 'Available') selected @endif>Available
+                                                            </option>
                                                             <option value="Not Available"
-                                                            @if(old('nannyStock', $nanny->stockstatus) == 'Not Available') selected @endif>Not Available</option>
-                                                          </select>
+                                                                @if (old('nannyStock', $nanny->stockstatus) == 'Not Available') selected @endif>Not
+                                                                Available</option>
+                                                        </select>
                                                     </div>
                                                 </div>
 

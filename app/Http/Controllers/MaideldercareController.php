@@ -71,7 +71,7 @@ class MaideldercareController extends Controller
 
 
     // maideldercare update
-    public function maideldercareUpdate(Request $request)
+    public function maideldercareUpdate(Request $request, $id)
     {
         //    dd('id', $request->all());
         $this->maideldercareValidationCheck($request);
@@ -79,19 +79,29 @@ class MaideldercareController extends Controller
 
         // photo
         if ($request->hasFile('maideldercarePhoto')) {
-            $dbPhoto = Maideldercare::where('id', $request->maideldercareId)->first();
-            $dbPhoto = $dbPhoto->maideldercarePhoto;
 
+
+            $dbPhoto = Maideldercare::where('id', $id)->first();
+            $dbPhoto = $dbPhoto->photo;
+
+            // dd($dbPhoto);
             if ($dbPhoto != null) {
                 Storage::delete('public/' . $dbPhoto);
             }
+
+            $fileName = uniqid() . $request->file('maideldercarePhoto')->getClientOriginalName();
+            $request->file('maideldercarePhoto')->storeAs('public', $fileName);
+            $data['photo'] = $fileName;
+        } else {
+
+            $dbPhoto = Maideldercare::where('id', $id)->first();
+
+            $dbPhoto = $dbPhoto->photo;
+
+
+            $data['photo'] = $dbPhoto;
         }
-
-        $fileName = uniqid() . $request->file('maideldercarePhoto')->getClientOriginalName();
-        $request->file('maideldercarePhoto')->storeAs('public', $fileName);
-        $data['photo'] = $fileName;
-
-        Maideldercare::where('id', $request->maideldercareId)->update($data);
+        Maideldercare::where('id', $id)->update($data);
         return redirect()->route('maideldercare#page');
     }
 
@@ -101,7 +111,7 @@ class MaideldercareController extends Controller
         // dd("validae");
         Validator::make($request->all(), [
             'maideldercareCode' => 'required|unique:maideldercares,code,' . $request->maideldercareId,
-            'maideldercarePhoto' => 'required|mimes:jpg,jpeg,png|file',
+            'maideldercarePhoto' => 'mimes:jpg,jpeg,png|file',
             'maideldercareName' => 'required',
             'maideldercareDoB' => 'required',
             // 'maideldercarePosition' => 'required',

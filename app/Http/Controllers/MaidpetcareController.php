@@ -71,7 +71,7 @@ class MaidpetcareController extends Controller
 
 
     // maidpetcare update
-    public function maidpetcareUpdate(Request $request)
+    public function maidpetcareUpdate(Request $request, $id)
     {
         //    dd('id', $request->all());
         $this->maidpetcareValidationCheck($request);
@@ -79,19 +79,31 @@ class MaidpetcareController extends Controller
 
         // photo
         if ($request->hasFile('maidpetcarePhoto')) {
-            $dbPhoto = Maidpetcare::where('id', $request->maidpetcareId)->first();
-            $dbPhoto = $dbPhoto->maidpetcarePhoto;
 
+
+            $dbPhoto = Maidpetcare::where('id', $id)->first();
+            $dbPhoto = $dbPhoto->photo;
+
+            // dd($dbPhoto);
             if ($dbPhoto != null) {
                 Storage::delete('public/' . $dbPhoto);
             }
+
+            $fileName = uniqid() . $request->file('maidpetcarePhoto')->getClientOriginalName();
+            $request->file('maidpetcarePhoto')->storeAs('public', $fileName);
+            $data['photo'] = $fileName;
+        } else {
+
+            $dbPhoto = Maidpetcare::where('id', $id)->first();
+
+            $dbPhoto = $dbPhoto->photo;
+
+
+            $data['photo'] = $dbPhoto;
+
         }
 
-        $fileName = uniqid() . $request->file('maidpetcarePhoto')->getClientOriginalName();
-        $request->file('maidpetcarePhoto')->storeAs('public', $fileName);
-        $data['photo'] = $fileName;
-
-        Maidpetcare::where('id', $request->maidpetcareId)->update($data);
+        Maidpetcare::where('id', $id)->update($data);
         return redirect()->route('maidpetcare#page');
     }
 
@@ -101,7 +113,7 @@ class MaidpetcareController extends Controller
         // dd("validae");
         Validator::make($request->all(), [
             'maidpetcareCode' => 'required|unique:maidpetcares,code,' . $request->maidpetcareId,
-            'maidpetcarePhoto' => 'required|mimes:jpg,jpeg,png|file',
+            'maidpetcarePhoto' => 'mimes:jpg,jpeg,png|file',
             'maidpetcareName' => 'required',
             'maidpetcareDoB' => 'required',
             // 'maidpetcarePosition' => 'required',

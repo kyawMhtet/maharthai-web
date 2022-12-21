@@ -84,15 +84,17 @@
                                             </div>
 
                                             <div class="d-flex">
+                                                <p><b>Available/Not Available: </b></p>
+                                                <p class="ms-">{{ $housekeeping->stockstatus }}</p>
+                                            </div>
+
+                                            <div class="d-flex">
                                                 <p><b>Note:</b></p>
                                                 {{-- <p class="ms-2">{{ $housekeeping->note }}</p> --}}
                                                 <p><b>{{ Str::words($housekeeping->note,15, '...') }}</b></p>
                                             </div>
 
-                                            <div class="d-flex">
-                                                <p><b>Available/Not Available: </b></p>
-                                                <p class="ms-">{{ $housekeeping->stockstatus }}</p>
-                                            </div>
+
 
                                         </div>
                                     </div>

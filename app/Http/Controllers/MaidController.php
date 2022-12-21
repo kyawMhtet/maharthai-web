@@ -62,7 +62,7 @@ class MaidController extends Controller
     }
 
     // maid update
-    public function maidUpdate(Request $request)
+    public function maidUpdate(Request $request, $id)
     {
         //    dd('id', $request->all());
         $this->maidValidationCheck($request);
@@ -70,19 +70,29 @@ class MaidController extends Controller
 
         // photo
         if ($request->hasFile('maidPhoto')) {
-            $dbPhoto = Maid::where('id', $request->maidId)->first();
-            $dbPhoto = $dbPhoto->maidPhoto;
 
+
+            $dbPhoto = Maid::where('id', $id)->first();
+            $dbPhoto = $dbPhoto->photo;
+
+            // dd($dbPhoto);
             if ($dbPhoto != null) {
                 Storage::delete('public/' . $dbPhoto);
             }
+
+            $fileName = uniqid() . $request->file('maidPhoto')->getClientOriginalName();
+            $request->file('maidPhoto')->storeAs('public', $fileName);
+            $data['photo'] = $fileName;
+        } else {
+
+            $dbPhoto = Maid::where('id', $id)->first();
+
+            $dbPhoto = $dbPhoto->photo;
+
+
+            $data['photo'] = $dbPhoto;
         }
-
-        $fileName = uniqid() . $request->file('maidPhoto')->getClientOriginalName();
-        $request->file('maidPhoto')->storeAs('public', $fileName);
-        $data['photo'] = $fileName;
-
-        Maid::where('id', $request->maidId)->update($data);
+        Maid::where('id', $id)->update($data);
         return redirect()->route('maid#page');
     }
 
@@ -93,7 +103,7 @@ class MaidController extends Controller
     {
         Validator::make($request->all(), [
             'maidCode' => 'required|unique:maids,code,' . $request->maidId,
-            'maidPhoto' => 'required|mimes:jpg,jpeg,png|file',
+            'maidPhoto' => 'mimes:jpg,jpeg,png|file',
             'maidName' => 'required',
             'maidDoB' => 'required',
             // 'maidPosition' => 'required',
