@@ -73,38 +73,35 @@
 {{-- end carousel slide --}}
 <div class="filter container w-25 mt-5">
     <div class="shadow-sm py-2 rounded text-danger">
-        <form action="" method="get">
+        <form action="{{ route('premiumnanny#search') }}" method="post">
             @csrf
-            <div class="d-flex ms-5">
-                <div>
-                    <div class="form-check">
-                        <input class="workingtime" type="radio" value="full-time" name="full_part" id="fulltime">
-                        <label class="form-check-label" for="fulltime">
-                            Full-time
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="workingtime" type="radio" value="part-time" name="full_part" id="parttime">
-                        <label class="form-check-label" for="parttime">
-                            Part-time
-                        </label>
-                    </div>
-                </div>
+            <div class="d-flex">
 
-                <div class="ms-4">
-                    <div class="form-check">
-                        <input class="workingtime" type="radio" value="live-In" name="live_in_out" id="livein">
-                        <label class="form-check-label" for="livein">
-                            Live-In
-                        </label>
+                <div class="mt-1 d-flex m-auto">
+                    <div class="me-2">
+                        <select name="full_part" id="" class="form-select">
+                            <option value="full-time">Full-time</option>
+                            <option value="part-time">Part-time</option>
+                        </select>
                     </div>
-                    <div class="form-check">
-                        <input class="workingtime" type="radio" value="live-Out" name="live_in_out" id="liveout">
-                        <label class="form-check-label" for="liveout">
-                            Live-Out
-                        </label>
+
+                    <div>
+                        <select name="live_in_out" id="" class="form-select">
+                            <option value="live-In">Live-In</option>
+                            <option value="live-Out">Live-Out</option>
+                        </select>
                     </div>
                 </div>
+            </div>
+
+            <div class="mt-3 text-center">
+                <button class="btn btn-danger text-white rounded">Submit</button>
+                <button class="btn btn-primary">
+                    <a href="{{ route('mainpremiumnanny#page') }}" class="clear">
+                        Clear
+                    </a>
+                </button>
+
             </div>
         </form>
     </div>

@@ -80,15 +80,21 @@
                                                 </div>
 
                                                 <div class="d-flex">
+                                                    @if ($maideldercare->stockstatus == 'Available')
+                                                        <p class="text-success">{{ $maideldercare->stockstatus }}</p>
+                                                    @elseif ($maideldercare->stockstatus == 'Not Available')
+                                                        <p class="text-danger">{{ $maideldercare->stockstatus }}</p>
+                                                    @endif
+
+                                                </div>
+
+                                                <div class="d-flex">
                                                     <p><b>Note:</b></p>
                                                     {{-- <p class="ms-2">{{ $maideldercare->note }}</p> --}}
                                                     <p><b>{{ Str::words($maideldercare->note,15, '...') }}</b></p>
                                                 </div>
 
-                                                <div class="d-flex">
-                                                    <p><b>Available/Not Available: </b></p>
-                                                    <p class="ms-">{{ $maideldercare->stockstatus }}</p>
-                                                </div>
+
 
                                             </div>
                                         </div>

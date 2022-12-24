@@ -29,8 +29,6 @@
                         <div class="col">
                             <p class="ms-3">{{ old('nannyName', $nannies->name) }}</p>
                         </div>
-                        {{-- <p><b>Name: </b></p>
-                        <p class="ms-3">{{ old('nannyName', $nannies->name) }}</p> --}}
                     </div>
 
                     <div class="d-flex">
@@ -201,7 +199,7 @@
 
         <div class="mt-4">
             <a href="{{ route('user#home') }}" class="btn btn-primary px-3">Back</a>
-            <a href="{{ route('user#request') }}" class="btn btn-danger px-3 float-end">Request</a>
+            <a href="{{ route('nannyrequest#page', $nannies->id) }}" class="btn btn-danger px-3 float-end">Request</a>
         </div>
 
     </div>

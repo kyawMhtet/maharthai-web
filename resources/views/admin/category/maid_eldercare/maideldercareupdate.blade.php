@@ -30,97 +30,181 @@
 
                     <div class="col info mt-3">
                         <div class="d-flex">
-                            <p><b>Code: </b></p>
-                            <p class="ms-3">{{ old('maideldercareCode', $maideldercare->code) }}</p>
+                            <div class="col-2">
+                                <p><b>Code: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareCode', $maideldercare->code) }}</p>
+
+                            </div>
                         </div>
                         <div class="d-flex">
-                            <p><b>Name: </b></p>
-                            <p class="ms-3">{{ old('maideldercareName', $maideldercare->name) }}</p>
+                            <div class="col-2">
+                                <p><b>Name: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareName', $maideldercare->name) }}</p>
+
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Position: </b></p>
-                            <p class="ms-3">{{ old('maideldercarePosition', $maideldercare->position) }}</p>
+                            <div class="col-2">
+                                <p><b>Position: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercarePosition', $maideldercare->position) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>DOB: </b></p>
-                            <p class="ms-3">{{ old('maideldercareDoB', $maideldercare->date_of_birth) }}</p>
+                            <div class="col-2">
+                                <p><b>DOB: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareDoB', $maideldercare->date_of_birth) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Nationality: </b></p>
-                            <p class="ms-3">{{ old('maideldercareNationality', $maideldercare->nationality) }}</p>
+                            <div class="col-2">
+                                <p><b>Nationality: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareNationality', $maideldercare->nationality) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Religion: </b></p>
-                            <p class="ms-3">{{ old('maideldercareReligion', $maideldercare->religion) }}</p>
+                            <div class="col-2">
+                                <p><b>Religion: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareReligion', $maideldercare->religion) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Weight: </b></p>
-                            <p class="ms-3">{{ old('maideldercareWeight', $maideldercare->weight) }}</p>
+                            <div class="col-2">
+                                <p><b>Weight: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareWeight', $maideldercare->weight) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Height: </b></p>
-                            <p class="ms-3">{{ old('maideldercareHeight', $maideldercare->height) }}</p>
+                            <div class="col-2">
+                                <p><b>Height: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareHeight', $maideldercare->height) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Salary: </b></p>
-                            <p class="ms-3">{{ old('maideldercareSalary', $maideldercare->salary) }} <b>Baht</b></p>
+                            <div class="col-2">
+                                <p><b>Salary: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareSalary', $maideldercare->salary) }} <b>Baht</b></p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Language: </b></p>
-                            <p class="ms-3">{{ old('maideldercareLanguage', $maideldercare->language) }}</p>
+                            <div class="col-2">
+                                <p><b>Language: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareLanguage', $maideldercare->language) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>status: </b></p>
-                            <p class="ms-3">{{ old('maideldercareStatus', $maideldercare->status) }}</p>
+                            <div class="col-2">
+                                <p><b>status: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareStatus', $maideldercare->status) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Working Time: </b></p>
-                            <p class="ms-3">{{ old('full_part', $maideldercare->full_part) }} / {{ old('live_in_out', $maideldercare->live_in_out) }}</p>
+                            <div class="col-2">
+                                <p><b>Working Time: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('full_part', $maideldercare->full_part) }} /
+                                    {{ old('live_in_out', $maideldercare->live_in_out) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Experience: </b></p>
-                            <p class="ms-3">{{ old('maideldercareExperience', $maideldercare->experience) }}</p>
+                            <div class="col-2">
+                                <p><b>Experience: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareExperience', $maideldercare->experience) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Skill: </b></p>
-                            <p class="ms-3">{{ old('maideldercareSkill', $maideldercare->skill) }}</p>
+                            <div class="col-2">
+                                <p><b>Skill: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareSkill', $maideldercare->skill) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Pets: </b></p>
-                            <p class="ms-3">{{ old('pets', $maideldercare->pet) }}</p>
+                            <div class="col-2">
+                                <p><b>Pets: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('pets', $maideldercare->pet) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex px-4 mb-3">
-                            <small>Note: </small>
-                            <small class="ms-3">{{ old('petNote', $maideldercare->pet_note) }}</small>
+                            <div class="col-2">
+                                <small>Note: </small>
+                            </div>
+                            <div class="col">
+                                <small class="ms-5">{{ old('petNote', $maideldercare->pet_note) }}</small>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Vaccine: </b></p>
-                            <p class="ms-3">{{ old('maideldercareVaccine', $maideldercare->vaccine) }}</p>
+                            <div class="col-2">
+                                <p><b>Vaccine: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareVaccine', $maideldercare->vaccine) }}</p>
+                            </div>
+                        </div>
+
+                        {{-- <div class="d-flex">
+                            <p><b>Available/Not Available:</b></p>
+                            <p class="ms-5">{{ old('maideldercareStock', $maideldercare->stockstatus) }}</p>
+                        </div> --}}
+
+                        <div class="d-flex">
+                            <div class="col-2">
+                                <h4 class="text-danger">Remark: </h4>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareRemark', $maideldercare->remark) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <h4 class="text-danger">Remark: </h4>
-                            <p class="ms-3">{{ old('maideldercareRemark', $maideldercare->remark) }}</p>
-                        </div>
-
-                        <div class="d-flex">
-                            <p><b>Note: </b></p>
-                            <p class="ms-3">{{ old('maideldercareNote', $maideldercare->note) }}</p>
+                            <div class="col-2">
+                                <p><b>Note: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maideldercareNote', $maideldercare->note) }}</p>
+                            </div>
                         </div>
 
 

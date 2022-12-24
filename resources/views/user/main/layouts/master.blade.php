@@ -76,6 +76,15 @@
             font-size: 17px;
         }
 
+        .clear {
+            text-decoration: none;
+            color: white;
+        }
+
+        .clear:hover {
+            color: white;
+        }
+
 
 
     </style>

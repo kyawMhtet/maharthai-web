@@ -30,97 +30,181 @@
 
                     <div class="col info mt-3">
                         <div class="d-flex">
-                            <p><b>Code: </b></p>
-                            <p class="ms-3">{{ old('maidcookCode', $maidcook->code) }}</p>
+                            <div class="col-2">
+                                <p><b>Code: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookCode', $maidcook->code) }}</p>
+
+                            </div>
                         </div>
                         <div class="d-flex">
-                            <p><b>Name: </b></p>
-                            <p class="ms-3">{{ old('maidcookName', $maidcook->name) }}</p>
+                            <div class="col-2">
+                                <p><b>Name: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookName', $maidcook->name) }}</p>
+
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Position: </b></p>
-                            <p class="ms-3">{{ old('maidcookPosition', $maidcook->position) }}</p>
+                            <div class="col-2">
+                                <p><b>Position: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookPosition', $maidcook->position) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>DOB: </b></p>
-                            <p class="ms-3">{{ old('maidcookDoB', $maidcook->date_of_birth) }}</p>
+                            <div class="col-2">
+                                <p><b>DOB: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookDoB', $maidcook->date_of_birth) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Nationality: </b></p>
-                            <p class="ms-3">{{ old('maidcookNationality', $maidcook->nationality) }}</p>
+                            <div class="col-2">
+                                <p><b>Nationality: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookNationality', $maidcook->nationality) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Religion: </b></p>
-                            <p class="ms-3">{{ old('maidcookReligion', $maidcook->religion) }}</p>
+                            <div class="col-2">
+                                <p><b>Religion: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookReligion', $maidcook->religion) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Weight: </b></p>
-                            <p class="ms-3">{{ old('maidcookWeight', $maidcook->weight) }}</p>
+                            <div class="col-2">
+                                <p><b>Weight: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookWeight', $maidcook->weight) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Height: </b></p>
-                            <p class="ms-3">{{ old('maidcookHeight', $maidcook->height) }}</p>
+                            <div class="col-2">
+                                <p><b>Height: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookHeight', $maidcook->height) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Salary: </b></p>
-                            <p class="ms-3">{{ old('maidcookSalary', $maidcook->salary) }} <b>Baht</b></p>
+                            <div class="col-2">
+                                <p><b>Salary: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookSalary', $maidcook->salary) }} <b>Baht</b></p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Language: </b></p>
-                            <p class="ms-3">{{ old('maidcookLanguage', $maidcook->language) }}</p>
+                            <div class="col-2">
+                                <p><b>Language: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookLanguage', $maidcook->language) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>status: </b></p>
-                            <p class="ms-3">{{ old('maidcookStatus', $maidcook->status) }}</p>
+                            <div class="col-2">
+                                <p><b>status: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookStatus', $maidcook->status) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Working Time: </b></p>
-                            <p class="ms-3">{{ old('full_part', $maidcook->full_part) }} / {{ old('live_in_out', $maidcook->live_in_out) }}</p>
+                            <div class="col-2">
+                                <p><b>Working Time: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('full_part', $maidcook->full_part) }} /
+                                    {{ old('live_in_out', $maidcook->live_in_out) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Experience: </b></p>
-                            <p class="ms-3">{{ old('maidcookExperience', $maidcook->experience) }}</p>
+                            <div class="col-2">
+                                <p><b>Experience: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookExperience', $maidcook->experience) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Skill: </b></p>
-                            <p class="ms-3">{{ old('maidcookSkill', $maidcook->skill) }}</p>
+                            <div class="col-2">
+                                <p><b>Skill: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookSkill', $maidcook->skill) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Pets: </b></p>
-                            <p class="ms-3">{{ old('pets', $maidcook->pet) }}</p>
+                            <div class="col-2">
+                                <p><b>Pets: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('pets', $maidcook->pet) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex px-4 mb-3">
-                            <small>Note: </small>
-                            <small class="ms-3">{{ old('petNote', $maidcook->pet_note) }}</small>
+                            <div class="col-2">
+                                <small>Note: </small>
+                            </div>
+                            <div class="col">
+                                <small class="ms-5">{{ old('petNote', $maidcook->pet_note) }}</small>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <p><b>Vaccine: </b></p>
-                            <p class="ms-3">{{ old('maidcookVaccine', $maidcook->vaccine) }}</p>
+                            <div class="col-2">
+                                <p><b>Vaccine: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookVaccine', $maidcook->vaccine) }}</p>
+                            </div>
+                        </div>
+
+                        {{-- <div class="d-flex">
+                            <p><b>Available/Not Available:</b></p>
+                            <p class="ms-5">{{ old('maidcookStock', $maidcook->stockstatus) }}</p>
+                        </div> --}}
+
+                        <div class="d-flex">
+                            <div class="col-2">
+                                <h4 class="text-danger">Remark: </h4>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookRemark', $maidcook->remark) }}</p>
+                            </div>
                         </div>
 
                         <div class="d-flex">
-                            <h4 class="text-danger">Remark: </h4>
-                            <p class="ms-3">{{ old('maidcookRemark', $maidcook->remark) }}</p>
-                        </div>
-
-                        <div class="d-flex">
-                            <p><b>Note: </b></p>
-                            <p class="ms-3">{{ old('maidcookNote', $maidcook->note) }}</p>
+                            <div class="col-2">
+                                <p><b>Note: </b></p>
+                            </div>
+                            <div class="col">
+                                <p class="ms-5">{{ old('maidcookNote', $maidcook->note) }}</p>
+                            </div>
                         </div>
 
 

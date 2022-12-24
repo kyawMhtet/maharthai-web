@@ -62,15 +62,13 @@ Route::get('NannyMaidPage', [UserController::class, 'home'])->name('user#home');
 
 
 // Route::get('/home/nanny/{id}', [NannyController::class, 'nannyDetail'])->name('nanny#detail');
-Route::get('requestPage', [UserController::class, 'requestForm'])->name('user#request');
+Route::get('nannyRequestPage/{id}', [UserController::class, 'requestForm'])->name('nannyrequest#page');
 
 Route::get('nanny_detail/{id}', [UserController::class, 'nannyInfo'])->name('nanny#info');
 
 Route::get('nanny/request/{id}', [UserController::class, 'nannyRequest'])->name('nanny#request');
 
-// Route::get('nanny/fulltime', [UserController::class, 'nannyfulltimeFilter'])->name('nanny#fulltimefilter');
-
-// Route::get('nanny/parttime', [UserController::class, 'nannypartimeFilter'])->name('nanny#partimefilter');
+Route::post('nanny/search', [UserController::class, 'nannySearch'])->name('nanny#search');
 
 
 // Filtering
@@ -106,7 +104,10 @@ Route::get('maidPage', [MainMaidController::class, 'maidPage'])->name('mainmaid#
 
 Route::get('maid_detail/{id}', [MainMaidController::class, 'maidInfo'])->name('maid#info');
 
-Route::get('maidRequestPage', [MainMaidController::class, 'maidRequestPage'])->name('maidrequest#page');
+Route::get('maidRequestPage/{id}', [MainMaidController::class, 'maidRequestPage'])->name('maidrequest#page');
+
+Route::post('maid/search', [MainMaidController::class, 'maidSearch'])->name('maid#search');
+
 
 // housekeeping page
 
@@ -114,7 +115,10 @@ Route::get('housekeepingPage', [MainHousekeepingController::class, 'housekeeping
 
 Route::get('housekeeping_detail/{id}', [MainHousekeepingController::class, 'housekeepingInfo'])->name('housekeeping#info');
 
-Route::get('housekeepingRequestPage', [MainHousekeepingController::class, 'housekeepingRequestPage'])->name('housekeepingrequest#page');
+Route::get('housekeepingRequestPage/{id}', [MainHousekeepingController::class, 'housekeepingRequestPage'])->name('housekeepingrequest#page');
+
+Route::post('housekeeping/search', [MainHousekeepingController::class, 'housekeepingSearch'])->name('housekeeping#search');
+
 
 // maid, cook page
 
@@ -122,7 +126,10 @@ Route::get('maidcookPage', [MainmaidcookController::class, 'maidcookPage'])->nam
 
 Route::get('maidcook_detail/{id}', [MainmaidcookController::class, 'maidcookInfo'])->name('maidcook#info');
 
-Route::get('maidcookRequestPage', [MainmaidcookController::class, 'maidcookRequestPage'])->name('maidcookrequest#page');
+Route::get('maidcookRequestPage/{id}', [MainmaidcookController::class, 'maidcookRequestPage'])->name('maidcookrequest#page');
+
+Route::post('maidcook/search', [MainmaidcookController::class, 'maidcookSearch'])->name('maidcook#search');
+
 
 
 // maid, eldercare page
@@ -131,7 +138,9 @@ Route::get('maideldercarePage', [MainmaideldercareController::class, 'maidelderc
 
 Route::get('maideldercare_detail/{id}', [MainmaideldercareController::class, 'maideldercareInfo'])->name('maideldercare#info');
 
-Route::get('maideldercareRequestPage', [MainmaideldercareController::class, 'maideldercareRequestPage'])->name('maideldercarerequest#page');
+Route::get('maideldercareRequestPage/{id}', [MainmaideldercareController::class, 'maideldercareRequestPage'])->name('maideldercarerequest#page');
+
+Route::post('maideldercare/search', [MainmaideldercareController::class, 'maideldercareSearch'])->name('maideldercare#search');
 
 
 // maid, pet care page
@@ -140,7 +149,11 @@ Route::get('maidpetcarePage', [MainmaidpetcareController::class, 'maidpetcarePag
 
 Route::get('maidpetcare_detail/{id}', [MainmaidpetcareController::class, 'maidpetcareInfo'])->name('maidpetcare#info');
 
-Route::get('maidpetcareRequestPage', [MainmaidpetcareController::class, 'maidpetcareRequestPage'])->name('maidpetcarerequest#page');
+Route::get('maidpetcareRequestPage/{id}', [MainmaidpetcareController::class, 'maidpetcareRequestPage'])->name('maidpetcarerequest#page');
+
+Route::post('maidpetcare/search', [MainmaidpetcareController::class, 'maidpetcareSearch'])->name('maidpetcare#search');
+
+
 
 // premium nanny page
 
@@ -148,7 +161,10 @@ Route::get('premiumnannyPage', [MainpremiumnannyController::class, 'premiumnanny
 
 Route::get('premiumnanny_detail/{id}', [MainpremiumnannyController::class, 'premiumnannyInfo'])->name('premiumnanny#info');
 
-Route::get('premiumnannyRequestPage', [MainpremiumnannyController::class, 'premiumnannyRequestPage'])->name('premiumnannyrequest#page');
+Route::get('premiumnannyRequestPage/{id}', [MainpremiumnannyController::class, 'premiumnannyRequestPage'])->name('premiumnannyrequest#page');
+
+Route::post('premiumnanny/search', [MainpremiumnannyController::class, 'premiumnannySearch'])->name('premiumnanny#search');
+
 
 
 
@@ -242,7 +258,6 @@ Route::middleware([
         Route::get('housekeeping/editPage/{id}', [HousekeepingController::class, 'editPage'])->name('housekeeping#editPage');
 
         Route::post('housekeeping/update/{id}', [HousekeepingController::class, 'housekeepingUpdate'])->name('housekeeping#update');
-
 
 
         // maid, cook

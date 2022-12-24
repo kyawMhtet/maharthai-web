@@ -14,7 +14,7 @@
 
                 <div>
                     <p>Code*</p>
-                    <input type="text" name="maidpetcareCode" value="" class="form-control" placeholder="J..." required>
+                    <input type="text" name="maidpetcareCode" value="{{ old('maidpetcareCode', $maidpetcares->code) }}" class="form-control" placeholder="J..." required>
                 </div>
                 <div>
                     <p>Name*</p>

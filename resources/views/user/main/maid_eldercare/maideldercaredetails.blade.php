@@ -199,7 +199,7 @@
 
         <div class="mt-4">
             <a href="{{ route('mainmaideldercare#page') }}" class="btn btn-primary px-3">Back</a>
-            <a href="{{ route('maideldercarerequest#page') }}" class="btn btn-danger px-3 float-end">Request</a>
+            <a href="{{ route('maideldercarerequest#page', $maideldercares->id) }}" class="btn btn-danger px-3 float-end">Request</a>
         </div>
 
     </div>

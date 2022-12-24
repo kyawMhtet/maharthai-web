@@ -196,7 +196,7 @@
 
         <div class="mt-4">
             <a href="{{ route('mainmaid#page') }}" class="btn btn-primary px-3">Back</a>
-            <a href="{{ route('maidrequest#page') }}" class="btn btn-danger px-3 float-end">Request</a>
+            <a href="{{ route('maidrequest#page', $maids->id) }}" class="btn btn-danger px-3 float-end">Request</a>
         </div>
 
     </div>

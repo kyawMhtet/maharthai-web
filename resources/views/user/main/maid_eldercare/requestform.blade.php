@@ -14,9 +14,9 @@
 
                 <div>
                     <p>Code*</p>
-                    <input type="text" name="maidCode" value="" class="form-control" placeholder="J..." required>
+                    <input type="text" name="maideldercareCode" value="{{ old('maideldercareCode', $maideldercares->code) }}" class="form-control" placeholder="J..." disabled required>
                 </div>
-                <div>
+                <div class="mt-3">
                     <p>Name*</p>
                     <input type="text" name="name" class="form-control" placeholder="Enter Name*" required>
                 </div>

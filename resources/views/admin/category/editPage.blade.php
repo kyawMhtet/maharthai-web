@@ -9,22 +9,6 @@
         <div class="section__content section__content--p30">
             <div class="container-fluid">
                 <div class="col-md-12">
-                    <!-- DATA TABLE -->
-                    {{-- <div class="table-data__tool">
-                        <div class="table-data__tool-left">
-                            <div class="overview-wrap">
-                                <h2 class="title-1">Nanny List</h2>
-
-                            </div>
-                        </div>
-                        <div class="table-data__tool-right">
-                            <a href="{{ route('nanny#create') }}">
-                                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                    <i class="zmdi zmdi-plus"></i>Add Nanny
-                                </button>
-                            </a>
-                        </div>
-                    </div> --}}
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-3 offset-8">
@@ -40,25 +24,6 @@
                                         <h3 class="text-center title-2 p-2">Edit Nanny Info</h3>
                                     </div>
                                     <hr>
-
-                                    {{-- <form action="{{ route('photo#update') }}" method="post" enctype="multipart/form-data"
-                                        novalidate="novalidate">
-                                        <label for="cc-payment" class="control-label mb-1">Photo</label>
-                                        <input type="hidden" name="nannyId" value="{{ $nanny->id }}">
-                                        @if ($nanny->photo != null)
-                                            <img src="{{ asset('storage/' . $nanny->photo) }}" class="img-thumbnail"
-                                                alt="...">
-                                        @endif
-
-                                        <button id="" type="submit"
-                                        class="btn btn-danger btn-info btn-block">
-                                        <input type="submit" class="btn text-white" value="Update">
-
-                                        <i class="fa-solid fa-circle-right"></i>
-                                    </button>
-                                    </form> --}}
-
-                                    {{-- enctype="multipart/form-data" --}}
 
                                     <form action="{{ route('nanny#update', $nanny->id) }}" method="post" enctype="multipart/form-data"
                                         novalidate="novalidate">

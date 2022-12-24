@@ -79,38 +79,38 @@
 
     <div class="filter container w-25 mt-5">
         <div class=" shadow-sm py-2 rounded text-danger">
-            <form action="" method="get">
+            <form action="{{ route('nanny#search') }}" method="post">
                 @csrf
-                <div class="d-flex ms-5">
-                    <div>
-                        <div class="form-check">
-                            <input class="workingtime" type="radio" value="full-time" name="full_part" id="fulltime">
-                            <label class="form-check-label" for="fulltime">
-                                Full-time
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="workingtime" type="radio" value="part-time" name="full_part" id="parttime">
-                            <label class="form-check-label" for="parttime">
-                                Part-time
-                            </label>
-                        </div>
-                    </div>
+                <div class="d-flex">
 
-                    <div class="ms-4">
-                        <div class="form-check">
-                            <input class="workingtime" type="radio" value="live-In" name="live_in_out" id="livein">
-                            <label class="form-check-label" for="livein">
-                                Live-In
-                            </label>
+                    <div class="mt-1 d-flex m-auto">
+                        <div class="me-2">
+                            <select name="full_part" id="" class="form-select">
+                                <option value="full-time">Full-time</option>
+                                <option value="part-time">Part-time</option>
+                            </select>
                         </div>
-                        <div class="form-check">
-                            <input class="workingtime" type="radio" value="live-Out" name="live_in_out" id="liveout">
-                            <label class="form-check-label" for="liveout">
-                                Live-Out
-                            </label>
+
+                        <div>
+                            <select name="live_in_out" id="" class="form-select">
+                                <option value="live-In">Live-In</option>
+                                <option value="live-Out">Live-Out</option>
+                            </select>
                         </div>
                     </div>
+                </div>
+
+                <div class="mt-3 text-center">
+                    <button class="btn btn-danger text-white rounded btn-sm">Submit</button>
+                    <button class="btn btn-primary btn-sm">
+                        <a href="{{ route('user#home') }}" class="clear">
+                            Clear
+                        </a>
+                    </button>
+                    {{-- <button>Submit</button>
+                    <button>
+                        <a href="{{ route('user#home') }}" class="clear">Clear</a>
+                    </button> --}}
                 </div>
             </form>
         </div>
@@ -187,196 +187,7 @@
 
 
     <script>
-        $(document).ready(function() {
-            // $.ajax({
-            //     type : 'get' ,
-            //     url : 'http://localhost/maharthai/public/ajax/nanny/list' ,
-            //     dataType : 'json' ,
-            //     success : function(response){
-            //         console.log('response');
-            //     }
-            // });
 
-
-            // input[type=radio][name=full_part]
-
-            $('.workingtime').change(function() {
-                $eventOption = $('.workingtime:checked').val();
-                // console.log($eventOption);
-                if ($eventOption == 'full-time') {
-                    $.ajax({
-                        type: 'get',
-                        url: '{{ route('filter#nannylist') }}',
-                        data: {
-                            'status': 'full-time'
-                        },
-                        dataType: 'json',
-                        success: function(response) {
-                            // console.log(response[0].full_part);
-                            $list = '';
-                            for ($i = 0; $i < response.length; $i++) {
-                                $list += `
-                                <div class="col-4 mt-5">
-                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
-
-                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
-                            style="height: 305px; width: 305px;" alt="">
-                        <div class="card-body text-start">
-                            <div>
-                                <p>${response[$i].code}</p>
-                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
-                                <p>${response[$i].salary} <b>Baht</b></p>
-
-                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
-                            </div>
-
-                        </div>
-                        <div class="text-center mb-4">
-                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
-                                More Details
-                            </a>
-                        </div>
-
-                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
-
-                    </div>
-                </div>
-                            `;
-                            }
-                            $('#nannyList').html($list);
-                        }
-                    });
-                } else if ($eventOption == 'part-time') {
-                    $.ajax({
-                        type: 'get',
-                        url: '{{ route('filter#nannylist') }}',
-                        data: {
-                            'status': 'part-time'
-                        },
-                        dataType: 'json',
-                        success: function(response) {
-                            // console.log(response[0].full_part);
-                            $list = '';
-                            for ($i = 0; $i < response.length; $i++) {
-                                $list += `
-                                <div class="col-4 mt-5">
-                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
-
-                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
-                            style="height: 305px; width: 305px;" alt="">
-                        <div class="card-body text-start">
-                            <div>
-                                <p>${response[$i].code}</p>
-                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
-                                <p>${response[$i].salary} <b>Baht</b></p>
-
-                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
-                            </div>
-
-                        </div>
-                        <div class="text-center mb-4">
-                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
-                                More Details
-                            </a>
-                        </div>
-
-                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
-
-                    </div>
-                </div>
-                            `;
-                            }
-                            $('#nannyList').html($list);
-                        }
-                    });
-                } else if ($eventOption == 'live-In') {
-                    $.ajax({
-                        type: 'get',
-                        url: '{{ route('filter#nannylist') }}',
-                        data: {
-                            'status': 'live-In'
-                        },
-                        dataType: 'json',
-                        success: function(response) {
-                            $list = '';
-                            for ($i = 0; $i < response.length; $i++) {
-                                $list += `
-                                <div class="col-4 mt-5">
-                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
-
-                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
-                            style="height: 305px; width: 305px;" alt="">
-                        <div class="card-body text-start">
-                            <div>
-                                <p>${response[$i].code}</p>
-                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
-                                <p>${response[$i].salary} <b>Baht</b></p>
-
-                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
-                            </div>
-
-                        </div>
-                        <div class="text-center mb-4">
-                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
-                                More Details
-                            </a>
-                        </div>
-
-                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
-
-                    </div>
-                </div>
-                            `;
-                            }
-                            $('#nannyList').html($list);
-                        }
-                    });
-                } else if ($eventOption == 'live-Out') {
-                    $.ajax({
-                        type: 'get',
-                        url: '{{ route('filter#nannylist') }}',
-                        data: {
-                            'status': 'live-Out'
-                        },
-                        dataType: 'json',
-                        success: function(response) {
-                            $list = '';
-                            for ($i = 0; $i < response.length; $i++) {
-                                $list += `
-                                <div class="col-4 mt-5">
-                    <div class="nanny card p-2 border border-0" style="width: 20rem; height: 600px; ">
-
-                        <img class="card-img-top" src="{{ asset('storage/${response[$i].photo}') }}"
-                            style="height: 305px; width: 305px;" alt="">
-                        <div class="card-body text-start">
-                            <div>
-                                <p>${response[$i].code}</p>
-                                <p>${response[$i].full_part} / ${response[$i].live_in_out}</p>
-                                <p>${response[$i].salary} <b>Baht</b></p>
-
-                                <p>{{ Str::words($nanny->experience, 8, '...') }}</p>
-                            </div>
-
-                        </div>
-                        <div class="text-center mb-4">
-                            <a href="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger rounded-pill w-75">
-                                More Details
-                            </a>
-                        </div>
-
-                        {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('nanny#info', $nanny->id) }}" class="btn btn-danger">More Details</a> --}}
-
-                    </div>
-                </div>
-                            `;
-                            }
-                            $('#nannyList').html($list);
-
-                        }
-                    });
-                }
-            });
-        });
     </script>
 
 

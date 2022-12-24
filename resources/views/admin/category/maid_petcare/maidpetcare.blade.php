@@ -80,8 +80,12 @@
                                                 </div>
 
                                                 <div class="d-flex">
-                                                    <p><b>Available/Not Available :</b></p>
-                                                    <p class="ms-">{{ $maidpetcare->stockstatus }}</p>
+                                                    @if ($maidpetcare->stockstatus == 'Available')
+                                                        <p class="text-success">{{ $maidpetcare->stockstatus }}</p>
+                                                    @elseif ($maidpetcare->stockstatus == 'Not Available')
+                                                        <p class="text-danger">{{ $maidpetcare->stockstatus }}</p>
+                                                    @endif
+
                                                 </div>
 
                                                 <div class="d-flex">
