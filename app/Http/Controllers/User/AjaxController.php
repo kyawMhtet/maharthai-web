@@ -21,11 +21,14 @@ class AjaxController extends Controller
             $data = Nanny::where('full_part', 'full-time')->get();
         } else if ($request->status == 'part-time') {
             $data = Nanny::where('full_part', 'part-time')->get();
-        } else if ($request->status == 'live-In') {
+        } else if ($request->status == 'live-In')
+        {
             $data = Nanny::where('live_in_out', 'live-In')->get();
-        } else if ($request->status == 'live-Out') {
+        } else if ($request->status == 'live-Out')
+        {
             $data = Nanny::where('live_in_out', 'live-Out')->get();
         }
+
         return $data;
     }
 

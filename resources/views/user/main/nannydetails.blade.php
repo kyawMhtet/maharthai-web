@@ -5,7 +5,7 @@
 @section('content')
     <div class="container-lg shadow-lg p-5 mt-5">
         <div class="row p-2 detail">
-            <div class="col-3">
+            <div class="col-3 img">
                 <img class="card-img-top rounded" src="{{ asset('storage/' . $nannies->photo) }}" style="height: 300px; width: 300px;"
                 alt="">
             </div>

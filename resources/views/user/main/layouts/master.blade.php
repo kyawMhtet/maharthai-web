@@ -17,7 +17,7 @@
 
     {{-- responsive --}}
 
-   <link rel="stylesheet" href="{{ asset('responsive/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('responsive/responsive.css') }}">
 
     {{-- JQuery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
@@ -85,8 +85,47 @@
             color: white;
         }
 
+        @media(max-width: 375px) {
+            .form {
+                /* border: 2px solid red; */
+                /* width: 300px; */
+                height: 580px;
+                width: auto;
+            }
 
+            .form input {
+                /* width: 300px; */
+                width: auto;
+            }
+        }
 
+        @media(max-width: 470px) {
+            .list {
+                margin-right: 70px;
+            }
+        }
+
+        @media(max-width: 900px)
+        {
+            .list-item {
+                margin: auto;
+            }
+        }
+
+        @media(max-width: 991px)
+        {
+            .list-item {
+                width: 330px;
+            }
+        }
+
+        /* @media(max-width: 1080px)
+        {
+            .list-item {
+
+                border: 1px solid red;
+            }
+        } */
     </style>
     {{-- <nav class="navbar navbar-expand-lg bg-light sticky-top shadow-sm-bottom">
 
@@ -170,56 +209,63 @@
 
     <nav class="navbar navbar-expand-lg bg-light p-3 fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            {{-- <img src="{{ asset('storage/maharthai.jpg') }}" class="d-block" alt="..." alt=""> --}}
-            <h4 class="text-danger"><b>Mahar Thai Lin Aung</b></h4>
-          </a>
+            <a class="navbar-brand" href="#">
+                {{-- <img src="{{ asset('storage/maharthai.jpg') }}" class="d-block" alt="..." alt=""> --}}
+                <h4 class="text-danger"><b>Mahar Thai Lin Aung</b></h4>
+            </a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="https://maharthailinaung.com/">Home</a>
-                </li>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://maharthailinaung.com/">Home</a>
+                        </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Services
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ route('mainmaid#page') }}" class="dropdown-item">Maid</a></li>
-                        <li><a href="{{ route('user#home') }}" class="dropdown-item">Nanny, Maid</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('mainmaid#page') }}" class="dropdown-item">Maid</a></li>
+                                <li><a href="{{ route('user#home') }}" class="dropdown-item">Nanny, Maid</a></li>
 
-                        <li><a href="{{ route('mainhousekeeping#page') }}" class="dropdown-item">HouseKeeping</a></li>
+                                <li><a href="{{ route('mainhousekeeping#page') }}"
+                                        class="dropdown-item">HouseKeeping</a></li>
 
-                        <li><a href="{{ route('mainmaideldercare#page') }}" class="dropdown-item">Maid, Eldercare</a></li>
-                        <li><a href="{{ route('mainmaidcook#page') }}" class="dropdown-item">Maid, Cook</a></li>
-                        <li><a href="{{ route('mainmaidpetcare#page') }}" class="dropdown-item">Maid, Pet Care</a></li>
-                        <li><a href="{{ route('mainpremiumnanny#page') }}" class="dropdown-item">Premium Nanny</a></li>
+                                <li><a href="{{ route('mainmaideldercare#page') }}" class="dropdown-item">Maid,
+                                        Eldercare</a></li>
+                                <li><a href="{{ route('mainmaidcook#page') }}" class="dropdown-item">Maid, Cook</a></li>
+                                <li><a href="{{ route('mainmaidpetcare#page') }}" class="dropdown-item">Maid, Pet
+                                        Care</a></li>
+                                <li><a href="{{ route('mainpremiumnanny#page') }}" class="dropdown-item">Premium
+                                        Nanny</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                EN/TH
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">ENG</a></li>
+                                <li><a class="dropdown-item" href="#">THAI</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      EN/TH
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">ENG</a></li>
-                      <li><a class="dropdown-item" href="#">THAI</a></li>
-                    </ul>
-                  </li>
-
-              </ul>
+                </div>
             </div>
-          </div>
         </div>
     </nav>
 
@@ -231,6 +277,24 @@
     {{-- end navbar --}}
 
     @yield('content')
+
+    <div class="form w-50 m-auto mt-4 text-center">
+
+        <form action="https://formspree.io/f/mvoynkqy" method="POST">
+            <input type="text" class="form-control border border-0" placeholder="Name*">
+            <input type="email" class="form-control border border-0" placeholder="example@gmail.com">
+            <input type="text" class="form-control border border-0" placeholder="Phone*">
+            <input type="text" class="form-control border border-0" placeholder="Full Time or Part Time*">
+            <input type="text" class="form-control border border-0" placeholder="Live In or Live Out*">
+            <textarea name="" class="form-control textarea" id="" placeholder="Note*" cols="10" rows="5"></textarea>
+
+            <div class="request mt-3">
+                <button class="btn btn-danger">Request</button>
+
+            </div>
+        </form>
+
+    </div>
 
     <p class="mt-5 text-center footer">
         This site is protected by reCAPTCHA and the Google <span class="text-danger">Privacy Policy</span> and <span

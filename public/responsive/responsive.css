@@ -1,4 +1,4 @@
-@media(max-width: 576px)
+@media(max-width: 375px)
 {
     .list {
         margin-right: 85px;
@@ -6,7 +6,7 @@
 
 }
 
-@media(max-width: 576px)
+@media(max-width: 375px)
 {
     .info {
         /* background-color: blueviolet; */
@@ -25,5 +25,10 @@
         width: 45%;
     }
 }
+
+
+
+
+
 
 

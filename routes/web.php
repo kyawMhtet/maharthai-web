@@ -68,7 +68,7 @@ Route::get('nanny_detail/{id}', [UserController::class, 'nannyInfo'])->name('nan
 
 Route::get('nanny/request/{id}', [UserController::class, 'nannyRequest'])->name('nanny#request');
 
-Route::post('nanny/search', [UserController::class, 'nannySearch'])->name('nanny#search');
+Route::post('nanny/search/{id}', [UserController::class, 'nannySearch'])->name('nanny#search');
 
 
 // Filtering
