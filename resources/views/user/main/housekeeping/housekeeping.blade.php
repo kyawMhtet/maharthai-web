@@ -128,69 +128,77 @@
         </div>
     </div> --}}
 
+    <div class="filter container w-25 mt-5">
+        <div class="filter1 shadow-sm py-2 rounded text-danger">
+            <form action="{{ route('housekeeping#search') }}" method="get">
+                @csrf
+                <div class="d-flex ">
+
+                    <div class="mt-1 d-flex m-auto ">
+                        <div class="me-2 search">
+                            <select name="full_part" id="" class="form-select">
+                                <option value="full-time">Full-time</option>
+                                <option value="part-time">Part-time</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <select name="live_in_out" id="" class="form-select">
+                                <option value="live-In">Live-In</option>
+                                <option value="live-Out">Live-Out</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3 text-center">
+                    <button class="btn btn-danger text-white rounded btn-sm submit">Submit</button>
+                    <button class="btn btn-primary btn-sm">
+                        <a href="{{ route('mainhousekeeping#page') }}" class="clear">
+                            Clear
+                        </a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     {{-- housekeeping workers --}}
 
     <div class="text-center mt-5 text-danger">
         <h2>HOUSEKEEPING WORKERS</h2>
     </div>
 
-    <div class="list container w-75 text-center mb-3">
-        <div class="container w-25 mt-3 shadow-sm p-2">
-            {{-- <div class="text-center"> --}}
-                <div class="d-flex">
-                    <div class="m-auto">
-                        <input type="radio" class="form-check-input workingtime" name="full_part" value="full-time" id="fullpart1">
-                        <label for="form-check-label" for="fullpart1">Full-time</label>
-                    </div>
-
-                    <div class="me-4">
-                        <input type="radio" class="form-check-input workingtime" name="full_part" value="part-time" id="fullpart2">
-                        <label for="form-check-label" for="fullpart2">Part-time</label>
-                    </div>
-                </div>
-
-                <div class="me-4 d-flex">
-                    <div class="m-auto">
-                        <input type="radio" class="form-check-input workingtime1" name="live_in_out" value="live-In" id="liveinout1">
-                        <label for="form-check-label" for="liveinout1">Live-In</label>
-                    </div>
-
-                    <div class="me-2">
-                        <input type="radio" class="form-check-input workingtime1" name="live_in_out" value="live-Out" id="liveinout2">
-                        <label for="form-check-label" for="liveinout2">Live-Out</label>
-                    </div>
-                </div>
-            {{-- </div> --}}
-        </div>
-        <div class="mt-2">
-            <a href="{{ route('mainhousekeeping#page') }}">
-                <button class="btn btn-primary btn-sm">Clear</button>
-            </a>
+    <div class="list container text-center mb-3">
+        <div class="text-start ms-4 mt-4 result">
+            <h6>Search result for : <span class="badge bg-secondary text-white">{{ request('full_part') }} /
+                {{ request('live_in_out') }}</span></h6>
         </div>
         <div class="row m-auto" id="housekeepingList">
             @foreach ($housekeepings as $housekeeping)
-                @if ($housekeeping->stockstatus == 'Available' ||
-                    $housekeeping->stockstatus == 'null' ||
-                    $housekeeping->stockstatus == '')
-                    <div class="col col-lg-4 col-md-6 col-sm-8 mt-5 text-center">
+                @if ($housekeeping->stockstatus == 'Available' || $housekeeping->stockstatus == 'null' || $housekeeping->stockstatus == '')
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 ist-item  mt-2 text-center">
+                        <div class="housekeeping card listitem p-2 border border-0">
 
-                        <div class="housekeeping card p-2 border border-0" style="width: 20rem; height: 600px;">
-
-                            <img class="card-img-top" src="{{ asset('storage/' . $housekeeping->photo) }}"
-                                style="height: 305px; width: 305px;" alt="">
+                            <img class="card-img-top" src="{{ asset('storage/' . $housekeeping->photo) }}" alt="">
                             <div class="card-body text-start">
-                                <p>{{ $housekeeping->code }}</p>
-                                <p>{{ $housekeeping->full_part }} / {{ $housekeeping->live_in_out }}</p>
-                                <p>{{ $housekeeping->salary }} <b>Baht</b></p>
-                                <p>{{ Str::words($housekeeping->experience, 8, '...') }}</p>
+                                <div>
+                                    <p>{{ $housekeeping->code }}</p>
+                                    <p>{{ $housekeeping->full_part }} / {{ $housekeeping->live_in_out }}</p>
+                                    <p>{{ $housekeeping->salary }} <b>Baht</b></p>
+
+
+                                    <p>{{ Str::words($housekeeping->experience, 8, '...') }}</p>
+                                </div>
 
                             </div>
                             <div class="text-center mb-4">
-                                <a href="{{ route('housekeeping#info', $housekeeping->id) }}"
-                                    class="btn btn-danger mb-2 rounded-pill w-75">
+                                <a href="{{ route('housekeeping#info', $housekeeping->id) }}" class="btn btn-danger rounded-pill w-75">
                                     More Details
                                 </a>
                             </div>
+
+                            {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('housekeeping#info', $housekeeping->id) }}" class="btn btn-danger">More Details</a> --}}
 
                         </div>
                     </div>
@@ -214,34 +222,37 @@
 
     <script>
         $(document).ready(function() {
-    // $.ajax({
-    //     type : 'get' ,
-    //     url : 'http://localhost/maharthai/public/ajax/housekeeping/list' ,
-    //     dataType : 'json' ,
-    //     success : function(response){
-    //         console.log('response');
-    //     }
-    // });
+            // $.ajax({
+            //     type : 'get' ,
+            //     url : 'http://localhost/maharthai/public/ajax/housekeeping/list' ,
+            //     dataType : 'json' ,
+            //     success : function(response){
+            //         console.log('response');
+            //     }
+            // });
 
 
-    // input[type=radio][name=full_part]
+            // input[type=radio][name=full_part]
 
-    $('.workingtime1').change(function() {
-        $eventOption1 = $('.workingtime1:checked').val();
-        // console.log($eventOption1);
-        if ($eventOption1 == 'live-In') {
-            $.ajax({
-                type: 'get',
-                url: '{{ route('filter#housekeepinglist') }}',
-                data: {
-                    'status': 'live-In'
-                },
-                dataType: 'json',
-                success: function(response) {
-                    // console.log(response[0].full_part);
-                    $list = '';
-                    for ($i = 0; $i < response.length; $i++) {
-                        $list += `
+            $('.workingtime1').change(function() {
+                $eventOption1 = $('.workingtime1:checked').val();
+                // console.log($eventOption1);
+                if ($eventOption1 == 'live-In') {
+                    $.ajax({
+                        type: 'get',
+                        url: '{{ route('filter#housekeepinglist') }}',
+                        data: {
+                            'status': 'live-In'
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            // console.log(response[0].full_part);
+                            $list = '';
+                            for ($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                @if ($housekeeping->stockstatus == 'Available' ||
+                    $housekeeping->stockstatus == 'null' ||
+                    $housekeeping->stockstatus == '')
                     <div class="col-4 mt-5">
         <div class="housekeeping card p-2 border border-0" style="width: 20rem; height: 600px; ">
 
@@ -267,24 +278,30 @@
 
         </div>
     </div>
+
+    @elseif ($housekeeping->stockstatus == 'Not Available')
+                @endif
                 `;
-                    }
-                    $('#housekeepingList').html($list);
-                }
-            });
-        } else if ($eventOption1 == 'live-Out') {
-            $.ajax({
-                type: 'get',
-                url: '{{ route('filter#housekeepinglist') }}',
-                data: {
-                    'status': 'live-Out'
-                },
-                dataType: 'json',
-                success: function(response) {
-                    // console.log(response[0].full_part);
-                    $list = '';
-                    for ($i = 0; $i < response.length; $i++) {
-                        $list += `
+                            }
+                            $('#housekeepingList').html($list);
+                        }
+                    });
+                } else if ($eventOption1 == 'live-Out') {
+                    $.ajax({
+                        type: 'get',
+                        url: '{{ route('filter#housekeepinglist') }}',
+                        data: {
+                            'status': 'live-Out'
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            // console.log(response[0].full_part);
+                            $list = '';
+                            for ($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                @if ($housekeeping->stockstatus == 'Available' ||
+                    $housekeeping->stockstatus == 'null' ||
+                    $housekeeping->stockstatus == '')
                     <div class="col-4 mt-5">
         <div class="housekeeping card p-2 border border-0" style="width: 20rem; height: 600px; ">
 
@@ -310,35 +327,41 @@
 
         </div>
     </div>
+
+    @elseif ($housekeeping->stockstatus == 'Not Available')
+                @endif
                 `;
-                    }
-                    $('#housekeepingList').html($list);
+                            }
+                            $('#housekeepingList').html($list);
+                        }
+                    });
                 }
             });
-        }
-    });
 
 
 
 
-    $('.workingtime').change(function() {
-        $eventOption = $('.workingtime:checked').val();
-        // $eventOption1 = $('.workingtime1:checked').val();
+            $('.workingtime').change(function() {
+                $eventOption = $('.workingtime:checked').val();
+                // $eventOption1 = $('.workingtime1:checked').val();
 
-        // console.log($eventOption);
-        if ($eventOption == 'full-time') {
-            $.ajax({
-                type: 'get',
-                url: '{{ route('filter#housekeepinglist') }}',
-                data: {
-                    'status': 'full-time'
-                },
-                dataType: 'json',
-                success: function(response) {
-                    // console.log(response[0].full_part);
-                    $list = '';
-                    for ($i = 0; $i < response.length; $i++) {
-                        $list += `
+                // console.log($eventOption);
+                if ($eventOption == 'full-time') {
+                    $.ajax({
+                        type: 'get',
+                        url: '{{ route('filter#housekeepinglist') }}',
+                        data: {
+                            'status': 'full-time'
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            // console.log(response[0].full_part);
+                            $list = '';
+                            for ($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                @if ($housekeeping->stockstatus == 'Available' ||
+                    $housekeeping->stockstatus == 'null' ||
+                    $housekeeping->stockstatus == '')
                     <div class="col-4 mt-5">
         <div class="housekeeping card p-2 border border-0" style="width: 20rem; height: 600px; ">
 
@@ -364,24 +387,30 @@
 
         </div>
     </div>
+
+    @elseif ($housekeeping->stockstatus == 'Not Available')
+                @endif
                 `;
-                    }
-                    $('#housekeepingList').html($list);
-                }
-            });
-        } else if ($eventOption == 'part-time') {
-            $.ajax({
-                type: 'get',
-                url: '{{ route('filter#housekeepinglist') }}',
-                data: {
-                    'status': 'part-time'
-                },
-                dataType: 'json',
-                success: function(response) {
-                    // console.log(response[0].full_part);
-                    $list = '';
-                    for ($i = 0; $i < response.length; $i++) {
-                        $list += `
+                            }
+                            $('#housekeepingList').html($list);
+                        }
+                    });
+                } else if ($eventOption == 'part-time') {
+                    $.ajax({
+                        type: 'get',
+                        url: '{{ route('filter#housekeepinglist') }}',
+                        data: {
+                            'status': 'part-time'
+                        },
+                        dataType: 'json',
+                        success: function(response) {
+                            // console.log(response[0].full_part);
+                            $list = '';
+                            for ($i = 0; $i < response.length; $i++) {
+                                $list += `
+                                @if ($housekeeping->stockstatus == 'Available' ||
+                    $housekeeping->stockstatus == 'null' ||
+                    $housekeeping->stockstatus == '')
                     <div class="col-4 mt-5">
         <div class="housekeeping card p-2 border border-0" style="width: 20rem; height: 600px; ">
 
@@ -407,15 +436,18 @@
 
         </div>
     </div>
+
+    @elseif ($housekeeping->stockstatus == 'Not Available')
+                @endif
                 `;
-                    }
-                    $('#housekeepingList').html($list);
+                            }
+                            $('#housekeepingList').html($list);
+                        }
+                    });
                 }
             });
-        }
-    });
-});
-</script>
+        });
+    </script>
 
 
 @endsection

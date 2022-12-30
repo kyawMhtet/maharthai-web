@@ -1,7 +1,9 @@
 @media(max-width: 375px)
 {
-    .list {
-        margin-right: 85px;
+
+    .list-item {
+        border: 2px solid red;
+        margin-right: 100px;
     }
 
 }

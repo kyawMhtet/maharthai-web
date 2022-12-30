@@ -85,7 +85,13 @@
             color: white;
         }
 
+
+
+
+
+
         @media(max-width: 375px) {
+
             .form {
                 /* border: 2px solid red; */
                 /* width: 300px; */
@@ -105,15 +111,13 @@
             }
         }
 
-        @media(max-width: 900px)
-        {
+        @media(max-width: 900px) {
             .list-item {
                 margin: auto;
             }
         }
 
-        @media(max-width: 991px)
-        {
+        @media(max-width: 991px) {
             .list-item {
                 width: 330px;
             }
@@ -222,7 +226,7 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">

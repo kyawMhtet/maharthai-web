@@ -37,15 +37,17 @@ class AjaxController extends Controller
     {
         // logger($request->status);
         if ($request->status == 'full-time') {
-            $data = Maid::where('full_part', 'full-time')->get();
+            $data = Maid::where('full_part', 'full-time');
         } else if ($request->status == 'part-time') {
-            $data = Maid::where('full_part', 'part-time')->get();
+            $data = Maid::where('full_part', 'part-time');
         } else if ($request->status == 'live-In') {
-            $data = Maid::where('live_in_out', 'live-In')->get();
+            $data = Maid::where('live_in_out', 'live-In');
         } else if ($request->status == 'live-Out') {
-            $data = Maid::where('live_in_out', 'live-Out')->get();
+            $data = Maid::where('live_in_out', 'live-Out');
         }
         return $data;
+
+
     }
 
     // housekeeping

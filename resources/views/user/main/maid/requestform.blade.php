@@ -8,7 +8,7 @@
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
     <div class="container mt-5">
 
-        <div class="w-50 m-auto mt-5 shadow p-5">
+        <div class="col-12 col-xl-6 col-lg-6 col-md-5 col-sm-12 m-auto mt-5 shadow p-5">
             <h3 class="text-center text-danger">Request Form</h3>
             <form action="https://formspree.io/f/mvoynkqy" method="POST">
 

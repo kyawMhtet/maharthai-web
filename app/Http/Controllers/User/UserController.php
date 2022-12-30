@@ -30,32 +30,32 @@ class UserController extends Controller
     }
 
 
-    // public function nannySearch()
-    // {
-    //     // $data = $this->nannySearchData($request);
-
-    //     // if ($request->full_part == 'full-time' && $request->live_in_out == 'live-In') {
-    //     //     $nannies = Nanny::where('full_part', $request->full_part)->orWhere('live_in_out', $request->live_in_out)->get();
-    //     //     $nannies->appends(request()->all());
-    //     // }
-
-    //     $nannies = Nanny::when(request('full_part', 'live_in_out'), function($query) {
-    //         $query->where('full_part', 'like', '%' . request('full_part') . '%')
-    //                 ->orWhere('live_in_out', 'like', '%' . request('live_in_out') . '%')
-    //                 ->first();
-    //     })
-    //         ->orderBy('id', 'desc')
-    //         ->paginate(12);
-    //     $nannies->appends(request()->all());
-
-    //     return view('user.main.home', compact('nannies'));
-    // }
-
-    public function nannySearch($id)
+    public function nannySearch()
     {
-        $nannies = Nanny::where('id', $id)->first();
-        dd($nannies->toArray());
+        // $data = $this->nannySearchData($request);
+
+        // if ($request->full_part == 'full-time' && $request->live_in_out == 'live-In') {
+        //     $nannies = Nanny::where('full_part', $request->full_part)->orWhere('live_in_out', $request->live_in_out)->get();
+        //     $nannies->appends(request()->all());
+        // }
+
+        $nannies = Nanny::when(request('full_part', 'live_in_out'), function($query) {
+            $query->where('full_part', 'like', '%' . request('full_part') . '%')
+                    ->orWhere('live_in_out', 'like', '%' . request('live_in_out') . '%')
+                    ->first();
+        })
+            ->orderBy('id', 'desc')
+            ->paginate(12);
+        $nannies->appends(request()->all());
+
+        return view('user.main.home', compact('nannies'));
     }
+
+    // public function nannySearch($id)
+    // {
+    //     $nannies = Nanny::where('id', $id)->first();
+    //     dd($nannies->toArray());
+    // }
 
 
 
