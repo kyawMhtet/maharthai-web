@@ -215,7 +215,9 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 {{-- <img src="{{ asset('storage/maharthai.jpg') }}" class="d-block" alt="..." alt=""> --}}
-                <h4 class="text-danger"><b>Mahar Thai Lin Aung</b></h4>
+                <a href="https://maharthailinaung.com/" style="text-decoration: none;">
+                    <h4 class="text-danger">Mahar Thai Lin Aung</h4>
+                </a>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -229,13 +231,13 @@
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body">
+                <div class="offcanvas-body p-5">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
+                        <li class="nav-item p-2">
                             <a class="nav-link" aria-current="page" href="https://maharthailinaung.com/">Home</a>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown p-2">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Services
@@ -257,7 +259,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown p-2">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 EN/TH
