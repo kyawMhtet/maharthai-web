@@ -231,8 +231,8 @@
                     <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body p-5">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
                         <li class="nav-item p-2">
                             <a class="nav-link" aria-current="page" href="https://maharthailinaung.com/">Home</a>
                         </li>
