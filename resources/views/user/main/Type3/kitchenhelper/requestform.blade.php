@@ -1,6 +1,6 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'Manager Request Form')
+@section('title', 'KitchenHelper Request Form')
 
 
 @section('content')
@@ -14,7 +14,7 @@
 
                 <div>
                     <p>Code*</p>
-                    <input type="text" name="managerCode" value="{{ old('managerCode', $managers->code) }}" class="form-control" placeholder="J..." disabled required>
+                    <input type="text" name="kitchenhelperCode" value="{{ old('kitchenhelperCode', $kitchenhelpers->code) }}" class="form-control" placeholder="J..." disabled required>
                 </div>
                 <div class="mt-3">
                     <p>Name*</p>
@@ -33,7 +33,7 @@
 
 
                 <div class="mt-3 text-end">
-                    <a href="{{ route('manager#info', $managers->id) }}" type="button" class="btn btn-primary">Back</a>
+                    <a href="{{ route('kitchenhelper#info', $kitchenhelpers->id) }}" type="button" class="btn btn-primary">Back</a>
                     <button class="btn btn-danger" type="submit">Send</button>
                 </div>
             </form>

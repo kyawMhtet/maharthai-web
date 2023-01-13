@@ -9,13 +9,16 @@ use App\Http\Controllers\MaidController;
 use App\Http\Controllers\NannyController;
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChiefassistantController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\GardenerController;
 use App\Http\Controllers\GeneralworkerController;
+use App\Http\Controllers\HelperController;
 use App\Http\Controllers\MaidcookController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\MaidpetcareController;
 use App\Http\Controllers\HousekeepingController;
+use App\Http\Controllers\KitchenhelperController;
 use App\Http\Controllers\PremiumnannyController;
 use App\Http\Controllers\MaideldercareController;
 use App\Http\Controllers\ManagerController;
@@ -33,6 +36,10 @@ use App\Http\Controllers\User\Type_2\MainGardenerController;
 use App\Http\Controllers\User\Type_2\MainGeneralworkerController;
 use App\Http\Controllers\User\Type_2\MainSalemanController;
 use App\Http\Controllers\User\Type_3\MainCashierController;
+use App\Http\Controllers\User\Type_3\MainChiefassistantController;
+use App\Http\Controllers\User\Type_3\MainHelperController;
+use App\Http\Controllers\User\Type_3\MainKitchenhelperController;
+use App\Http\Controllers\User\Type_3\MainManagerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -231,6 +238,52 @@ Route::get('cashier_detail/{id}', [MainCashierController::class, 'cashierInfo'])
 Route::get('cashierRequestPage/{id}', [MainCashierController::class, 'cashierRequestPage'])->name('cashierrequest#page');
 
 Route::get('cashier/search', [MainCashierController::class, 'cashierSearch'])->name('cashier#search');
+
+// Manager
+
+Route::get('managerPage', [MainManagerController::class, 'managerPage'])->name('mainmanager#page');
+
+Route::get('manager_detail/{id}', [MainManagerController::class, 'managerInfo'])->name('manager#info');
+
+Route::get('managerRequestPage/{id}', [MainManagerController::class, 'managerRequestPage'])->name('managerrequest#page');
+
+Route::get('manager/search', [MainManagerController::class, 'managerSearch'])->name('manager#search');
+
+// Helper
+
+Route::get('helperPage', [MainHelperController::class, 'helperPage'])->name('mainhelper#page');
+
+Route::get('helper_detail/{id}', [MainHelperController::class, 'helperInfo'])->name('helper#info');
+
+Route::get('helperRequestPage/{id}', [MainHelperController::class, 'helperRequestPage'])->name('helperrequest#page');
+
+Route::get('helper/search', [MainHelperController::class, 'helperSearch'])->name('helper#search');
+
+// ChiefAssistant
+
+Route::get('chiefassistantPage', [MainChiefassistantController::class, 'chiefassistantPage'])->name('mainchiefassistant#page');
+
+Route::get('chiefassistant_detail/{id}', [MainChiefassistantController::class, 'chiefassistantInfo'])->name('chiefassistant#info');
+
+Route::get('chiefassistantRequestPage/{id}', [MainChiefassistantController::class, 'chiefassistantRequestPage'])->name('chiefassistantrequest#page');
+
+Route::get('chiefassistant/search', [MainChiefassistantController::class, 'chiefassistantSearch'])->name('chiefassistant#search');
+
+// KitchenHelper
+
+Route::get('kitchenhelperPage', [MainKitchenhelperController::class, 'kitchenhelperPage'])->name('mainkitchenhelper#page');
+
+Route::get('kitchenhelper_detail/{id}', [MainKitchenhelperController::class, 'kitchenhelperInfo'])->name('kitchenhelper#info');
+
+Route::get('kitchenhelperRequestPage/{id}', [MainKitchenhelperController::class, 'kitchenhelperRequestPage'])->name('kitchenhelperrequest#page');
+
+Route::get('kitchenhelper/search', [MainKitchenhelperController::class, 'kitchenhelperSearch'])->name('kitchenhelper#search');
+
+
+
+
+
+
 
 
 
@@ -496,6 +549,53 @@ Route::middleware([
 
         Route::post('manager/update/{id}', [ManagerController::class, 'managerUpdate'])->name('manager#update');
 
+        // Helper
+
+        Route::get('helperPage', [HelperController::class, 'helperPage'])->name('helper#page');
+
+        Route::get('helper/create', [CategoryController::class, 'helperCreatePage'])->name('helper#create');
+
+        Route::post('helper', [HelperController::class, 'helperCreate'])->name('helper#aftercreate');
+
+        Route::get('helper/detail/{id}', [HelperController::class, 'helperEdit'])->name('helper#updatePage');
+
+        Route::get('helper/delete/{id}', [HelperController::class, 'helperDelete'])->name('helper#delete');
+
+        Route::get('helper/editPage/{id}', [HelperController::class, 'editPage'])->name('helper#editPage');
+
+        Route::post('helper/update/{id}', [HelperController::class, 'helperUpdate'])->name('helper#update');
+
+
+        // ChiefAssistant
+        Route::get('chiefassistantPage', [ChiefassistantController::class, 'chiefassistantPage'])->name('chiefassistant#page');
+
+        Route::get('chiefassistant/create', [CategoryController::class, 'chiefassistantCreatePage'])->name('chiefassistant#create');
+
+        Route::post('chiefassistant', [ChiefassistantController::class, 'chiefassistantCreate'])->name('chiefassistant#aftercreate');
+
+        Route::get('chiefassistant/detail/{id}', [ChiefassistantController::class, 'chiefassistantEdit'])->name('chiefassistant#updatePage');
+
+        Route::get('chiefassistant/delete/{id}', [ChiefassistantController::class, 'chiefassistantDelete'])->name('chiefassistant#delete');
+
+        Route::get('chiefassistant/editPage/{id}', [ChiefassistantController::class, 'editPage'])->name('chiefassistant#editPage');
+
+        Route::post('chiefassistant/update/{id}', [ChiefassistantController::class, 'chiefassistantUpdate'])->name('chiefassistant#update');
+
+        // KitchenHelper
+
+        Route::get('kitchenhelperPage', [KitchenhelperController::class, 'kitchenhelperPage'])->name('kitchenhelper#page');
+
+        Route::get('kitchenhelper/create', [CategoryController::class, 'kitchenhelperCreatePage'])->name('kitchenhelper#create');
+
+        Route::post('kitchenhelper', [KitchenhelperController::class, 'kitchenhelperCreate'])->name('kitchenhelper#aftercreate');
+
+        Route::get('kitchenhelper/detail/{id}', [KitchenhelperController::class, 'kitchenhelperEdit'])->name('kitchenhelper#updatePage');
+
+        Route::get('kitchenhelper/delete/{id}', [KitchenhelperController::class, 'kitchenhelperDelete'])->name('kitchenhelper#delete');
+
+        Route::get('kitchenhelper/editPage/{id}', [KitchenhelperController::class, 'editPage'])->name('kitchenhelper#editPage');
+
+        Route::post('kitchenhelper/update/{id}', [KitchenhelperController::class, 'kitchenhelperUpdate'])->name('kitchenhelper#update');
 
 
         // customers page

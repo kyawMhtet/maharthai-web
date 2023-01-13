@@ -36,6 +36,10 @@
             color: red;
         }
 
+        .dropdown-menu {
+            height: 500px;
+        }
+
         .dropdown-menu a {
             color: black;
             margin-top: 10px;
@@ -242,7 +246,7 @@
                                 aria-expanded="false">
                                 Services
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu overflow-auto">
                                 <li><a href="{{ route('mainmaid#page') }}" class="dropdown-item">Maid</a></li>
                                 <li><a href="{{ route('user#home') }}" class="dropdown-item">Nanny, Maid</a></li>
 
@@ -261,6 +265,11 @@
                                 <li><a href="{{ route('maingeneralworker#page') }}" class="dropdown-item">General Workers</a></li>
                                 <li><a href="{{ route('mainsaleman#page') }}" class="dropdown-item">Sale Man</a></li>
                                 <li><a href="{{ route('maincashier#page')}}" class="dropdown-item">Cashier</a></li>
+                                <li><a href="{{ route('mainmanager#page')}}" class="dropdown-item">Manager</a></li>
+                                <li><a href="#" class="dropdown-item">Waiter/Waitress</a></li>
+                                <li><a href="{{ route('mainhelper#page') }}" class="dropdown-item">Helper</a></li>
+                                <li><a href="{{ route('mainchiefassistant#page') }}" class="dropdown-item">ChiefAssistant</a></li>
+                                <li><a href="{{ route('mainkitchenhelper#page') }}" class="dropdown-item">KitchenHelper</a></li>
 
                             </ul>
                         </li>

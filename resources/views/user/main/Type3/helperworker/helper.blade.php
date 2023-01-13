@@ -1,6 +1,6 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'Manager')
+@section('title', 'Helper')
 
 @section('content')
 
@@ -22,11 +22,11 @@
             font-size: 18px;
         }
 
-        .manager {
+        .helper {
             transition: all 0.5s;
         }
 
-        .manager:hover {
+        .helper:hover {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
@@ -96,7 +96,7 @@
 
     <div class="filter container w-25 mt-5">
         <div class="filter1 shadow-sm py-2 rounded text-danger">
-            <form action="{{ route('manager#search') }}" method="get">
+            <form action="{{ route('helper#search') }}" method="get">
                 @csrf
                 <div class="d-flex">
                     <div class="mt-1 d-flex m-auto">
@@ -119,7 +119,7 @@
                 <div class="mt-3 text-center">
                     <button class="btn btn-danger text-white rounded">Submit</button>
                     <button class="btn btn-primary">
-                        <a href="{{ route('mainmanager#page') }}" class="clear">
+                        <a href="{{ route('mainhelper#page') }}" class="clear">
                             Clear
                         </a>
                     </button>
@@ -127,11 +127,11 @@
             </form>
         </div>
     </div>
-    {{-- manager workers --}}
+    {{-- helper workers --}}
 
 
     <div class="text-center mt-5 text-danger">
-        <h2>MANAGER WORKERS</h2>
+        <h2>HELPER WORKERS</h2>
     </div>
 
     <div class="list container text-center mb-3">
@@ -139,49 +139,49 @@
             <h6>Search result for : <span class="badge bg-secondary text-white">{{ request('full_part') }} /
                     {{ request('live_in_out') }}</span></h6>
         </div>
-        <div class="row m-auto" id="cashierList">
-            @foreach ($managers as $manager)
-                @if ($manager->stockstatus == 'Available' || $manager->stockstatus == 'null' || $manager->stockstatus == '')
+        <div class="row m-auto" id="helperList">
+            @foreach ($helpers as $helper)
+                @if ($helper->stockstatus == 'Available' || $helper->stockstatus == 'null' || $helper->stockstatus == '')
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 ist-item  mt-2 text-center">
-                        <div class="manager card listitem p-2 border border-0">
+                        <div class="helper card listitem p-2 border border-0">
 
-                            <img class="card-img-top" src="{{ asset('storage/' . $manager->photo) }}" alt="">
+                            <img class="card-img-top" src="{{ asset('storage/' . $helper->photo) }}" alt="">
                             <div class="card-body text-start">
                                 <div>
-                                    <p>{{ $manager->code }}</p>
-                                    <p>{{ $manager->full_part }} / {{ $manager->live_in_out }}</p>
-                                    <p>{{ $manager->salary }} <b>Baht</b></p>
+                                    <p>{{ $helper->code }}</p>
+                                    <p>{{ $helper->full_part }} / {{ $helper->live_in_out }}</p>
+                                    <p>{{ $helper->salary }} <b>Baht</b></p>
 
 
-                                    <p>{{ Str::words($manager->experience, 8, '...') }}</p>
+                                    <p>{{ Str::words($helper->experience, 8, '...') }}</p>
                                 </div>
 
                             </div>
                             <div class="text-center mb-4">
-                                <a href="{{ route('manager#info', $manager->id) }}" class="btn btn-danger rounded-pill w-75">
+                                <a href="{{ route('helper#info', $helper->id) }}" class="btn btn-danger rounded-pill w-75">
                                     More Details
                                 </a>
                             </div>
 
-                            {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('manager#info', $manager->id) }}" class="btn btn-danger">More Details</a> --}}
+                            {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('helper#info', $helper->id) }}" class="btn btn-danger">More Details</a> --}}
 
                         </div>
                     </div>
-                @elseif ($manager->stockstatus == 'Not Available')
+                @elseif ($helper->stockstatus == 'Not Available')
                 @endif
             @endforeach
         </div>
         <div class="mt-5">
-            {{ $managers->links() }}
+            {{ $helpers->links() }}
         </div>
     </div>
-    {{-- end manager workers --}}
+    {{-- end helper workers --}}
 
 
-    {{-- hire for manager --}}
+    {{-- hire for helper --}}
 
     <div class="text-center mt-3 text-danger">
-        <h2>HIRE FOR MANAGER</h2>
+        <h2>HIRE FOR HELPER WORKERS</h2>
     </div>
 
 

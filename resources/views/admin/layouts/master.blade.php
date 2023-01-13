@@ -173,10 +173,10 @@
 
                                     <li class="text-center"><a class="dropdown-item"
                                             href="">Waiter/Waitress</a></li>
-                                    <li class="text-center"><a class="dropdown-item" href="">Helper</a></li>
-                                    <li class="text-center"><a class="dropdown-item" href="">ChiefAssitant</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('helper#page') }}">Helper</a></li>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('chiefassistant#page') }}">ChiefAssitant</a>
                                     </li>
-                                    <li class="text-center"><a class="dropdown-item" href="">KitchenHelper</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('kitchenhelper#page') }}">KitchenHelper</a>
                                     </li>
                                 </ul>
                             </div>

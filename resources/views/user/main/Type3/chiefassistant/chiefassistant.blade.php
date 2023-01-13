@@ -1,6 +1,6 @@
 @extends('user.main.layouts.master')
 
-@section('title', 'Manager')
+@section('title', 'ChiefAssistant')
 
 @section('content')
 
@@ -22,11 +22,11 @@
             font-size: 18px;
         }
 
-        .manager {
+        .chiefassistant {
             transition: all 0.5s;
         }
 
-        .manager:hover {
+        .chiefassistant:hover {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
@@ -96,7 +96,7 @@
 
     <div class="filter container w-25 mt-5">
         <div class="filter1 shadow-sm py-2 rounded text-danger">
-            <form action="{{ route('manager#search') }}" method="get">
+            <form action="{{ route('chiefassistant#search') }}" method="get">
                 @csrf
                 <div class="d-flex">
                     <div class="mt-1 d-flex m-auto">
@@ -119,7 +119,7 @@
                 <div class="mt-3 text-center">
                     <button class="btn btn-danger text-white rounded">Submit</button>
                     <button class="btn btn-primary">
-                        <a href="{{ route('mainmanager#page') }}" class="clear">
+                        <a href="{{ route('mainchiefassistant#page') }}" class="clear">
                             Clear
                         </a>
                     </button>
@@ -127,11 +127,11 @@
             </form>
         </div>
     </div>
-    {{-- manager workers --}}
+    {{-- chiefassistant workers --}}
 
 
     <div class="text-center mt-5 text-danger">
-        <h2>MANAGER WORKERS</h2>
+        <h2>CHIEFASSISTANT WORKERS</h2>
     </div>
 
     <div class="list container text-center mb-3">
@@ -139,49 +139,49 @@
             <h6>Search result for : <span class="badge bg-secondary text-white">{{ request('full_part') }} /
                     {{ request('live_in_out') }}</span></h6>
         </div>
-        <div class="row m-auto" id="cashierList">
-            @foreach ($managers as $manager)
-                @if ($manager->stockstatus == 'Available' || $manager->stockstatus == 'null' || $manager->stockstatus == '')
+        <div class="row m-auto" id="chiefassistantList">
+            @foreach ($chiefassistants as $chiefassistant)
+                @if ($chiefassistant->stockstatus == 'Available' || $chiefassistant->stockstatus == 'null' || $chiefassistant->stockstatus == '')
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 ist-item  mt-2 text-center">
-                        <div class="manager card listitem p-2 border border-0">
+                        <div class="chiefassistant card listitem p-2 border border-0">
 
-                            <img class="card-img-top" src="{{ asset('storage/' . $manager->photo) }}" alt="">
+                            <img class="card-img-top" src="{{ asset('storage/' . $chiefassistant->photo) }}" alt="">
                             <div class="card-body text-start">
                                 <div>
-                                    <p>{{ $manager->code }}</p>
-                                    <p>{{ $manager->full_part }} / {{ $manager->live_in_out }}</p>
-                                    <p>{{ $manager->salary }} <b>Baht</b></p>
+                                    <p>{{ $chiefassistant->code }}</p>
+                                    <p>{{ $chiefassistant->full_part }} / {{ $chiefassistant->live_in_out }}</p>
+                                    <p>{{ $chiefassistant->salary }} <b>Baht</b></p>
 
 
-                                    <p>{{ Str::words($manager->experience, 8, '...') }}</p>
+                                    <p>{{ Str::words($chiefassistant->experience, 8, '...') }}</p>
                                 </div>
 
                             </div>
                             <div class="text-center mb-4">
-                                <a href="{{ route('manager#info', $manager->id) }}" class="btn btn-danger rounded-pill w-75">
+                                <a href="{{ route('chiefassistant#info', $chiefassistant->id) }}" class="btn btn-danger rounded-pill w-75">
                                     More Details
                                 </a>
                             </div>
 
-                            {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('manager#info', $manager->id) }}" class="btn btn-danger">More Details</a> --}}
+                            {{-- <a href="javascript:void(0)" id="show-worker" data-url="{{ route('chiefassistant#info', $chiefassistant->id) }}" class="btn btn-danger">More Details</a> --}}
 
                         </div>
                     </div>
-                @elseif ($manager->stockstatus == 'Not Available')
+                @elseif ($chiefassistant->stockstatus == 'Not Available')
                 @endif
             @endforeach
         </div>
         <div class="mt-5">
-            {{ $managers->links() }}
+            {{ $chiefassistants->links() }}
         </div>
     </div>
-    {{-- end manager workers --}}
+    {{-- end chiefassistant workers --}}
 
 
-    {{-- hire for manager --}}
+    {{-- hire for chiefassistant --}}
 
     <div class="text-center mt-3 text-danger">
-        <h2>HIRE FOR MANAGER</h2>
+        <h2>HIRE FOR CHIEFASSISTANT WORKERS</h2>
     </div>
 
 

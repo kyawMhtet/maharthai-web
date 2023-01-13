@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2 p-2">General Worker Form</h3>
+                                        <h3 class="text-center title-2 p-2">Sale Man Form</h3>
                                     </div>
                                     <hr>
                                     <form action="{{ route('saleman#aftercreate') }}" method="post"

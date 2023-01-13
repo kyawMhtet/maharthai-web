@@ -100,4 +100,22 @@ class CategoryController extends Controller
     {
         return view('admin.category.Type3.manager.managercreate');
     }
+
+    // Helper
+    public function helperCreatePage()
+    {
+        return view('admin.category.Type3.helperworker.helpercreate');
+    }
+
+    // ChiefAssistant
+    public function chiefassistantCreatePage()
+    {
+        return view('admin.category.Type3.chiefassistant.chiefassistantcreate');
+    }
+
+    // kitchenhelper
+    public function kitchenhelperCreatePage()
+    {
+        return view('admin.category.Type3.kitchenhelper.kitchenhelpercreate');
+    }
 }
