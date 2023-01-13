@@ -63,7 +63,7 @@ class DriverController extends Controller
     }
 
     // driver update
-    public function driverUpdate(Request $request)
+    public function driverUpdate(Request $request, $id)
     {
         //    dd('id', $request->all());
         $this->driverValidationCheck($request);
@@ -71,19 +71,28 @@ class DriverController extends Controller
 
         // photo
         if ($request->hasFile('driverPhoto')) {
-            $dbPhoto = Driver::where('id', $request->driverId)->first();
+            $dbPhoto = Driver::where('id', $id)->first();
             $dbPhoto = $dbPhoto->driverPhoto;
 
             if ($dbPhoto != null) {
                 Storage::delete('public/' . $dbPhoto);
             }
+
+            $fileName = uniqid() . $request->file('driverPhoto')->getClientOriginalName();
+            $request->file('driverPhoto')->storeAs('public', $fileName);
+            $data['photo'] = $fileName;
+        } else {
+            $dbPhoto = Driver::where('id', $id)->first();
+
+            $dbPhoto = $dbPhoto->photo;
+
+
+            $data['photo'] = $dbPhoto;
         }
 
-        $fileName = uniqid() . $request->file('driverPhoto')->getClientOriginalName();
-        $request->file('driverPhoto')->storeAs('public', $fileName);
-        $data['photo'] = $fileName;
 
-        Driver::where('id', $request->driverId)->update($data);
+
+        Driver::where('id', $id)->update($data);
         return redirect()->route('driver#page');
     }
 
@@ -94,7 +103,7 @@ class DriverController extends Controller
     {
         Validator::make($request->all(), [
             'driverCode' => 'required|unique:drivers,code,' . $request->driverId,
-            'driverPhoto' => 'required|mimes:jpg,jpeg,png|file',
+            'driverPhoto' => 'mimes:jpg,jpeg,png|file',
             'driverName' => 'required',
             'driverDoB' => 'required',
             // 'driverPosition' => 'required',

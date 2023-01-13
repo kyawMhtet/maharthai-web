@@ -36,7 +36,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2 p-2">Premium Nanny Form</h3>
+                                        <h3 class="text-center title-2 p-2">Driver Form</h3>
                                     </div>
                                     <hr>
                                     <form action="{{ route('driver#aftercreate') }}" method="post"
@@ -99,7 +99,7 @@
                                                 <br>
 
                                                 <label for="cc-payment" class="control-label mb-1">Position</label>
-                                                <input id="cc-payment" name="driverPosition" type="text" value="Premium Nanny"
+                                                <input id="cc-payment" name="driverPosition" type="text" value="Driver"
                                                     class="form-control @error('driverPosition') is-invalid  @enderror"
                                                     aria-label="Disabled input example" disabled>
                                                 @error('driverPosition')

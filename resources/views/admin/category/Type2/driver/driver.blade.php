@@ -87,8 +87,12 @@
                                             </div>
 
                                             <div class="d-flex">
-                                                <p><b>Available/Not Available:</b></p>
-                                                <p class="ms-">{{ $driver->stockstatus }}</p>
+                                                @if ($driver->stockstatus == 'Available')
+                                                    <p class="text-success">{{ $driver->stockstatus }}</p>
+                                                @elseif ($driver->stockstatus == 'Not Available')
+                                                    <p class="text-danger">{{ $driver->stockstatus }}</p>
+                                                @endif
+
                                             </div>
 
                                             <div class="d-flex">
@@ -97,7 +101,6 @@
                                                 <p><b>{{ Str::words($driver->note,15, '...') }}</b></p>
 
                                             </div>
-
 
                                         </div>
                                     </div>

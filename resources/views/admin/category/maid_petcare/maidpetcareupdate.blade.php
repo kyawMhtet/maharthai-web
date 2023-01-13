@@ -30,7 +30,7 @@
 
                     <div class="col info mt-3">
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Code: </b></p>
                             </div>
                             <div class="col">
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Name: </b></p>
                             </div>
                             <div class="col">
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Position: </b></p>
                             </div>
                             <div class="col">
@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>DOB: </b></p>
                             </div>
                             <div class="col">
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Nationality: </b></p>
                             </div>
                             <div class="col">
@@ -76,7 +76,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Religion: </b></p>
                             </div>
                             <div class="col">
@@ -85,7 +85,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Weight: </b></p>
                             </div>
                             <div class="col">
@@ -94,7 +94,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Height: </b></p>
                             </div>
                             <div class="col">
@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Salary: </b></p>
                             </div>
                             <div class="col">
@@ -112,7 +112,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Language: </b></p>
                             </div>
                             <div class="col">
@@ -121,7 +121,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>status: </b></p>
                             </div>
                             <div class="col">
@@ -130,7 +130,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Working Time: </b></p>
                             </div>
                             <div class="col">
@@ -140,7 +140,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Experience: </b></p>
                             </div>
                             <div class="col">
@@ -149,7 +149,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Skill: </b></p>
                             </div>
                             <div class="col">
@@ -158,7 +158,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Pets: </b></p>
                             </div>
                             <div class="col">
@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="d-flex px-4 mb-3">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <small>Note: </small>
                             </div>
                             <div class="col">
@@ -176,7 +176,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Vaccine: </b></p>
                             </div>
                             <div class="col">
@@ -190,7 +190,7 @@
                         </div> --}}
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <h4 class="text-danger">Remark: </h4>
                             </div>
                             <div class="col">
@@ -199,7 +199,7 @@
                         </div>
 
                         <div class="d-flex">
-                            <div class="col-2">
+                            <div class="col-3">
                                 <p><b>Note: </b></p>
                             </div>
                             <div class="col">

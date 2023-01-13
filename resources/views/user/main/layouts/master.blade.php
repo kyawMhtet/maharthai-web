@@ -232,7 +232,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 ">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item p-2">
                             <a class="nav-link" aria-current="page" href="https://maharthailinaung.com/">Home</a>
                         </li>
@@ -256,6 +256,12 @@
                                         Care</a></li>
                                 <li><a href="{{ route('mainpremiumnanny#page') }}" class="dropdown-item">Premium
                                         Nanny</a></li>
+                                <li><a href="{{ route('maindriver#page') }}" class="dropdown-item">Driver</a></li>
+                                <li><a href="{{ route('maingardener#page') }}" class="dropdown-item">Gardener</a></li>
+                                <li><a href="{{ route('maingeneralworker#page') }}" class="dropdown-item">General Workers</a></li>
+                                <li><a href="{{ route('mainsaleman#page') }}" class="dropdown-item">Sale Man</a></li>
+                                <li><a href="{{ route('maincashier#page')}}" class="dropdown-item">Cashier</a></li>
+
                             </ul>
                         </li>
 

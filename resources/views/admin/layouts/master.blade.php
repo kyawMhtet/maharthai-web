@@ -147,12 +147,12 @@
                                     {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
                                     <li class="text-center"><a class="dropdown-item" href="{{ route('driver#page') }}">Driver</a></li>
 
-                                    <li class="text-center"><a class="dropdown-item" href="">Gardener</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('gardener#page') }}">Gardener</a>
                                     </li>
 
-                                    <li class="text-center"><a class="dropdown-item" href="">General
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('generalworker#page') }}">General
                                             Workers</a></li>
-                                    <li class="text-center"><a class="dropdown-item" href="">Sale Man</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('saleman#page') }}">Sale Man</a>
                                     </li>
 
                                 </ul>
@@ -166,9 +166,9 @@
                                     <i class="fas fa-chart-bar"></i>Type 3 (Restaurant)</a>
                                 <ul class="dropdown-menu">
                                     {{-- <li><span class="dropdown-item-text">Dropdown item text</span></li> --}}
-                                    <li class="text-center"><a class="dropdown-item" href="">Casher</a></li>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('cashier#page') }}">Cashier</a></li>
 
-                                    <li class="text-center"><a class="dropdown-item" href="">Manager</a>
+                                    <li class="text-center"><a class="dropdown-item" href="{{ route('manager#page') }}">Manager</a>
                                     </li>
 
                                     <li class="text-center"><a class="dropdown-item"

@@ -61,7 +61,6 @@ class CategoryController extends Controller
     }
 
 
-
     // Type(2)
 
     // Driver
@@ -70,4 +69,35 @@ class CategoryController extends Controller
         return view('admin.category.Type2.driver.drivercreate');
     }
 
+    // Gardener
+    public function gardenerCreatePage()
+    {
+        return view('admin.category.Type2.gardener.gardenercreate');
+    }
+
+    // General worker
+    public function generalworkerCreatePage()
+    {
+        return view('admin.category.Type2.generalworker.generalworkercreate');
+    }
+
+    // Sale man
+    public function salemanCreatePage()
+    {
+        return view('admin.category.Type2.saleman.salemancreate');
+    }
+
+    // Type 3
+
+    // Cashier
+    public function cashierCreatePage()
+    {
+        return view('admin.category.Type3.cashier.cashiercreate');
+    }
+
+    // Manager
+    public function managerCreatePage()
+    {
+        return view('admin.category.Type3.manager.managercreate');
+    }
 }

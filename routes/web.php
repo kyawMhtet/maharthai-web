@@ -4,17 +4,22 @@ use App\Models\Nanny;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CashierController;
 use App\Http\Controllers\MaidController;
 use App\Http\Controllers\NannyController;
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\GardenerController;
+use App\Http\Controllers\GeneralworkerController;
 use App\Http\Controllers\MaidcookController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\MaidpetcareController;
 use App\Http\Controllers\HousekeepingController;
 use App\Http\Controllers\PremiumnannyController;
 use App\Http\Controllers\MaideldercareController;
+use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\SalemanController;
 use App\Http\Controllers\User\AjaxController;
 // main
 use App\Http\Controllers\User\MainMaidController;
@@ -23,7 +28,11 @@ use App\Http\Controllers\User\MainmaidpetcareController;
 use App\Http\Controllers\User\MainHousekeepingController;
 use App\Http\Controllers\User\MainpremiumnannyController;
 use App\Http\Controllers\User\MainmaideldercareController;
-
+use App\Http\Controllers\User\Type_2\MainDriverController;
+use App\Http\Controllers\User\Type_2\MainGardenerController;
+use App\Http\Controllers\User\Type_2\MainGeneralworkerController;
+use App\Http\Controllers\User\Type_2\MainSalemanController;
+use App\Http\Controllers\User\Type_3\MainCashierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -166,6 +175,62 @@ Route::get('premiumnannyRequestPage/{id}', [MainpremiumnannyController::class, '
 Route::get('premiumnanny/search', [MainpremiumnannyController::class, 'premiumnannySearch'])->name('premiumnanny#search');
 
 
+// Type 2
+
+// Driver page
+
+Route::get('driverPage', [MainDriverController::class, 'driverPage'])->name('maindriver#page');
+
+Route::get('driver_detail/{id}', [MaindriverController::class, 'driverInfo'])->name('driver#info');
+
+Route::get('driverRequestPage/{id}', [MaindriverController::class, 'driverRequestPage'])->name('driverrequest#page');
+
+Route::get('driver/search', [MaindriverController::class, 'driverSearch'])->name('driver#search');
+
+// Gardener page
+
+Route::get('gardenerPage', [MainGardenerController::class, 'gardenerPage'])->name('maingardener#page');
+
+Route::get('gardener_detail/{id}', [MainGardenerController::class, 'gardenerInfo'])->name('gardener#info');
+
+Route::get('gardenerRequestPage/{id}', [MainGardenerController::class, 'gardenerRequestPage'])->name('gardenerrequest#page');
+
+Route::get('gardener/search', [MainGardenerController::class, 'gardenerSearch'])->name('gardener#search');
+
+
+// General worker page
+
+Route::get('generalworkerPage', [MainGeneralworkerController::class, 'generalworkerPage'])->name('maingeneralworker#page');
+
+Route::get('generalworker_detail/{id}', [MainGeneralworkerController::class, 'generalworkerInfo'])->name('generalworker#info');
+
+Route::get('generalworkerRequestPage/{id}', [MainGeneralworkerController::class, 'generalworkerRequestPage'])->name('generalworkerrequest#page');
+
+Route::get('generalworker/search', [MainGeneralworkerController::class, 'generalworkerSearch'])->name('generalworker#search');
+
+
+// Sale Man page
+
+Route::get('salemanPage', [MainSalemanController::class, 'salemanPage'])->name('mainsaleman#page');
+
+Route::get('saleman_detail/{id}', [MainSalemanController::class, 'salemanInfo'])->name('saleman#info');
+
+Route::get('salemanRequestPage/{id}', [MainSalemanController::class, 'salemanRequestPage'])->name('salemanrequest#page');
+
+Route::get('saleman/search', [MainSalemanController::class, 'salemanSearch'])->name('saleman#search');
+
+
+// Type 3
+
+// Cashier
+
+Route::get('cashierPage', [MainCashierController::class, 'cashierPage'])->name('maincashier#page');
+
+Route::get('cashier_detail/{id}', [MainCashierController::class, 'cashierInfo'])->name('cashier#info');
+
+Route::get('cashierRequestPage/{id}', [MainCashierController::class, 'cashierRequestPage'])->name('cashierrequest#page');
+
+Route::get('cashier/search', [MainCashierController::class, 'cashierSearch'])->name('cashier#search');
 
 
 
@@ -346,6 +411,90 @@ Route::middleware([
 
         Route::post('driver/update/{id}', [DriverController::class, 'driverUpdate'])->name('driver#update');
 
+
+        // Gardener
+
+        Route::get('gardenerPage', [GardenerController::class, 'gardenerPage'])->name('gardener#page');
+
+        Route::get('gardener/create', [CategoryController::class, 'gardenerCreatePage'])->name('gardener#create');
+
+        Route::post('gardener', [GardenerController::class, 'gardenerCreate'])->name('gardener#aftercreate');
+
+        Route::get('gardener/detail/{id}', [GardenerController::class, 'gardenerEdit'])->name('gardener#updatePage');
+
+        Route::get('gardener/delete/{id}', [GardenerController::class, 'gardenerDelete'])->name('gardener#delete');
+
+        Route::get('gardener/editPage/{id}', [GardenerController::class, 'editPage'])->name('gardener#editPage');
+
+        Route::post('gardener/update/{id}', [GardenerController::class, 'gardenerUpdate'])->name('gardener#update');
+
+        // General worker
+
+        Route::get('generalworkerPage', [GeneralworkerController::class, 'generalworkerPage'])->name('generalworker#page');
+
+        Route::get('generalworker/create', [CategoryController::class, 'generalworkerCreatePage'])->name('generalworker#create');
+
+        Route::post('generalworker', [GeneralworkerController::class, 'generalworkerCreate'])->name('generalworker#aftercreate');
+
+        Route::get('generalworker/detail/{id}', [GeneralworkerController::class, 'generalworkerEdit'])->name('generalworker#updatePage');
+
+        Route::get('generalworker/delete/{id}', [GeneralworkerController::class, 'generalworkerDelete'])->name('generalworker#delete');
+
+        Route::get('generalworker/editPage/{id}', [GeneralworkerController::class, 'editPage'])->name('generalworker#editPage');
+
+        Route::post('generalworker/update/{id}', [GeneralworkerController::class, 'generalworkerUpdate'])->name('generalworker#update');
+
+
+        // Sale Man
+
+        Route::get('salemanPage', [SalemanController::class, 'salemanPage'])->name('saleman#page');
+
+        Route::get('saleman/create', [CategoryController::class, 'salemanCreatePage'])->name('saleman#create');
+
+        Route::post('saleman', [SalemanController::class, 'salemanCreate'])->name('saleman#aftercreate');
+
+        Route::get('saleman/detail/{id}', [SalemanController::class, 'salemanEdit'])->name('saleman#updatePage');
+
+        Route::get('saleman/delete/{id}', [SalemanController::class, 'salemanDelete'])->name('saleman#delete');
+
+        Route::get('saleman/editPage/{id}', [SalemanController::class, 'editPage'])->name('saleman#editPage');
+
+        Route::post('saleman/update/{id}', [SalemanController::class, 'salemanUpdate'])->name('saleman#update');
+
+
+        // Type 3
+
+        // Cashier
+
+        Route::get('cashierPage', [CashierController::class, 'cashierPage'])->name('cashier#page');
+
+        Route::get('cashier/create', [CategoryController::class, 'cashierCreatePage'])->name('cashier#create');
+
+        Route::post('cashier', [CashierController::class, 'cashierCreate'])->name('cashier#aftercreate');
+
+        Route::get('cashier/detail/{id}', [CashierController::class, 'cashierEdit'])->name('cashier#updatePage');
+
+        Route::get('cashier/delete/{id}', [CashierController::class, 'cashierDelete'])->name('cashier#delete');
+
+        Route::get('cashier/editPage/{id}', [CashierController::class, 'editPage'])->name('cashier#editPage');
+
+        Route::post('cashier/update/{id}', [CashierController::class, 'cashierUpdate'])->name('cashier#update');
+
+        // Manager
+
+        Route::get('managerPage', [ManagerController::class, 'managerPage'])->name('manager#page');
+
+        Route::get('manager/create', [CategoryController::class, 'managerCreatePage'])->name('manager#create');
+
+        Route::post('manager', [ManagerController::class, 'managerCreate'])->name('manager#aftercreate');
+
+        Route::get('manager/detail/{id}', [ManagerController::class, 'managerEdit'])->name('manager#updatePage');
+
+        Route::get('manager/delete/{id}', [ManagerController::class, 'managerDelete'])->name('manager#delete');
+
+        Route::get('manager/editPage/{id}', [ManagerController::class, 'editPage'])->name('manager#editPage');
+
+        Route::post('manager/update/{id}', [ManagerController::class, 'managerUpdate'])->name('manager#update');
 
 
 
