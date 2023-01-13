@@ -12,20 +12,20 @@ class MainGardenerController extends Controller
     public function gardenerPage()
     {
         $gardeners = Gardener::orderBy('id', 'desc')->paginate(12);
-        return view('user.main.Type2.gardener.gardener', compact('gardeners'));
+        return view('user.main.Type2.Gardener.gardener', compact('gardeners'));
     }
 
     public function gardenerInfo($id)
     {
         $gardeners = Gardener::where('id', $id)->first();
-        return view('user.main.Type2.gardener.gardenerdetails', compact('gardeners'));
+        return view('user.main.Type2.Gardener.gardenerdetails', compact('gardeners'));
     }
 
 
     public function gardenerRequestPage($id)
     {
         $gardeners = Gardener::where('id', $id)->first();
-        return view('user.main.Type2.gardener.requestform', compact('gardeners'));
+        return view('user.main.Type2.Gardener.requestform', compact('gardeners'));
     }
 
 
@@ -47,7 +47,7 @@ class MainGardenerController extends Controller
             ->paginate(12);
         $gardeners->appends(request()->all());
 
-        return view('user.main.Type2.gardener.gardener', compact('gardeners'));
+        return view('user.main.Type2.Gardener.gardener', compact('gardeners'));
     }
 
 

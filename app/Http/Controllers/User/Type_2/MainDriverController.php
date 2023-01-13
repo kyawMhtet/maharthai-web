@@ -12,20 +12,20 @@ class MainDriverController extends Controller
     public function driverPage()
     {
         $drivers = Driver::orderBy('id', 'desc')->paginate(12);
-        return view('user.main.Type2.driver.driver', compact('drivers'));
+        return view('user.main.Type2.Driver.driver', compact('drivers'));
     }
 
     public function driverInfo($id)
     {
         $drivers = Driver::where('id', $id)->first();
-        return view('user.main.Type2.driver.driverdetails', compact('drivers'));
+        return view('user.main.Type2.Driver.driverdetails', compact('drivers'));
     }
 
 
     public function driverRequestPage($id)
     {
         $drivers = Driver::where('id', $id)->first();
-        return view('user.main.Type2.driver.requestform', compact('drivers'));
+        return view('user.main.Type2.Driver.requestform', compact('drivers'));
     }
 
 
@@ -47,7 +47,7 @@ class MainDriverController extends Controller
             ->paginate(12);
         $drivers->appends(request()->all());
 
-        return view('user.main.Type2.driver.driver', compact('drivers'));
+        return view('user.main.Type2.Driver.driver', compact('drivers'));
     }
 
 

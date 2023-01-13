@@ -12,20 +12,20 @@ class MainGeneralworkerController extends Controller
     public function generalworkerPage()
     {
         $generalworkers = Generalworker::orderBy('id', 'desc')->paginate(12);
-        return view('user.main.Type2.generalworker.generalworker', compact('generalworkers'));
+        return view('user.main.Type2.Generalworker.generalworker', compact('generalworkers'));
     }
 
     public function generalworkerInfo($id)
     {
         $generalworkers = Generalworker::where('id', $id)->first();
-        return view('user.main.Type2.generalworker.generalworkerdetails', compact('generalworkers'));
+        return view('user.main.Type2.Generalworker.generalworkerdetails', compact('generalworkers'));
     }
 
 
     public function generalworkerRequestPage($id)
     {
         $generalworkers = Generalworker::where('id', $id)->first();
-        return view('user.main.Type2.generalworker.requestform', compact('generalworkers'));
+        return view('user.main.Type2.Generalworker.requestform', compact('generalworkers'));
     }
 
 
@@ -47,7 +47,7 @@ class MainGeneralworkerController extends Controller
             ->paginate(12);
         $generalworkers->appends(request()->all());
 
-        return view('user.main.Type2.generalworker.generalworker', compact('generalworkers'));
+        return view('user.main.Type2.Generalworker.generalworker', compact('generalworkers'));
     }
 
 
